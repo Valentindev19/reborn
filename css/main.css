@@ -179,10 +179,10 @@ h6 {
 
 .bg-gra-02 {
   background: -webkit-gradient(linear, left bottom, right top, from(#39769D), to(#6c4079));
-  background: -webkit-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-  background: -moz-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-  background: -o-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-  background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
+  background: -webkit-linear-gradient(bottom left, #39769D 0%, #6c4079 100%);
+  background: -moz-linear-gradient(bottom left, #39769D 0%, #6c4079 100%);
+  background: -o-linear-gradient(bottom left, #39769D 0%, #6c4079 100%);
+  background: linear-gradient(to top right, #39769D 0%, #6c4079 100%);
 }
 
 /* ==========================================================================
