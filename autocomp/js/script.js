@@ -19,7 +19,7 @@ function autocomplet() {
 
 // Lors du choix dans la liste
 function set_item(item) {
-	// Split des valeurs
+	// Split de l'item
 	var newitem = item.split(" ");
 	// change input value
 	$('#nom_id').val(newitem[0]);
