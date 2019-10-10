@@ -162,27 +162,27 @@ h6 {
    #BACKGROUND
    ========================================================================== */
 .bg-blue {
-  background: #39769D;
+  background: #1363b8;
 }
 
 .bg-red {
-  background: #39769D;
+  background: #1363b8;
 }
 
 .bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#39769D));
-  background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #39769D 100%);
-  background: -moz-linear-gradient(bottom, #fbc2eb 0%, #39769D 100%);
-  background: -o-linear-gradient(bottom, #fbc2eb 0%, #39769D 100%);
-  background: linear-gradient(to top, #fbc2eb 0%, #39769D 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#1363b8), to(#2bbdb6));
+  background: -webkit-linear-gradient(bottom, #1363b8 0%, #2bbdb6 100%);
+  background: -moz-linear-gradient(bottom, #1363b8 0%, #2bbdb6 100%);
+  background: -o-linear-gradient(bottom, #1363b8 0%, #2bbdb6 100%);
+  background: linear-gradient(to top, #1363b8 0%, #2bbdb6 100%);
 }
 
 .bg-gra-02 {
-  background: -webkit-gradient(linear, left bottom, right top, from(#39769D), to(#6c4079));
-  background: -webkit-linear-gradient(bottom left, #39769D 0%, #6c4079 100%);
-  background: -moz-linear-gradient(bottom left, #39769D 0%, #6c4079 100%);
-  background: -o-linear-gradient(bottom left, #39769D 0%, #6c4079 100%);
-  background: linear-gradient(to top right, #39769D 0%, #6c4079 100%);
+  background: -webkit-gradient(linear, left bottom, right top, from(#1363b8), to(#2bbdb6));
+  background: -webkit-linear-gradient(bottom left, #1363b8 0%, #2bbdb6 100%);
+  background: -moz-linear-gradient(bottom left, #1363b8 0%, #2bbdb6 100%);
+  background: -o-linear-gradient(bottom left, #1363b8 0%, #2bbdb6 100%);
+  background: linear-gradient(to top right, #1363b8 0%, #2bbdb6 100%);
 }
 
 /* ==========================================================================
@@ -279,19 +279,19 @@ h6 {
 }
 
 .btn--green {
-  background: #39769D;
+  background: #1363b8;
 }
 
 .btn--green:hover {
-  background: #39769D;
+  background: #1363b8;
 }
 
 .btn--blue {
-  background: #39769D;
+  background: #1363b8;
 }
 
 .btn--blue:hover {
-  background: #39769D;
+  background: #1363b8;
 }
 
 /* ==========================================================================
