@@ -122,8 +122,12 @@
                                     <input class="input--style-4" type="password" name="mdp">
                                 </div>
                             </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                              <div class="g-recaptcha" data-sitekey="6Lca1qQUAAAAADWm9IN2V9Em3Vj-CmPdo3LG0U3j"></div>
+                            </div>
                         </div>
-
+                      </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>
@@ -136,8 +140,8 @@
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="vendor/datepicker/jquery-1.12.4.js"></script>
+    <script src="vendor/datepicker/jquery-ui-1.12.1.js"></script>
     <script>
     $( function() {
       $( "#datepicker" ).datepicker();
@@ -146,6 +150,9 @@
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
+
+    <!-- Captcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
