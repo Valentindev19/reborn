@@ -14,6 +14,7 @@
           <input type="password" placeholder="mot de passe"/>
           <div class="g-recaptcha" data-sitekey="6Lca1qQUAAAAADWm9IN2V9Em3Vj-CmPdo3LG0U3j"></div>
           <button>Connexion</button>
+            <p class="message"> <a href="conex.html">Mot de passe oublié</a></p>
           <p class="message">Pas inscrit ? <a href="conex.html">Créer un compte</a></p>
         </form>
       </div>
