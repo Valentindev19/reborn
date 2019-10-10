@@ -8,6 +8,12 @@
     <meta name="description" content="Colorlib Templates">
     <meta name="author" content="Colorlib">
     <meta name="keywords" content="Colorlib Templates">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
 
     <!-- Title Page-->
     <title>Insciption</title>
@@ -27,6 +33,7 @@
 </head>
 
 <body>
+  <form>
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
@@ -91,13 +98,15 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Code Postal</label>
-                                    <input class="input--style-4" type="text" name="cdp">
+                                    <input  class="input--style-4" type="text" id="nom_id" onkeyup="autocomplet()">
+                                    <ul id="nom_list_id"></ul>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Ville</label>
-                                    <input class="input--style-4" type="text" name="ville">
+                                    <input  class="input--style-4"type="text" id="nom2_id">
+
                                 </div>
                             </div>
                         </div>
@@ -136,7 +145,7 @@
             </div>
         </div>
     </div>
-
+  </form>
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
