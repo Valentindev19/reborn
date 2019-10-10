@@ -12,11 +12,11 @@
     else
     {
       echo "Cocher le captcha !!";
+      header('Refresh: 2; log.php');
     }
 
   }
   else
   {
-    //header("Location:log.php");
-    echo "ton pere";
+    header("Location:log.php");
   }
