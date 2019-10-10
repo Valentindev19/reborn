@@ -1289,9 +1289,9 @@ a {
   .img-border:before, .img-border-sm:before {
     position: absolute;
     content: "";
-    height: 97%;
-    width: 97%;
-    background: #eec60a;
+    height: 100%;
+    width: 100%;
+    background: #14D790;
     right: 0px;
     bottom: 0px;
     z-index: 1;
