@@ -1,15 +1,4 @@
-#similipopup {
-  position : fixed;
-  display : none;
-  left : 45%;
-  margin-left : -150px;
-  width : 430px;
-  top : 9%;
-  background : #50423f;
-  border : 1px solid #f05f40;
-  padding : 40px;
-  z-index:2;
-}
+
 
 #divbody
 {
@@ -18,5 +7,16 @@
   position : fixed;
   background-color : rgba(0, 0, 0, 0.7);
   z-index : 1;
-  padding : 100%;
+  padding-left: 50px;
+  padding-right: 1200px;
+  padding-top: 50px;
+  padding-bottom: 1200px;
+}
+
+#divpop
+{
+  z-index: 2;
+  position: relative;
+  left: 500px;
+  top : 100px;
 }

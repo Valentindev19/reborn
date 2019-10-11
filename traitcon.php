@@ -35,7 +35,7 @@
           <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
           <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
           <!-- Font special for pages-->
-          <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+          <!--<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">-->
 
           <!-- Vendor CSS-->
           <link rel="stylesheet" href="css/jquery-ui-1.12.1.css">
@@ -49,13 +49,14 @@
       </head>
 
       <body>
-        <div id="divbody" onclick="document.getElementById('divbody').style.display = 'none'">
-          <div id="similipopup">
-            <!-- au click on redonne la valeur de display à none pour similipopup-->
-            <a href="#" onclick="document.getElementById('divbody').style.display = 'none'"><img src="img/inc/close.png" alt="Fermer"></a>
-            <a href="#contact" onclick="document.getElementById('divbody').style.display = 'none'"><img src="img/inc/free_devis.png" id="devispop" alt="Devis"></a>
-          </div>
+        <div id="divbody">
+          <div id="divpop" class="ui-widget">
+             <div  class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+                     <strong>Erreur !</strong> Veuillez cocher le Captcha</p>
+                  </div>
         </div>
+      </div>
+
         <form method="post" action="traitcon.php">
           <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
               <div class="wrapper wrapper--w680">
@@ -169,12 +170,7 @@
               </div>
           </div>
         </form>
-        <div class="ui-widget">
-           <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-               <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-                   <center><strong>Erreur !</strong> Veuillez cocher le Captcha</center></p>
-                  </div>
-                </div>
+
           <!-- Jquery JS-->
           <script src="vendor/jquery/jquery.min.js"></script>
           <!-- Vendor JS-->
@@ -188,6 +184,8 @@
 
           <!-- Main JS-->
           <script src="js/global.js"></script>
+          <script src="js/jquery.js"></script>
+          <script src="jquery-ui.js"></script>
 
           <!-- Captcha -->
           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
