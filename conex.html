@@ -31,7 +31,7 @@
 </head>
 
 <body>
-  <form method="post" action="traitcon.php">
+  <form id="conex_form" method="post" action="traitcon.php">
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
@@ -42,13 +42,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nom de famille</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="nom">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Prénom</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="prenom">
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                 <div class="input-group">
                                     <label class="label">Année de naissance</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" id="datepicker">
+                                        <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -67,11 +67,11 @@
                                     <label class="label">Genre</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Homme
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" checked="checked" name="genre">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Femme
-                                            <input type="radio" name="gender">
+                                            <input type="radio" name="genre">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -96,8 +96,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Code Postal</label>
+<<<<<<< HEAD
                                     <input  class="input--style-4" type="text" id="nom_id" onkeyup="autocomplet()">
 
+=======
+                                    <input  class="input--style-4" type="text" id="nom_id" onkeyup="autocomplet()" name="CP">
+                                    <div class="formville">
+>>>>>>> 17d1e2901455feb24f0554d3b22dcec4c6b2e796
                                     <ul id="nom_list_id"></ul>
                                   
                                 </div>
@@ -105,7 +110,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Ville</label>
-                                    <input  class="input--style-4"type="text" id="nom2_id">
+                                    <input  class="input--style-4"type="text" id="nom2_id" name="ville">
 
                                 </div>
                             </div>
@@ -114,7 +119,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Adresse</label>
-                                    <input class="input--style-4" type="text" name="add">
+                                    <input class="input--style-4" type="text" name="adr">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -131,14 +136,9 @@
                                     <input class="input--style-4" type="password" name="mdp">
                                 </div>
                             </div>
-                        <div class="col-2">
-                            <div class="input-group">
-                              <div class="g-recaptcha" data-sitekey="6Lca1qQUAAAAADWm9IN2V9Em3Vj-CmPdo3LG0U3j"></div>
-                            </div>
-                        </div>
                       </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" type="submit" name="form_conex">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -164,9 +164,45 @@
     <script src="js/global.js"></script>
 
     <!-- Captcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9"></script>
+    <script>
+     // when form is submit
+     $('#conex_form').submit(function() {
+       // we stoped it
+       event.preventDefault();
+       var nom = $('#nom').val();
+       var prenom = $('#prenom').val();
+       var dn = $('#DN').val();
+       var genre = $('#genre').val();
+       var email = $('#email').val();
+       var phone = $('#phone').val();
+       var cp = $('#CP').val();
+       var ville = $('#ville').val();
+       var adr = $("#adr").val();
+       var comp = $('#comp').val();
+       var mdp = $('#mdp').val();
+       // needs for recaptacha ready
+       grecaptcha.ready(function() {
+          // do request for recaptcha token
+          // response is promise with passed token
+          grecaptcha.execute('6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9', {action: 'create_comment'}).then(function(token) {
+              // add token to form
+              $('#conex_form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                  $.post("trait.php",{nom: nom, prenom: prenom, dn: dn, genre: genre, email: email, phone: phone, cp: cp, ville: ville, adr: adr, comp: comp, mdp: mdp, token: token}, function(result) {
+                          console.log(result);
+                          if(result.success) {
+                                  alert('Formulaire bien envoyé.')
+                          } else {
+                                  alert('You are spammer ! Get the @$%K out.')
+                          }
+                  });
+          });;
+        });
+      });
+    </script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 <!-- end document-->
