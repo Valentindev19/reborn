@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="css/log.css">
     <div class="login-page">
       <div class="form">
-        <form class="login-form" method="post" action="traitlog.php">
-          <input type="text" placeholder="mail"/>
-          <input type="password" placeholder="mot de passe"/>
-          <button>Connexion</button>
+        <form class="login-form" method="post" action="trait.php">
+          <input type="text" placeholder="mail" name="mail"/>
+          <input type="password" placeholder="mot de passe" name="mdp"/>
+          <button name="form_log">Connexion</button>
             <p class="message"> <a href="conex.html">Mot de passe oublié</a></p>
           <p class="message">Pas inscrit ? <a href="conex.html">Créer un compte</a></p>
         </form>
       </div>
     </div>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>
