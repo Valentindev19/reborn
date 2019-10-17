@@ -45,7 +45,7 @@
 
 
     <div class="site-navbar-wrap js-site-navbar bg-white">
-      
+
       <div class="container">
         <div class="site-navbar bg-light">
 
@@ -109,7 +109,7 @@
       </div>
     </div>
 
-
+    <form method="post" acton="mail.php">
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -150,7 +150,7 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Envoyer le message" class="btn btn-primary pill px-4 py-2">
+                  <td><input type ="submit" name="envoi" value="Envoyer" class="btn btn-primary pill px-4 py-2">
                 </div>
               </div>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16487.670893629707!2d1.2213861096393634!3d44.82721581606987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aca7ec036b85b7%3A0x81d6690adf9d6450!2s24200%20Vitrac!5e0!3m2!1sfr!2sfr!4v1570699872709!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -188,7 +188,7 @@
                 </div>
               </div>
             </div>
-
+          </form>
 
 
 
@@ -233,3 +233,27 @@
 
           </body>
         </html>
+
+        <!-- Script PHP -->
+		<?php
+		 	//creation des tarifs des livres
+
+			if(isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['message']))
+			{
+
+
+$objet= "Contact :";
+$texte=$texte . $_POST['nom'];
+$texte=$texte . $_POST['phone'];
+$texte=$texte . $_POST['message'] . "\r\n";
+
+(mail($_POST['mail'],$objet,$texte);
+
+				{
+					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
+				}
+				else {
+					echo"<h1> Le mail n'a pas ete envoye: Recommencez !</h1>";
+				}
+			}
+			?>
