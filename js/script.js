@@ -1,6 +1,6 @@
 // autocompletion
 function autocomplet() {
-	var min_length = 4; // nombre de caractère avant lancement recherch
+	var min_length = 5; // nombre de caractère avant lancement recherch
 	var keyword = $('#nom_id').val();  // nom_id fait référence au champ de recherche puis lancement de la recherche grace ajax_refresh
 	if (keyword.length >= min_length) {
 		$.ajax({
