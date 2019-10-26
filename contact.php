@@ -81,7 +81,7 @@
                         </ul>
 
                       </li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="contact.php">Contact</a></li>
                       <li><a href="log.php">Connexion</a></li>
                     </ul>
                   </div>
@@ -242,18 +242,19 @@
 			{
 
 
-$objet= "Contact :";
-$texte=$texte . $_POST['nom'];
-$texte=$texte . $_POST['phone'];
-$texte=$texte . $_POST['message'];
+        $objet= "Contact :";
+        $texte=$texte . $_POST['nom'];
+        $texte=$texte . $_POST['phone'];
+        $texte=$texte . $_POST['message'];
+        $email = "valentindevaud@gmail.com";
 
-if(mail($_POST['email'],$objet,$texte))
+        if(mail($email,$objet,$texte))
 
-				{
-					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
-				}
-				else {
-					echo"<h1> Le mail n'a pas ete envoye: Recommencez !</h1>";
-				}
-			}
-			?>
+        				{
+        					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
+        				}
+        				else {
+        					echo"<h1> Le mail n'a pas ete envoye: Recommencez !</h1>";
+        				}
+        			}
+        			?>
