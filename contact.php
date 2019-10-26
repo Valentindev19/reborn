@@ -109,7 +109,7 @@
       </div>
     </div>
 
-    <form method="post" acton="mail.php">
+    <form method="post" acton="contact.php">
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -245,9 +245,9 @@
 $objet= "Contact :";
 $texte=$texte . $_POST['nom'];
 $texte=$texte . $_POST['phone'];
-$texte=$texte . $_POST['message'] . "\r\n";
+$texte=$texte . $_POST['message'];
 
-(mail($_POST['mail'],$objet,$texte);
+if(mail($_POST['email'],$objet,$texte))
 
 				{
 					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
