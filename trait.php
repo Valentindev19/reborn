@@ -24,7 +24,7 @@
   header('Content-type: application/json');
   if ($responseKeys["success"])
   {
-    if (isset($_POST["form_conex"])) {
+    if (isset($_POST["conex_form"])) {
       $nom;$prenom;$dn;$genre;$email;$phone;$cp;$vile;$adr;$comp;$mdp;$captcha;
       $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
       $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
@@ -40,6 +40,35 @@
       $captcha = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
 
       // TRAITEMENT INSCIPTION POUR VALENTIN (C'est l'inscription au site)!
+
+    }
+    if (isset($_POST["contact_form"])) {
+      $nompre;$email;$phone;$message;$captcha;
+      $nompre = filter_input(INPUT_POST, 'nompre', FILTER_SANITIZE_STRING);
+      $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+      $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+      $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+      $captcha = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
+
+      if(isset($nompre) && isset($email) && isset($phone) && isset($message))
+			{
+
+
+        $objet= "Contact :";
+        $texte=$texte . $nompre;
+        $texte=$texte . $phone;
+        $texte=$texte . $message;
+        $email = "valentindevaud@gmail.com";
+
+        if(mail($email,$objet,$texte))
+
+        				{
+        					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
+        				}
+        				else {
+        					echo"<h1> Le mail n'a pas ete envoye: Recommencez !</h1>";
+        				}
+        			}
 
     }
   }

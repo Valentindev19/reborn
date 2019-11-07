@@ -119,7 +119,7 @@
 
 
 
-            <form action="#" class="p-5 bg-white">
+            <form action="trait.php" id="contact_form" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -232,30 +232,37 @@
 
             <script src="cookie/cookiechoices.js"></script>
 
+            <!-- Captcha -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://www.google.com/recaptcha/api.js?render=6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9"></script>
+            <script>
+             // when form is submit
+             $('#contact_form').submit(function() {
+               // we stoped it
+               event.preventDefault();
+               var nompre = $('#nompre').val();
+               var email = $('#email').val();
+               var phone = $('#phone').val();
+               var message = $('#message').val();
+               // needs for recaptacha ready
+               grecaptcha.ready(function() {
+                  // do request for recaptcha token
+                  // response is promise with passed token
+                  grecaptcha.execute('6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9', {action: 'create_comment'}).then(function(token) {
+                      // add token to form
+                      $('#contact_form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                          $.post("trait.php",{nompre: nompre, email: email, phone: phone, message: message, token: token}, function(result) {
+                                  console.log(result);
+                                  if(result.success) {
+                                          alert('Formulaire bien envoyé.')
+                                  } else {
+                                          alert('Vous êtes un spammeur.')
+                                  }
+                          });
+                  });;
+                });
+              });
+            </script>
+
           </body>
         </html>
-
-        <!-- Script PHP -->
-		<?php
-		 	//creation des tarifs des livres
-
-			if(isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['message']))
-			{
-
-
-        $objet= "Contact :";
-        $texte=$texte . $_POST['nom'];
-        $texte=$texte . $_POST['phone'];
-        $texte=$texte . $_POST['message'];
-        $email = "valentindevaud@gmail.com";
-
-        if(mail($email,$objet,$texte))
-
-        				{
-        					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
-        				}
-        				else {
-        					echo"<h1> Le mail n'a pas ete envoye: Recommencez !</h1>";
-        				}
-        			}
-        			?>
