@@ -110,7 +110,6 @@
       </div>
     </div>
 
-    <form method="post" acton="contact.php">
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -119,7 +118,7 @@
 
 
 
-            <form action="trait.php" id="contact_form" class="p-5 bg-white">
+            <form method="post" action="trait.php" id="contact_form" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -151,7 +150,7 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <td><input type ="submit" name="envoi" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+                  <td><input type ="submit" name="btn_contact_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
                 </div>
               </div>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16487.670893629707!2d1.2213861096393634!3d44.82721581606987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aca7ec036b85b7%3A0x81d6690adf9d6450!2s24200%20Vitrac!5e0!3m2!1sfr!2sfr!4v1570699872709!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
@@ -189,8 +188,6 @@
                 </div>
               </div>
             </div>
-          </form>
-
 
 
           <script src="js/jquery-3.3.1.min.js"></script>

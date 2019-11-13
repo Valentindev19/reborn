@@ -3,7 +3,7 @@
 
  // puis création de votre requete  dans l'exemple ci dessous on sélectionne les eleves d'une BDDD
 
-	include 'bdd.inc.php';
+	include 'class/bdd.inc.php';
 
 
 $keyword = '%'.$_POST['keyword'].'%';  // récupère la lettre saisie dans le champ texte en provenance de JS

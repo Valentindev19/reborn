@@ -1,5 +1,6 @@
 <?php
-
+  include("class/bdd.inc.php");
+  /*header('Location:index.html');
   if(!$captcha){
     echo '<h2>Please check the the captcha form.</h2>';
     exit;
@@ -42,7 +43,7 @@
       // TRAITEMENT INSCIPTION POUR VALENTIN (C'est l'inscription au site)!
 
     }
-    if (isset($_POST["contact_form"])) {
+    if (isset($_POST["btn_contact_form"])) {*/
       $nompre;$email;$phone;$message;$captcha;
       $nompre = filter_input(INPUT_POST, 'nompre', FILTER_SANITIZE_STRING);
       $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -52,25 +53,12 @@
 
       if(isset($nompre) && isset($email) && isset($phone) && isset($message))
 			{
-
-
-        $objet= "Contact :";
-        $texte=$texte . $nompre;
-        $texte=$texte . $phone;
-        $texte=$texte . $message;
-        $email = "valentindevaud@gmail.com";
-
-        if(mail($email,$objet,$texte))
-
-        				{
-        					echo" <h1> Vous allez recevoir un mail de Confirmation </h1>";
-        				}
-        				else {
-        					echo"<h1> Le mail n'a pas ete envoye: Recommencez !</h1>";
-        				}
-        			}
-
-    }
+        $req = "INSERT INTO contact(nomprecontact,mailcontact,phonecontact,sujetcontact,messagecontact)
+                VALUES('$nompre','$email','$phone','$message')";
+        $conn -> Query($req);
+        header('Location:index.php');
+  		}
+    /*}
   }
   if($responseKeys["success"]) {
     echo json_encode(array('success' => 'true'));
@@ -83,6 +71,6 @@
     {
       // METTRE LA VERIFICATION SI LES INFO DE LOG SONT BONNES
     }
-  }
+  }*/
 
 ?>
