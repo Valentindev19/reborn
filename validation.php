@@ -1,8 +1,8 @@
 <?php
 
-// Connexion à la base de données
+  // Connexion à la base de données
   include('class/bdd.inc.php');
-// Vérification des données saisies par l'utilisateur
+  // Vérification des données saisies par l'utilisateur
   if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['DN']) && isset($_POST['sexe']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['CP']) &&
   isset($_POST['ville']) && isset($_POST['adr']) && isset($_POST['comp']))
   {
@@ -17,7 +17,7 @@
     $adr = $_POST['adr'];
     $comp = $_POST['comp'];
     $mdp = $_POST['mdp'];
-
+    // Récupération de l'id de la ville
     $req = "SELECT ville_id
             FROM villes
             WHERE ville_nom = '$ville'
@@ -26,7 +26,7 @@
     $ligne = $res -> fetch();
     $id_ville = $ligne['ville_id'];
   }
-
+  // Si lien cliqué dans le mail passage du membre en actif
   if (isset($_GET['cle']))
   {
     $email = $_GET['log'];
@@ -36,17 +36,23 @@
     $res = $conn -> Query($req);
     $ligne = $res -> fetch();
     $cleverif = $ligne['cle'];
-    echo $_GET['cle'];
-    echo '<br>',$cleverif;
     if ($_GET['cle'] == $cleverif)
     {
-        echo "tvsidv";
       $req = "UPDATE membre
               SET cle = $cleverif,
                   validemembre = '1'
               WHERE mailm = '$email'";
       $res = $conn -> Query($req);
-      setcookie("id", $cleverif, time()+31622400);
+      // Initialisation des variables sessions pour rester connecté
+      $req = "SELECT mailm, mdpm, id_typem, validemembre FROM membre WHERE mailm = '$mailm' ";
+      $res=	$conn -> query($req);
+      $ligne = $res -> fetch();
+
+      session_start();
+      $_SESSION['mailm'] = $ligne[mailm];
+      $_SESSION['mdpm'] = $ligne[mdpm];
+
+      header("membre.php");
     }
   }
   else
@@ -57,13 +63,13 @@
     // Génération aléatoire d'une clé
     $cle = md5(microtime(TRUE)*100000);
 
-    // Insertion de la clé dans la base de données (à adapter en INSERT si besoin)
+    // Insertion de la clé et des autres valeurs dans la base de données
     if(isset($_POST['form_conex']))
     {
         $req = "INSERT INTO membre(nomm,prenomm,genrem,ddn,mailm,telephonem,ruem,compm,mdpm,ville_id,id_typem,validemembre,cle)
-                VALUES('$nom','$prenom','$sexe',$dn,'$email','$phone','$adr','$comp','$mdp',$id_ville,2,0,'$cle');";
+                VALUES('$nom','$prenom','$sexe',$dn,'$email','$phone','$adr','$comp','$mdp',$id_ville,2,1 /* il est mis en actif ici parceque l envoie de mail ne marche pas en local  */,'$cle');";
         $conn -> Query($req);
-            echo "fhvdvsi";
+        header("Location:membre.php"); // header ici parceque l envoie de mail ne marche pas en local
     }
 
 
@@ -85,7 +91,7 @@
     Ceci est un mail automatique, Merci de ne pas y répondre.';
 
 
-    mail($destinataire, $sujet, $message, $entete) ; // Envoi du mail
+    //mail($destinataire, $sujet, $message, $entete) ;  Envoi du mail
 
   }
 

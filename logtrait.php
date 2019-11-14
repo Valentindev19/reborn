@@ -35,9 +35,10 @@ else
         {
           session_start();
 
-        $_SESSION['mailm'] = $ligne[mailm]
+        $_SESSION['mailm'] = $ligne[mailm];
         $_SESSION['mdpm'] = $ligne[mdpm];
         echo 'Vous êtes connecté !';
+        header("Location:membre.php");
       }
     }
       else {
