@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+session_start ();
+
+// On récupère nos variables de session
+//if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+?>
+
 <html lang="en">
 
 <head>
@@ -14,7 +21,7 @@
 
 
     <!-- Title Page-->
-    <title>Inscription</title>
+    <title>Modification</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -162,5 +169,12 @@
 
 </body>
 
+<?php
+//}
+/*else {
+	header ('location: log.php');
+
+}
+*/?>
 </html>
 <!-- end document-->
