@@ -123,13 +123,13 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Nom</label>
-                  <input type="text" id="nom" class="form-control" placeholder="Nom prenom">
+                  <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom prenom">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="email">Email</label>
-                  <input type="email" id="email" class="form-control" placeholder="Email">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                 </div>
               </div>
 
@@ -137,7 +137,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="phone">Téléphone</label>
-                  <input type="text" id="phone" class="form-control" placeholder="Téléphone">
+                  <input type="text" name="phone" id="phone" class="form-control" placeholder="Téléphone">
                 </div>
               </div>
 
@@ -159,6 +159,7 @@
         </div>
       </div>
     </div>
+    
 
     <!--Image btn vers le haut-->
     <img id='btn_up' src="images/to_top.png"/>
