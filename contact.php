@@ -229,37 +229,5 @@
 
             <script src="cookie/cookiechoices.js"></script>
 
-            <!-- Captcha -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://www.google.com/recaptcha/api.js?render=6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9"></script>
-            <script>
-             // when form is submit
-             $('#contact_form').submit(function() {
-               // we stoped it
-               event.preventDefault();
-               var nompre = $('#nompre').val();
-               var email = $('#email').val();
-               var phone = $('#phone').val();
-               var message = $('#message').val();
-               // needs for recaptacha ready
-               grecaptcha.ready(function() {
-                  // do request for recaptcha token
-                  // response is promise with passed token
-                  grecaptcha.execute('6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9', {action: 'create_comment'}).then(function(token) {
-                      // add token to form
-                      $('#contact_form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
-                          $.post("trait.php",{nompre: nompre, email: email, phone: phone, message: message, token: token}, function(result) {
-                                  console.log(result);
-                                  if(result.success) {
-                                          alert('Formulaire bien envoyé.')
-                                  } else {
-                                          alert('Vous êtes un spammeur.')
-                                  }
-                          });
-                  });;
-                });
-              });
-            </script>
-
           </body>
         </html>
