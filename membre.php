@@ -134,7 +134,7 @@ session_start ();
 	        <div class="d-block d-md-flex">
 	          <div class="text-center p-4 item border-right">
 							<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
-	            <h2 class="h5 text-uppercase">Besoin d'aide ?</h2>
+	            <a href="contact.php"><h2 class="h5 text-uppercase">Besoin d'aide ?</h2>
 							<p>Contacter le support <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	          <div class="text-center p-4 item">

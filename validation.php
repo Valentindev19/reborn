@@ -78,7 +78,7 @@
     $sujet = "Activer votre compte" ;
     $entete = "From: inscription@centresaintvitrac.com" ;
 
-    // Le lien d'activation est composé du mail et de la clé
+    // Le lien d'activation est composé du mail et de la clé(cle)
     $message = 'Bienvenue sur le centre équestre de saint vitrac,
 
     Pour activer votre compte, veuillez cliquer sur le lien ci dessous

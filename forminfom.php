@@ -4,6 +4,7 @@ session_start ();
 
 // On récupère nos variables de session
 //if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+
 ?>
 
 <html lang="en">
