@@ -12,6 +12,7 @@
     $conn -> query($sql);
   }
   header('Location: contact.php');
+  //edee
 
 
   //Liaison des marqueurs avec les valeurs
