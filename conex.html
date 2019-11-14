@@ -31,7 +31,7 @@
 </head>
 
 <body>
-  <form id="conex_form" method="post" action="traitcon.php">
+  <form id="conex_form" method="post" action="validation.php">
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
@@ -55,7 +55,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Année de naissance</label>
+                                    <label class="label">Date de naissance</label>
                                     <div class="input-group-icon">
                                         <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
@@ -64,14 +64,18 @@
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Genre</label>
+                                    <label class="label">Sexe</label>
                                     <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Homme
-                                            <input type="radio" checked="checked" name="genre">
+                                        <label class="radio-container m-r-45">Masculin
+                                            <input type="radio" checked="checked" name="sexe" value="Homme" >
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="radio-container">Femme
-                                            <input type="radio" name="genre">
+                                        <label class="radio-container">Fémminin
+                                            <input type="radio" name="sexe" value="Femme">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Autres
+                                            <input type="radio" name="sexe" value="Autre">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -103,8 +107,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Ville</label>
-                                    <input  class="input--style-4"type="text" id="nom2_id" name="ville">
-
+                                    <input  class="input--style-4" type="text" id="nom2_id" name="ville">
                                 </div>
                             </div>
                         </div>
@@ -156,44 +159,6 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
-    <!-- Captcha -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9"></script>
-    <script>
-     // when form is submit
-     $('#conex_form').submit(function() {
-       // we stoped it
-       event.preventDefault();
-       var nom = $('#nom').val();
-       var prenom = $('#prenom').val();
-       var dn = $('#DN').val();
-       var genre = $('#genre').val();
-       var email = $('#email').val();
-       var phone = $('#phone').val();
-       var cp = $('#CP').val();
-       var ville = $('#ville').val();
-       var adr = $("#adr").val();
-       var comp = $('#comp').val();
-       var mdp = $('#mdp').val();
-       // needs for recaptacha ready
-       grecaptcha.ready(function() {
-          // do request for recaptcha token
-          // response is promise with passed token
-          grecaptcha.execute('6LfvfKQUAAAAAAuFhYtzgHjRHnjifzkODLfoQnw9', {action: 'create_comment'}).then(function(token) {
-              // add token to form
-              $('#conex_form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
-                  $.post("trait.php",{nom: nom, prenom: prenom, dn: dn, genre: genre, email: email, phone: phone, cp: cp, ville: ville, adr: adr, comp: comp, mdp: mdp, token: token}, function(result) {
-                          console.log(result);
-                          if(result.success) {
-                                  alert('Formulaire bien envoyé.')
-                          } else {
-                                  alert('You are spammer ! Get the @$%K out.')
-                          }
-                  });
-          });;
-        });
-      });
-    </script>
 
 </body>
 

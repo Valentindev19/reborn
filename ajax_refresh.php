@@ -9,7 +9,7 @@
 $keyword = '%'.$_POST['keyword'].'%';  // récupère la lettre saisie dans le champ texte en provenance de JS
 
 
-$sql = "SELECT ville_code_postal, ville_nom_reel  FROM villes WHERE ville_code_postal LIKE (:keyword) ORDER BY ville_nom_reel ASC LIMIT 0, 10";  // création de la requete avec sélection des résultats sur la lettre
+$sql = "SELECT ville_code_postal, ville_nom_reel, ville_id FROM villes WHERE ville_code_postal LIKE (:keyword) ORDER BY ville_nom_reel ASC LIMIT 0, 10";  // création de la requete avec sélection des résultats sur la lettre
 $req = $conn->prepare($sql);
 $req->bindParam(':keyword', $keyword, PDO::PARAM_STR);
 $req->execute();
