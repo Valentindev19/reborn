@@ -3,7 +3,7 @@
 session_start ();
 
 // On récupère nos variables de session
-if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+//if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 ?>
 	<html lang="en">
 	  <head>
@@ -122,23 +122,25 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	        <div class="d-block d-md-flex border-bottom">
 	          <div class="text-center p-4 item border-right">
   	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
-  	            <h2 class="h5 text-uppercase">Modifier vos données</h2>
-  	            <p><a href="deco.php">Modifer<span class="icon-arrow-right small"></span></a></p>
+  	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Modifier vos données</h2>
+  	            <p>Modifer <span class="icon-arrow-right small"></span></a></p>
   	          </div>
 	          <div class="text-center p-4 item">
-	            <!--<span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>-->
-	            <h2 class="h5 text-uppercase"></h2>
+	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
+	            <h2 class="h5 text-uppercase">Voir vos activités</h2>
+							<p>Afficher <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	        </div>
 	        <div class="d-block d-md-flex">
 	          <div class="text-center p-4 item border-right">
-	            <!--<span class="flaticon-speaker display-3 mb-3 d-block text-primary"></span>-->
-	            <h2 class="h5 text-uppercase"></h2>
+							<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
+	            <h2 class="h5 text-uppercase">Besoin d'aide ?</h2>
+							<p>Contacter le support <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	          <div class="text-center p-4 item">
-	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
-	            <h2 class="h5 text-uppercase">Deconnexion</h2>
-	            <p><a href="deco.php">Deconnectez vous <span class="icon-arrow-right small"></span></a></p>
+	            <span class="display-3 mb-3 d-block text-primary"><img src="images/icon-power-off.PNG"></span>
+	            <a href="deco.php"><h2 class="h5 text-uppercase">Deconnexion</h2>
+	            <p>Deconnectez vous <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	        </div>
 	      </div>
@@ -205,11 +207,11 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	</html>
 
 
-<?PHP
-}
-else {
-	header ('location: index.html');
+<?php
+//}
+/*else {
+	header ('location: log.php');
 
 }
-?>
+*/?>
 </html>

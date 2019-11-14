@@ -22,7 +22,7 @@
 }
 
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
   font-family: Flaticon;
   speak: none;
   font-style: normal;
@@ -43,3 +43,4 @@
 .flaticon-musical-note:before { content: "\f103"; }
 .flaticon-avatar:before { content: "\f104"; }
 .flaticon-paper-plane:before { content: "\f105"; }
+.flaticon-icon-user:before { content: "\f007"; }
