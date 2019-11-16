@@ -122,7 +122,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	        <div class="d-block d-md-flex border-bottom">
 	          <div class="text-center p-4 item border-right">
   	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
-  	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Gestion Membres</h2>
+  	            <a href="gestionm.php"><h2 class="h5 text-uppercase">Gestion Membres</h2>
   	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
   	          </div>
 	          <div class="text-center p-4 item">
