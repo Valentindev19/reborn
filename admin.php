@@ -3,7 +3,7 @@
 session_start ();
 
 // On récupère nos variables de session
-if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
 	<html lang="en">
 	  <head>
@@ -106,11 +106,11 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 
 
 
-	      <div class="site-blocks-cover" style="background-image: url(images/membre.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+	      <div class="site-blocks-cover" style="background-image: url(images/chevauxad.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
 	        <div class="container">
 	          <div class="row align-items-center justify-content-center">
 	            <div class="col-md-7 text-center" data-aos="fade">
-	              <h1>Espace Membre</h1>
+	              <h1>Espace Administrateur</h1>
 	            </div>
 	          </div>
 	        </div>
@@ -122,21 +122,34 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	        <div class="d-block d-md-flex border-bottom">
 	          <div class="text-center p-4 item border-right">
   	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
-  	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Modifier vos données</h2>
-  	            <p>Modifer <span class="icon-arrow-right small"></span></a></p>
+  	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Gestion Membres</h2>
+  	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
   	          </div>
 	          <div class="text-center p-4 item">
 	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-	            <h2 class="h5 text-uppercase">Voir vos activités</h2>
-							<p>Afficher <span class="icon-arrow-right small"></span></a></p>
+	            <h2 class="h5 text-uppercase"> Gestion activités</h2>
+							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	        </div>
 	        <div class="d-block d-md-flex">
 	          <div class="text-center p-4 item border-right">
 							<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
-	            <a href="contact.php"><h2 class="h5 text-uppercase">Besoin d'aide ?</h2>
-							<p>Contacter le support <span class="icon-arrow-right small"></span></a></p>
+	            <a href="contact.php"><h2 class="h5 text-uppercase"> Messages</h2>
+							<p>Voir les messages <span class="icon-arrow-right small"></span></a></p>
 	          </div>
+
+						<div class="text-center p-4 item border-right">
+  	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
+  	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Gestion Articles</h2>
+  	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
+  	          </div>
+	          <div class="text-center p-4 item">
+	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
+	            <h2 class="h5 text-uppercase"> Gestion Chevaux</h2>
+							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
+	          </div>
+	        </div>
+
 	          <div class="text-center p-4 item">
 	            <span class="display-3 mb-3 d-block text-primary"><img src="images/icon-power-off.PNG"></span>
 	            <a href="deco.php"><h2 class="h5 text-uppercase">Deconnexion</h2>
