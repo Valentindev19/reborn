@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 	<div class="row">
-		<h2 class="text-center">Gestion Membres</h2>
+		<h2 class="text-center">Gestion Message</h2>
 	</div>
 
         <div class="row">
@@ -26,35 +26,25 @@
 								<th>Id</th>
 								<th>Nom</th>
 								<th>Mail</th>
-								<th>Genre</th>
-								<th>Date Naissance</th>
-								<th>Mail</th>
 								<th>Téléphone</th>
-								<th>Ville</th>
-	                                <th>Modifier</th>
+								<th>Message</th>
 	                                 <th>Supprimer</th>
 							</tr>
 					</thead>
 					<?php
 include 'class/bdd.inc.php';
-$SQL= "SELECT membre.idmembre, membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel
-		FROM membre, villes
-		WHERE villes.ville_id= membre.ville_id
-		 AND membre.validemembre= 1";
+$SQL= "SELECT idcontact,nomprecontact, mailcontact, phonecontact, messagecontact
+		FROM contact";
 $result = $conn -> query($SQL);
-?>
+	?>
 					<tfoot>
 						<tr>
 							<th>Id</th>
 							<th>Nom</th>
-							<th>Prenom</th>
-							<th>Genre</th>
-							<th>Date Naissance</th>
 							<th>Mail</th>
 							<th>Téléphone</th>
-							<th>Ville</th>
-                                <th>Modifier</th>
-                                 <th>Supprimer</th>
+							<th>Message</th>
+																 <th>Supprimer</th>
 						</tr>
 					</tfoot>
 
@@ -63,16 +53,13 @@ $result = $conn -> query($SQL);
 						while($ligne = $result -> fetch())
 {
   echo"<tr>";
-    echo"<td>",$ligne['idmembre'],"</td>";
-    echo"<td>",$ligne['nomm'],"</td>";
-		echo"<td>",$ligne['prenomm'],"</td>";
-		echo"<td>",$ligne['genrem'],"</td>";
-    echo"<td>",$ligne['ddn'],"</td>";
-		echo"<td>",$ligne['mailm'],"</td>";
-		echo"<td>",$ligne['telephonem'],"</td>";
-    echo"<td>",$ligne['ville_nom_reel'],"</td>";
-    echo"<td> <a href='modclasse.php?id=$ligne[idmembre]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
-    echo"<td> <a href='supclasse.php?id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimerclasse' title='Supprimer' width=20 /></a></td>";
+    echo"<td>",$ligne['idcontact'],"</td>";
+    echo"<td>",$ligne['nomprecontact'],"</td>";
+		echo"<td>",$ligne['mailcontact'],"</td>";
+		echo"<td>",$ligne['phonecontact'],"</td>";
+    echo"<td>",$ligne['messagecontact'],"</td>";
+    echo"<td> <a href='supmessage.php?id=$ligne[idcontact]'><img src='images/supadmin.png' alt='edit'name='supclasse' width=35 /></a></td>";
+
   echo"</tr>";
 }
 echo"</center>";

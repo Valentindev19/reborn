@@ -134,7 +134,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	        <div class="d-block d-md-flex">
 	          <div class="text-center p-4 item border-right">
 							<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
-	            <a href="contact.php"><h2 class="h5 text-uppercase"> Messages</h2>
+	            <a href="gestionmess.php"><h2 class="h5 text-uppercase"> Messages</h2>
 							<p>Voir les messages <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 
