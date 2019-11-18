@@ -74,7 +74,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                      <li class="active">
 													<a href="index.php">Accueil</a>
 	                      </li>
-	                      <li class="active">
+	                      <li
 	                      <a href="actualite.php">Actualités</a></li>
 	                      <li><a href="chevaux.php">Chevaux</a></li>
 	                      <li><a href="pensions.php">Pensions</a></li>
@@ -92,13 +92,12 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                      <li><a href="contact.php">Contact</a></li>
 	                      </html>
 	                      <?php
-	                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-	                      session_start ();
+
 
 	                      // On récupère nos variables de session
 	                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                      ?>
-	                      <li><a href="membre.php">Page Membre</a></li>
+	                       <li class="active"><a href="membre.php">Page Membre</a></li>
 	                    </ul>
 	                    <?php
 	                    }
