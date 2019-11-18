@@ -3,7 +3,7 @@
 session_start ();
 
 // On récupère nos variables de session
-if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
+//if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
 	<html lang="en">
 	  <head>
@@ -126,7 +126,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
   	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
   	          </div>
 	          <div class="text-center p-4 item">
-	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
+	            <span class="display-3 mb-3 d-block text-primary"><img src="images/activites.PNG"></span>
 	            <h2 class="h5 text-uppercase"> Gestion activités</h2>
 							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
 	          </div>
@@ -139,7 +139,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	          </div>
 
 						<div class="text-center p-4 item border-right">
-  	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
+  	            <span class="display-3 mb-3 d-block text-primary"><img src="images/articles.PNG"></span>
   	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Gestion Articles</h2>
   	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
   	          </div>
@@ -150,11 +150,21 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	          </div>
 	        </div>
 
-	          <div class="text-center p-4 item">
+					<div class="d-block d-md-flex">
+						<div class="text-center p-4 item">
+							<span class="display-3 mb-3 d-block"></span>
+						</div>
+
+	          <div class="text-center p-4 item  border-top">
 	            <span class="display-3 mb-3 d-block text-primary"><img src="images/icon-power-off.PNG"></span>
 	            <a href="deco.php"><h2 class="h5 text-uppercase">Deconnexion</h2>
 	            <p>Deconnectez vous <span class="icon-arrow-right small"></span></a></p>
 	          </div>
+
+							<div class="text-center p-4 item">
+								<span class="display-3 mb-3 d-block"></span>
+							</div>
+					</div>
 	        </div>
 	      </div>
 	    </div>
@@ -221,10 +231,10 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 
 <?php
-}
-else {
-	header ('location: log.php');
+//}
+//else {
+//	header ('location: log.php');
 
-}
+//}
 ?>
 </html>
