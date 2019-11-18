@@ -89,10 +89,18 @@
 
                       // On récupère nos variables de session
                       if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
-                      ?>
-                      <li><a href="membre.php">Page Membre</a></li>
-                    </ul>
-                    <?php
+                        if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
+                        ?>
+                        <li><a href="admin.php">Page Admin</a></li>
+                      </ul>
+                      <?php
+                      }
+                      else {
+                        ?>
+                        <li><a href="log.php">Page Membre</a></li>
+                        <?php
+                      }
+
                     }
                     else {
                       ?>
