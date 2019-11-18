@@ -1,3 +1,10 @@
+<?php
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+session_start ();
+
+// On récupère nos variables de session
+if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
+?>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="http:s//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -83,3 +90,11 @@ echo"</center>";
 } );
     </script>
     </body>
+		<?php
+		}
+		else {
+			header ('location: log.php');
+
+		}
+		?>
+		</html>
