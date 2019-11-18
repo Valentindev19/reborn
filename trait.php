@@ -8,7 +8,7 @@
     $e = $_POST['email'];
     $p = $_POST['phone'];
     $m = $_POST['message'];
-    $sql = "INSERT INTO contact  VALUES (NULL,'$n','$e','$p','$m')";
+    $sql = "INSERT INTO contact  VALUES (NULL,'$n','$e','$p','$m',1)";
     $conn -> query($sql);
     setcookie('mail',0, time() + 3600);
 
