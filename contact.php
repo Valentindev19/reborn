@@ -67,7 +67,7 @@
                       <li>
                         <a href="index.php">Accueil</a>
                       </li>
-                      <li class="active">
+                      <li>
                       <a href="actualite.php">Actualités</a></li>
                       <li><a href="chevaux.php">Chevaux</a></li>
                       <li><a href="pensions.php">Pensions</a></li>
@@ -82,7 +82,7 @@
                         </ul>
 
                       </li>
-                      <li><a href="contact.php">Contact</a></li>
+                      <li class="active"><a href="contact.php">Contact</a></li>
                       </html>
                       <?php
                       // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)

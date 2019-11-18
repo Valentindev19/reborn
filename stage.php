@@ -67,7 +67,7 @@
                       <li>
                         <a href="index.php">Accueil</a>
                       </li>
-                      <li class="active">
+                      <li>
                       <a href="actualite.php">Actualités</a></li>
                       <li><a href="chevaux.php">Chevaux</a></li>
                       <li><a href="pensions.php">Pensions</a></li>
@@ -75,7 +75,7 @@
                         <a href="cours.php">Activités</a>
                         <ul class="dropdown arrow-top">
                           <li><a href="cours.php">Cours</a></li>
-                          <li><a href="stage.php">Stage</a></li>
+                          <li class="active"><a href="stage.php">Stage</a></li>
                           <li><a href="promenade.php">Promenade</a></li>
                           </li>
 
