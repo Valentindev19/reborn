@@ -65,25 +65,42 @@
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li>
-                        <a href="index.html">Accueil</a>
+                        <a href="index.php">Accueil</a>
                       </li>
                       <li class="active">
-                      <a href="actualite.html">Actualités</a></li>
-                      <li><a href="chevaux.html">Chevaux</a></li>
-                      <li><a href="pensions.html">Pensions</a></li>
+                      <a href="actualite.php">Actualités</a></li>
+                      <li><a href="chevaux.php">Chevaux</a></li>
+                      <li><a href="pensions.php">Pensions</a></li>
                       <li class="has-children">
-                        <a href="cours.html">Activités</a>
+                        <a href="cours.php">Activités</a>
                         <ul class="dropdown arrow-top">
-                          <li><a href="cours.html">Cours</a></li>
-                          <li><a href="stage.html">Stage</a></li>
-                          <li><a href="promenade.html">Promenade</a></li>
+                          <li><a href="cours.php">Cours</a></li>
+                          <li><a href="stage.php">Stage</a></li>
+                          <li><a href="promenade.php">Promenade</a></li>
                           </li>
 
                         </ul>
 
                       </li>
                       <li><a href="contact.php">Contact</a></li>
+                      </html>
+                      <?php
+                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+                      session_start ();
+
+                      // On récupère nos variables de session
+                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+                      ?>
+                      <li><a href="membre.php">Page Membre</a></li>
+                    </ul>
+                    <?php
+                    }
+                    else {
+                      ?>
                       <li><a href="log.php">Connexion</a></li>
+                      <?php
+                    }
+                    ?>
                     </ul>
                   </div>
                 </nav>
@@ -99,11 +116,12 @@
 
 
 
-      <div class="site-blocks-cover" style="background-image: url(images/couv.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover" style="background-image: url(images/chevalpro.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1>Actualités</h1>
+              <h1>Nos Promenade</h1>
+              <p class="font-weight-normal">Découvrez près de 75 sentiers de petite randonnée protégés avec panneaux de départ, balisage et signalisation. Bonnes balades !</p>
             </div>
           </div>
         </div>
@@ -111,42 +129,71 @@
     </div>
 
 
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-5 mb-md-0">
 
-      <div class="site-block-half d-flex">
-        <div class="image bg-image order-2" style="background-image: url('images/article.jpg');"></div>
-        <div class="text">
-          <div class="section-heading text-left">
-            <h2 class="mb-5">Aux États-Unis, un cheval maltraité fait un procès à son ancien propriétaire.</h2>
-            <p>Des avocats ont engagé des poursuites au nom de l'animal et demandent au moins 100.000 dollars de dommages et intérêts.</p>
-            <p><a target="_blank" href="http://www.slate.fr/story/165992/aux-etats-unis-un-cheval-maltraite-fait-un-proces-son-ancien-proprietaire" class="text-uppercase">Lire <span class="icon-arrow-right small"></span></a></p>
+              <div class="img-border">
+                <a href="https://www.youtube.com/watch?v=5x6ODx4iuFY" class="popup-vimeo image-play">
+                  <span class="icon-wrap">
+                    <span class="icon icon-play"></span>
+                  </span>
+                  <img src="images/vidy.png" alt="" class="img-fluid">
+                </a>
+              </div>
+
           </div>
-        </div>
-      </div>
-      <div class="site-block-half d-flex">
-        <div class="image bg-image" style="background-image: url('images/article2.jpg');"></div>
-        <div class="text">
-          <div class="section-heading text-left">
-            <h2 class="mb-5">Quand les chevaux font aussi de bons coach d'entreprise.</h2>
-            <p>Dans ce haras normand, des salariés viennent apprendre à mieux communiquer grâce au cheval. Des exercices pour permettre "à chacun de mieux se connaître et à l'équipe de mieux fonctionner".</p>
-            <p><a target="_blank" href="https://www.bfmtv.com/economie/quand-les-chevaux-font-aussi-de-bons-coach-d-entreprise-1797208.html" class="text-uppercase">Lire <span class="icon-arrow-right small"></span></a></p>
-          </div>
-        </div>
-      </div>
-      <div class="site-block-half d-flex">
-        <div class="image bg-image order-2" style="background-image: url('images/article3.jpg');"></div>
-        <div class="text">
-          <div class="section-heading text-left">
-            <h2 class="mb-5">Un cheval blessé par une balle perdue dans le Nord-Isère.</h2>
-            <p>L'émotion est toujours très vive à Moidieu-Détourbe (Isère). Samedi 26 octobre, la jument de la famille Olmos a reçu une balle perdue dans la mâchoire. Les dégâts sont importants mais l'animal devrait s'en sortir miraculeusement. Depuis, cette famille cherche à comprendre l'origine de l'accident.</p>
-            <p><a target="_blank" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=newssearch&cd=9&cad=rja&uact=8&ved=0ahUKEwiyiviw99DlAhW-AWMBHZ-7AwIQqQIISigAMAg&url=https%3A%2F%2Fwww.francebleu.fr%2Finfos%2Fsociete%2Fun-cheval-blesse-par-une-balle-perdue-dans-le-nord-isere-1572515450&usg=AOvVaw0YZE7lrxS9SlP_tDLcejLt" class="text-uppercase">Lire <span class="icon-arrow-right small"></span></a></p>
+          <div class="col-md-5 ml-auto">
+            <h2 class="h2 mb-3">À Propos de nos balades</h2>
+            <p class="h5 mb-3">Nous vous accompagnons presque partout !</p>
+            <p class="mb-4">Avec plus de 75 balades différentes dans notre région nous vous accompagnerons sous proposition et accord du centre.</p>
+            <p><a href="https://www.youtube.com/watch?v=5x6ODx4iuFY" class="popup-vimeo text-uppercase">Regarder une Vidéo <span class="icon-arrow-right small"></span></a></p>
           </div>
         </div>
       </div>
     </div>
 
-      <!--Image btn vers le haut-->
-      <img id='btn_up' src="images/to_top.png"/>
 
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
+            <h2 class="mb-3 text-uppercase">Balade <strong class="text-black font-weight-bold">débutant</strong> 1h</h2>
+            <p class="mb-4"> Le plaisir de la découverte de la promenade à cheval. Une très jolie balade de débutants, qui vous permettra de découvrir tranquillement le plaisir de la promenade à cheval.
+                             Le centre équestre de Saint Vitrac vous propose de découvrir le plaisir de la promenade à cheval dans les terres. Vous visiterez le marais au pas du cheval, et découvrirez la faune et la flore. Vous profiterai en famille d'une balade dans la nature, au rythme du cheval. Cette promenade est accessible à tous, enfants et adultes, y compris débutants.</p>
+            <form method="post" action="log.php">
+              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
+            </form>
+          </div>
+          <div class="col-md-12 col-lg-6 mr-auto order-2">
+            <img src="images/chevalpro1.jpg" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <img src="images/chevalpro2.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
+            <h2 class="mb-3 text-uppercase">Balade <strong class="text-black font-weight-bold">VIP</strong> 2h</h2>
+            <p class="mb-4"> Offrez-vous le plaisir d'une balade privée, avec un guide pour vous seuls. Vous pourrez ainsi découvrir la forêt de Jade à votre rythme, vous arrêter pour profiter du paysage, trotter et galoper en toute liberté.</p>
+            <form method="post" action="log.php">
+              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Image btn vers le haut-->
+    <img id='btn_up' src="images/to_top.png"/>
 
 
 

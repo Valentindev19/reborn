@@ -66,26 +66,42 @@
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
 
-                        <li><a href="index.html">Accueil</a></li>
-
-                      <li><a href="actualite.html">Actualités</a></li>
-                      <li class="active">
-                      <a href="chevaux.html">Chevaux</a>
+                      <a href="index.php">Accueil</a>
                     </li>
-                      <li><a href="pensions.html">Pensions</a></li>
-                      <li class="has-children">
-                        <a href="cours.html">Activités</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="cours.html">Cours</a></li>
-                          <li><a href="stage.html">Stage</a></li>
-                          <li><a href="promenade.html">Promenade</a></li>
-                          </li>
+                    <li class="active">
+                    <a href="actualite.php">Actualités</a></li>
+                    <li><a href="chevaux.php">Chevaux</a></li>
+                    <li><a href="pensions.php">Pensions</a></li>
+                    <li class="has-children">
+                      <a href="cours.php">Activités</a>
+                      <ul class="dropdown arrow-top">
+                        <li><a href="cours.php">Cours</a></li>
+                        <li><a href="stage.php">Stage</a></li>
+                        <li><a href="promenade.php">Promenade</a></li>
+                        </li>
 
-                        </ul>
+                      </ul>
 
-                      </li>
-                      <li><a href="contact.php">Contact</a></li>
-                      <li><a href="log.php">Connexion</a></li>
+                    </li>
+                    <li><a href="contact.php">Contact</a></li>
+                    </html>
+                    <?php
+                    // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+                    session_start ();
+
+                    // On récupère nos variables de session
+                    if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+                    ?>
+                    <li><a href="membre.php">Page Membre</a></li>
+                  </ul>
+                  <?php
+                  }
+                  else {
+                    ?>
+                    <li><a href="log.php">Connexion</a></li>
+                    <?php
+                  }
+                  ?>
                     </ul>
                   </div>
                 </nav>

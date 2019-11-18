@@ -71,6 +71,7 @@
                       <li><a href="chevaux.html">Chevaux</a></li>
                       <li><a href="pensions.html">Pensions</a></li>
                       <li class="has-children active">
+
                         <a href="cours.html">Activités</a>
                         <ul class="dropdown arrow-top">
                           <li><a href="cours.html">Cours</a></li>
@@ -82,7 +83,24 @@
 
                       </li>
                       <li><a href="contact.php">Contact</a></li>
+                      </html>
+                      <?php
+                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+                      session_start ();
+
+                      // On récupère nos variables de session
+                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+                      ?>
+                      <li><a href="membre.php">Page Membre</a></li>
+                    </ul>
+                    <?php
+                    }
+                    else {
+                      ?>
                       <li><a href="log.php">Connexion</a></li>
+                      <?php
+                    }
+                    ?>
                     </ul>
                   </div>
                 </nav>
@@ -98,13 +116,12 @@
 
 
 
-      <div class="site-blocks-cover" style="background-image: url(images/stage1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover" style="background-image: url(images/cours1.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1>Nos Stages</h1>
-              <p class="font-weight-normal">Vous recherchez un séjour cheval et nature pour vos enfants à partir de 7 ans.
-Le centre équestre Saint Vitrac vous propose plus de 4 heures équestres par jour.</p>
+              <h1>Nos Cours</h1>
+              <p class="font-weight-normal">Découvrez les cours proposés par notre équipe. De l'apprentissage au perfectionnement, notre équipe est la pour vous.</p>
             </div>
           </div>
         </div>
@@ -118,20 +135,15 @@ Le centre équestre Saint Vitrac vous propose plus de 4 heures équestres par jo
           <div class="col-md-6 mb-5 mb-md-0">
 
             <div class="img-border">
-              <a href="https://www.youtube.com/watch?v=UnK2GOhNTb8" class="popup-vimeo image-play">
-                <span class="icon-wrap">
-                  <span class="icon icon-play"></span>
-                </span>
-                <img src="images/stage.jpg" alt="" class="img-fluid">
+                <img src="images/cours11.png" alt="" class="img-fluid">
               </a>
             </div>
 
         </div>
         <div class="col-md-5 ml-auto">
-          <h2 class="h2 mb-3">À Propos de nos stages</h2>
-          <p class="h5 mb-3">Nos stages pour tous !</p>
-          <p class="mb-4">Nous proposons différents type de stages.</p>
-          <p><a href="https://www.youtube.com/watch?v=UnK2GOhNTb8" class="popup-vimeo text-uppercase">Regarder une Vidéo <span class="icon-arrow-right small"></span></a></p>
+          <h2 class="h2 mb-3">À Propos de nos cours</h2>
+          <p class="h5 mb-3">Nos cours pour tous !</p>
+          <p class="mb-4">Au centre Equestre de Saint Vitrac toute les personnes de tous les ages peuvent venir participer aux cours. A partir de 5 ans set jusqu'a 70 ans ils vous sera possible de prendre par à nos cours peu importe votre niveau. Les ages sont répartis dans différents cours pour vous proposer des cours plus précis. <!--Nous proposons différents type de cours, dès 6 ans mais aussi jusqu'au galop 5.--></p>
         </div>
       </div>
     </div>
@@ -143,17 +155,17 @@ Le centre équestre Saint Vitrac vous propose plus de 4 heures équestres par jo
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
-            <h2 class="mb-3 text-uppercase">Stage<strong class="text-black font-weight-bold"> de découverte </strong></h2>
+            <h2 class="mb-3 text-uppercase">Cours<strong class="text-black font-weight-bold"> D'Initiation </strong></h2>
 
-            <p class="mb-4">Les stages de "découverte" sont des stages d’équitation ludiques adaptés au tout petit avec des bons moments de contact avec l’animal agrémenté d’exercices de psychomotricité et des jeux à poney.
+            <p class="mb-4">Les séances de "Baby poney" sont des cours d’équitation ludiques adaptés au tout petit avec des bons moments de contact avec l’animal agrémenté d’exercices de psychomotricité et des jeux à poney.
 
 L’enfant apprend à brosser son poney, le respecter, le préparer pour la séance, l’emmener en main au manège pour enfin découvrir des petits jeux en groupe. Une activité ludique ou l’enfant s’amuse avec d’autres cavaliers à dos de poney.
 
 L’équitation permet à l’enfant de développer son équilibre, sa confiance en soi, son sens de la responsabilité en s’occupant du poney, sa socialisation…</p>
-            <p><a href="#" class="btn btn-primary pill px-4">En savoir plus</a></p> <!-- lien vers connex.html si client non connecté et si il est connecté liens vers les horraires et autres du cours -->
+            <p><a href="#" class="btn btn-primary pill px-4">Réserver un cour "Baby Poney"</a></p> <!-- lien vers connex.html si client non connecté et si il est connecté liens vers les horraires et autres du cours -->
           </div>
           <div class="col-md-12 col-lg-6 mr-auto order-2">
-            <img src="images/stageini.jpeg" alt="Image" class="img-fluid">
+            <img src="images/coursini.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>
@@ -163,15 +175,15 @@ L’équitation permet à l’enfant de développer son équilibre, sa confiance
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 mb-5 mb-md-0">
-            <img src="images/stageado.jpg" alt="Image" class="img-fluid">
+            <img src="images/coursado.jpg" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
-            <h2 class="mb-3 text-uppercase">Stage <strong class="text-black font-weight-bold"> d'apprentissage</strong></h2>
+            <h2 class="mb-3 text-uppercase">Cours <strong class="text-black font-weight-bold">ADO</strong></h2>
             <p class="mb-4">Les débutants et cavaliers de petits niveaux sont encadrés lors de la préparation jusqu’à totale autonomie. Les cavaliers confirmés sont laissés en autonomie mais toujours avec possibilité d’être aidés et secondés en cas de besoin.
 
 Les cours sont adaptés au niveau des cavaliers et à leurs préférences: Initiation,   dressage et d'obstacle en alternance ou  cours specifiques tels que dressage,  compétition,  voltige cosaque, attelage, pleine nature.</p>
             <form method="post" action="log.php">
-              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
+              <button class="btn btn-primary pill px-4" name="promenade">Reserver un cour "Débutant / Petit Niveau"</button>
             </form>
           </div>
         </div>
@@ -182,14 +194,14 @@ Les cours sont adaptés au niveau des cavaliers et à leurs préférences: Initi
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
-            <h2 class="mb-3 text-uppercase">Stage <strong class="text-black font-weight-bold"> de perfectionnement</strong></h2>
-            <p class="mb-4"> Stage de perfectionnement </p>
+            <h2 class="mb-3 text-uppercase">Cours <strong class="text-black font-weight-bold">Adulte</strong></h2>
+            <p class="mb-4"> Que vous soyez  débutant ou confirmé, des cours à cheval spécifiques pour adultes sont proposés tout au long de la semaine et en weekend, . Il faut  compter rester 2 heures au centre équestre avec la préparation du cheval (pansage, seller brider), le cours d'une heure  et les soins après le travail.</p>
             <form method="post" action="log.php">
-              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
+              <button class="btn btn-primary pill px-4" name="promenade">Reserver un cour "Adulte"</button>
             </form>
           </div>
           <div class="col-md-12 col-lg-6 mr-auto order-2">
-            <img src="images/stageadulte.jpg" alt="Image" class="img-fluid">
+            <img src="images/coursadulte.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>

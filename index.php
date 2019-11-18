@@ -82,8 +82,25 @@
 
                       </li>
                       <li><a href="contact.php">Contact</a></li>
-                      <li><a href="log.php">Connexion</a></li>
+                      </html>
+                      <?php
+                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+                      session_start ();
+
+                      // On récupère nos variables de session
+                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+                      ?>
+                      <li><a href="membre.php">Page Membre</a></li>
                     </ul>
+                    <?php
+                    }
+                    else {
+                      ?>
+                      <li><a href="log.php">Connexion</a></li>
+                      <?php
+                    }
+                    ?>
+
 
                   </div>
                 </nav>
@@ -230,7 +247,7 @@
     </div>
     <!--Image btn vers le haut-->
     <img id='btn_up' src="images/to_top.png"/>
-    
+
     </div>-->
 
 
