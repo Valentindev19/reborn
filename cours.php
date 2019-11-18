@@ -65,18 +65,18 @@
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li>
-                        <a href="index.html">Accueil</a>
+                        <a href="index.php">Accueil</a>
                       </li>
-                      <li><a href="actualite.html">Actualités</a></li>
-                      <li><a href="chevaux.html">Chevaux</a></li>
-                      <li><a href="pensions.html">Pensions</a></li>
-                      <li class="has-children active">
-
-                        <a href="cours.html">Activités</a>
+                      <li class="active">
+                      <a href="actualite.php">Actualités</a></li>
+                      <li><a href="chevaux.php">Chevaux</a></li>
+                      <li><a href="pensions.php">Pensions</a></li>
+                      <li class="has-children">
+                        <a href="cours.php">Activités</a>
                         <ul class="dropdown arrow-top">
-                          <li><a href="cours.html">Cours</a></li>
-                          <li><a href="stage.html">Stage</a></li>
-                          <li><a href="promenade.html">Promenade</a></li>
+                          <li><a href="cours.php">Cours</a></li>
+                          <li><a href="stage.php">Stage</a></li>
+                          <li><a href="promenade.php">Promenade</a></li>
                           </li>
 
                         </ul>
