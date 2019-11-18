@@ -162,7 +162,7 @@ session_start ();
   	          </div>
 	          <div class="text-center p-4 item">
 	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-	            <h2 class="h5 text-uppercase"> Gestion Chevaux</h2>
+	            <a href="gestionche.php"><h2 class="h5 text-uppercase"> Gestion Chevaux</h2>
 							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	        </div>
