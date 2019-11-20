@@ -74,7 +74,7 @@ session_start ();
 	                      <li>
 													<a href="index.php">Accueil</a>
 												</li>
-												<li
+												<li>
 												<a href="actualite.php">Actualités</a></li>
 												<li><a href="chevaux.php">Chevaux</a></li>
 												<li><a href="pensions.php">Pensions</a></li>
