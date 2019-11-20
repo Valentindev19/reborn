@@ -42,7 +42,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 include 'class/bdd.inc.php';
 $SQL= "SELECT idcontact,nomprecontact, mailcontact, phonecontact, messagecontact
 		FROM contact
-		WHERE validecontact= 1;
+		WHERE validecontact= 1";
 $result = $conn -> query($SQL);
 	?>
 					<tfoot>
