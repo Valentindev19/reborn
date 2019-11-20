@@ -157,7 +157,7 @@ session_start ();
 
 						<div class="text-center p-4 item border-right">
   	            <span class="display-3 mb-3 d-block text-primary"><img src="images/articles.PNG"></span>
-  	            <a href="forminfom.php"><h2 class="h5 text-uppercase">Gestion Articles</h2>
+  	            <a href="gestionart.php"><h2 class="h5 text-uppercase">Gestion Articles</h2>
   	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
   	          </div>
 	          <div class="text-center p-4 item">
