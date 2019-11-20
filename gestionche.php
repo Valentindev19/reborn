@@ -1,6 +1,8 @@
 <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
+include 'class/cheval.class.php';
+include 'class/bdd.inc.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -77,8 +79,8 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['poids'],"</td>";
 		echo"<td>",$ligne['sexeche'],"</td>";
     echo"<td>",$ligne['imageche'],"</td>";
-    echo"<td> <a href='modclasse.php?id=$ligne[idche]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
-    echo"<td> <a href='supclasse.php?id=$ligne[idche]'><img src='images/supadmin.png' alt='supprimerclasse' title='Supprimer' width=20 /></a></td>";
+    echo"<td> <a href='modclasse.php?modif=modif&id=$ligne[idche]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
+    echo"<td> <a href='traitadmin.php?sup=sup&id=$ligne[idche]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
@@ -92,6 +94,73 @@ echo"</center>";
 	</div>
 </div>
 	<a href ='admin.php'>RETOUR</a>
+
+  <div class="site-section bg-light">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-8 mb-5">
+
+
+
+          <form method="post" action="traitadmin.php" id="contact_form" class="p-5 bg-white">
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="race">Race</label>
+                <input type="text" name="race" id="race" class="form-control" placeholder="Race du cheval">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="nom">Nom cheval</label>
+                <input type=text name="nom" id="nom" class="form-control" placeholder="Nom du cheval">
+              </div>
+            </div>
+
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="age">Age</label>
+                <input type="number" name="age" id="age" class="form-control" placeholder="Age du cheval">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="taille">Taille</label>
+                <input name="taille" id="taille" class="form-control" placeholder="Taille du cheval en cm">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="poids">Poids</label>
+                <input name="poids" id="poids" class="form-control" placeholder="Poids du cheval en Kg">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="sexe">Sexe cheval</label>
+                <input name="sexe" id="sexe" class="form-control" placeholder="Sexe du cheval">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="img">Image</label>
+                <input type="file" name="img" id="img" class="form-control">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <td><input type ="submit" name="btn_ajche_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 		<script>
 		$(document).ready(function() {
