@@ -62,6 +62,7 @@
               WHERE idche ='$idche'";
       $conn -> query($SQL);
       header("Location:gestionche.php");
+    }
 ////////////////////////////////////////// MODIFIER
     public function affche($idche, $conn)
     {
