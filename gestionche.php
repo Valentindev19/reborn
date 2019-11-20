@@ -79,7 +79,7 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['poids'],"</td>";
 		echo"<td>",$ligne['sexeche'],"</td>";
     echo"<td>",$ligne['imageche'],"</td>";
-    echo"<td> <a href='modclasse.php?modif=modif&id=$ligne[idche]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
+    echo"<td> <a href='traitadmin.php?modif=modif&id=$ligne[idche]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='traitadmin.php?sup=sup&id=$ligne[idche]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
   echo"</tr>";
 }

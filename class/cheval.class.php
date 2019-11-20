@@ -69,8 +69,9 @@
       $SQL = "SELECT race, nomche, ageche, tailleche, poids, sexeche, imageche
       FROM cheval
       WHERE idche ='$idche'";
-      $conn -> query($SQL);
-      header("Location:gestionche.php");
+      $res = $conn -> query($SQL);
+      $ligne = $res -> fetch();
+      header("Location:traitadmin.php");
     }
 
   }
