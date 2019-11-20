@@ -97,7 +97,7 @@
                       }
                       else {
                         ?>
-                        <li><a href="log.php">Page Membre</a></li>
+                        <li><a href="membre.php">Page Membre</a></li>
                         <?php
                       }
 
