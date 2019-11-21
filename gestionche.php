@@ -17,6 +17,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/creative.css">
 <body>
 <div class="container">
 	<div class="row">
@@ -80,15 +81,17 @@ $req = $cheval->affche2($conn);
 echo"</center>";
 
 ?>
+
 					</tbody>
 				</table>
+				<a href='admin.php'><button class="boutonret">Retour</button></a>
 
 
 	</div>
 	</div>
 </div>
-	<a href ='admin.php'>RETOUR</a>
-
+<br>
+<br>
   <div class="site-section bg-light">
     <div class="container">
       <div class="row">
