@@ -162,7 +162,7 @@
                   </div>
                   <h2 class="heading mb-0"><a href="#"><?php echo $ligne['nomche']; ?></a></h2>
                   <span class="mb-3 d-block post-date"><?php echo $ligne['race']; ?> &bullet; <a href="#"><?php echo $ligne['sexeche']; ?></a></span>
-                  <p><?php echo $ligne['ageche']; ?> &bullet; <?php echo $ligne['tailleche']; ?> &bullet; <?php echo $ligne['poids']; ?> </p>
+                  <p><?php echo $ligne['ageche']; ?> ans &bullet; <?php echo $ligne['tailleche']; ?> cm &bullet; <?php echo $ligne['poids']; ?> Kg </p>
                 </div>
               </div>
           <?php

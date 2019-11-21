@@ -32,7 +32,6 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
     				<thead>
 							<tr>
-								<th>Id</th>
 								<th>Race</th>
 								<th>Nom cheval</th>
 								<th>Age cheval</th>
@@ -46,14 +45,11 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 					</thead>
 					<?php
 include 'class/bdd.inc.php';
-$SQL= "SELECT idche, race, nomche, ageche, tailleche, poids, sexeche, imageche
-		FROM cheval
-		WHERE valideche= 1";
-$result = $conn -> query($SQL);
+$cheval = new cheval("","","","","","","","","");
+$req = $cheval->affche2($conn);
 ?>
 					<tfoot>
             <tr>
-              <th>Id</th>
               <th>Race</th>
               <th>Nom cheval</th>
               <th>Age cheval</th>
@@ -68,10 +64,9 @@ $result = $conn -> query($SQL);
 
 					<tbody>
 						<?php
-						while($ligne = $result -> fetch())
-{
+	            while ($ligne = $req -> fetch())
+	            {
   echo"<tr>";
-    echo"<td>",$ligne['idche'],"</td>";
     echo"<td>",$ligne['race'],"</td>";
 		echo"<td>",$ligne['nomche'],"</td>";
 		echo"<td>",$ligne['ageche'],"</td>";

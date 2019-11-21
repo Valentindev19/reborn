@@ -76,8 +76,9 @@
 
     public function affche2($conn)
     {
-      $SQL = "SELECT race, nomche, ageche, tailleche, poids, sexeche, imageche
-      FROM cheval";
+      $SQL = "SELECT idche, race, nomche, ageche, tailleche, poids, sexeche, imageche
+      FROM cheval
+      WHERE valideche= 1";
       $req = $conn -> query($SQL);
       return $req;
     }
