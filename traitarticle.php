@@ -44,14 +44,14 @@
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="race">idche</label>
-                  <input type="hidden" name="idche" id="idche" class="form-control" placeholder="Race du cheval" value="<?php echo $GET_['idche']; ?>">
+                  <label class="font-weight-bold" for="race">idarticle</label>
+                  <input type="hidden" name="idche" id="idche" class="form-control" placeholder="Race du cheval" value="<?php echo $GET_['idarticle']; ?>">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="race">Race</label>
-                  <input type="text" name="race" id="race" class="form-control" placeholder="Race du cheval" value="<?php echo $ligne['race']; ?>">
+                  <label class="font-weight-bold" for="race">Titre</label>
+                  <input type="text" name="titre" id="titre" class="form-control" placeholder="Race du cheval" value="<?php echo $ligne['titre_article']; ?>">
                 </div>
               </div>
               <div class="row form-group">
