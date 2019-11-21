@@ -116,7 +116,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="age">Lien de l'article</label>
-                <input type="number" name="lien" id="lien" class="form-control" placeholder="Lien de l'article">
+                <input type="text" name="lien" id="lien" class="form-control" placeholder="Lien de l'article">
               </div>
             </div>
 

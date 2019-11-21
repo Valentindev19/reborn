@@ -1,6 +1,6 @@
 <?php
 
-  class cheval
+  class article
   {
     private $idarticle;
     private $titre_article;
@@ -40,7 +40,7 @@
       header('Location:gestionart.php');
     }
 ////////////////////////////////////////// SUPPRIMER
-    public function suppche($idche, $conn)
+    public function suppart($idarticle, $conn)
     {
       $SQL = "UPDATE cheval
               SET valideche = 0
@@ -52,7 +52,7 @@
     public function modifche($idche ,$race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn)
     {
       $SQL = "UPDATE cheval
-              SET race = $race , nomche = $nomche, ageche = $ageche, tailleche = $taille, poids = $poids, sexeche = $sexe, imageche = $image
+              SET race = '$race' , nomche = '$nomche', ageche = '$ageche', tailleche = '$taille', poids = '$poids', sexeche = '$sexe', imageche = '$image'
               WHERE idche ='$idche'";
       $conn -> query($SQL);
       header("Location:gestionche.php");
