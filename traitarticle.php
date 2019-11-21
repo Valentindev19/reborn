@@ -1,38 +1,36 @@
 <?php
   include 'class/bdd.inc.php';
-  include 'class/cheval.class.php';
+  include 'class/article.class.php';
 
   if (isset($_POST['btn_ajche_form']))
   {
-    if(isset($_POST['race']) && isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['sexe']) && isset($_POST['img']))
+    if(isset($_POST['titre']) && isset($_POST['resume']) && isset($_POST['lien']) && isset($_POST['contenue']) && isset($_POST['img']))
     {
-      $race = $_POST['race'];
-      $nom = $_POST['nom'];
-      $age = $_POST['age'];
-      $taille = $_POST['taille'];
-      $poids = $_POST['poids'];
-      $sexe = $_POST['sexe'];
-      $img = $_POST['img'];
+      $titre_article = $_POST['titre'];
+      $resume_article = $_POST['resume'];
+      $lien_article = $_POST['lien'];
+      $contenue_article = $_POST['contenue'];
 
-      $cheval = new cheval("","","","","","","","","");
-      $cheval->ajoutche($race,$nom,$age,$taille,$poids,$sexe,$img,$conn);
+
+      $article = new article("","","","","","");
+      $article->ajoutart($titre_article, $resume_article, $lien_article, $contenue_article, $conn);
     }
     else
     {
-      header('Location:gestionche.php');
+      header('Location:gestionart.php');
     }
   }
   if (isset($_GET['sup']))
   {
-    $idche = $_GET['id'];
-    $cheval = new cheval("","","","","","","","","");
-    $cheval->suppche($idche,$conn);
+    $id = $_GET['id'];
+    $article = new article("","","","","","");
+    $article->suppart($idarticle,$conn);
   }
   if (isset($_GET['modif']))
   {
-    echo "fku";
-    $cheval = new cheval("","","","","","","","","");
-    $cheval->affche($idche, $conn);
+
+    $article = new article("","","","","","");
+    $article->affarticle($idarticle, $conn);
     ?>
     <div class="site-section bg-light">
       <div class="container">
@@ -47,7 +45,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="race">idche</label>
-                  <input type="hidden" name="idche" id="idche" class="form-control" placeholder="Race du cheval" value="<?php echo $ligne['idche']; ?>">
+                  <input type="hidden" name="idche" id="idche" class="form-control" placeholder="Race du cheval" value="<?php echo $GET_['idche']; ?>">
                 </div>
               </div>
               <div class="row form-group">
