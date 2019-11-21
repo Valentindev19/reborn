@@ -58,12 +58,12 @@
     public function modifche($idche ,$race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn)
     {
       $SQL = "UPDATE cheval
-              SET race = $race , nomche = $nomche, ageche = $ageche, tailleche = $taille, poids = $poids, sexeche = $sexe, imageche = $image
+              SET race = '$race', nomche = '$nomche', ageche = $ageche, tailleche = $taille, poids = $poids, sexeche = '$sexe', imageche = '$image'
               WHERE idche ='$idche'";
       $conn -> query($SQL);
-      header("Location:gestionche.php");
+      //header("Location:gestionche.php");
     }
-////////////////////////////////////////// MODIFIER
+////////////////////////////////////////// AFFICHER
     public function affche($idche, $conn)
     {
       $SQL = "SELECT race, nomche, ageche, tailleche, poids, sexeche, imageche
@@ -71,10 +71,9 @@
       WHERE idche ='$idche'";
       $res = $conn -> query($SQL);
       $ligne = $res -> fetch();
-      header("Location:traitadmin.php");
+      return $ligne;
     }
-
-  }
+}
 
 
 ?>

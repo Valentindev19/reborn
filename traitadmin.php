@@ -4,8 +4,10 @@
 
   if (isset($_POST['btn_ajche_form']))
   {
+    echo "mstob";
     if(isset($_POST['race']) && isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['sexe']) && isset($_POST['img']))
     {
+      echo "shjep";
       $race = $_POST['race'];
       $nom = $_POST['nom'];
       $age = $_POST['age'];
@@ -24,16 +26,30 @@
   }
   if (isset($_GET['sup']))
   {
+    echo "dphshezop";
     $idche = $_GET['id'];
     $cheval = new cheval("","","","","","","","","");
     $cheval->suppche($idche,$conn);
+
   }
-  if (isset($_GET['modif']))
+  if (isset($_GET['mod']))
   {
-    echo "fku";
+    $idche = $_GET['id'];
     $cheval = new cheval("","","","","","","","","");
-    $cheval->affche($idche, $conn);
+    $ligne = $cheval->affche($idche, $conn);
     ?>
+    <html>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http:s//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script language="JavaScript" src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+    <body>
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -44,12 +60,7 @@
 
             <form method="post" action="traitadmin.php" id="modif_form" class="p-5 bg-white">
 
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="race">idche</label>
-                  <input type="hidden" name="idche" id="idche" class="form-control" placeholder="Race du cheval" value="<?php echo $ligne['idche']; ?>">
-                </div>
-              </div>
+              <input type="hidden" name="idche" id="idche" class="form-control" value="<?php echo $ligne['idche']; ?>">
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="race">Race</label>
@@ -92,13 +103,13 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="img">Image</label>
-                  <input type="file" name="img" id="img" class="form-control" value="<?php echo $ligne['imageche']; ?>">
+                  <input type="file" name="img" id="img" class="form-control">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <td><input type ="submit" name="btn_modif_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+                  <td><input type="submit" name="btn_modif_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
                 </div>
               </div>
             </form>
@@ -106,20 +117,32 @@
         </div>
       </div>
     </div>
+
+    <script>
+		$(document).ready(function() {
+    $('#datatable').dataTable();
+
+     $("[data-toggle=tooltip]").tooltip();
+
+} );
+    </script>
+    </body>
+    </html>
     <?php
     }
-    if (isset($_GET['btn_modif_form']) && isset($_POST['race']) && isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['sexe']) &&
-    isset($_POST['img']))
+    if (isset($_POST['btn_modif_form']))
     {
+      echo "oigje";
       $idche = $_POST['idche'];
       $race = $_POST['race'];
-      $nom = $_POST['nom'];
-      $age = $_POST['age'];
+      $nomche = $_POST['nom'];
+      $ageche = $_POST['age'];
       $taille = $_POST['taille'];
       $poids = $_POST['poids'];
       $sexe = $_POST['sexe'];
-      $img = $_POST['img'];
-      $cheval->modifche($idche ,$race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn);
+      $image = $_POST['img'];
+      $cheval = new cheval("","","","","","","","","");
+      $cheval-> modifche($idche, $race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn);
     }
 
 ?>
