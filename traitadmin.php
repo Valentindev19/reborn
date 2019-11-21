@@ -60,7 +60,7 @@
 
             <form method="post" action="traitadmin.php" id="modif_form" class="p-5 bg-white">
 
-              <input type="hidden" name="idche" id="idche" class="form-control" value="<?php echo $ligne['idche']; ?>">
+              <input type="text" name="idche" id="idche" class="form-control" value="<?php echo $_GET['id']; ?>">
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="race">Race</label>

@@ -59,7 +59,7 @@
     {
       $SQL = "UPDATE cheval
               SET race = '$race', nomche = '$nomche', ageche = $ageche, tailleche = $taille, poids = $poids, sexeche = '$sexe', imageche = '$image'
-              WHERE idche ='$idche'";
+              WHERE idche =$idche";
       $conn -> query($SQL);
       //header("Location:gestionche.php");
     }
