@@ -97,7 +97,7 @@ echo"</center>";
 
 
 
-          <form method="post" action="traitadmin.php" id="contact_form" class="p-5 bg-white">
+          <form method="post" action="traitarticle.php" id="contact_form" class="p-5 bg-white">
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
@@ -107,35 +107,23 @@ echo"</center>";
             </div>
             <div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="nom">Nom cheval</label>
-                <input type=text name="nom" id="nom" class="form-control" placeholder="Nom du cheval">
+                <label class="font-weight-bold" for="nom">Résumé</label>
+                <input type=text name="resume" id="resume" class="form-control" placeholder="Résumé de l'article">
               </div>
             </div>
 
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
-                <label class="font-weight-bold" for="age">Age</label>
-                <input type="number" name="age" id="age" class="form-control" placeholder="Age du cheval">
+                <label class="font-weight-bold" for="age">Lien de l'article</label>
+                <input type="number" name="lien" id="lien" class="form-control" placeholder="Lien de l'article">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="taille">Taille</label>
-                <input name="taille" id="taille" class="form-control" placeholder="Taille du cheval en cm">
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="poids">Poids</label>
-                <input name="poids" id="poids" class="form-control" placeholder="Poids du cheval en Kg">
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="sexe">Sexe cheval</label>
-                <input name="sexe" id="sexe" class="form-control" placeholder="Sexe du cheval">
+                <label class="font-weight-bold" for="taille">Contenue Article</label>
+                <input name="contenue" id="contenue" class="form-control" placeholder="Contenue de l'article">
               </div>
             </div>
             <div class="row form-group">
