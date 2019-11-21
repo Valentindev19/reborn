@@ -4,10 +4,8 @@
 
   if (isset($_POST['btn_ajche_form']))
   {
-    echo "mstob";
     if(isset($_POST['race']) && isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['sexe']) && isset($_POST['img']))
     {
-      echo "shjep";
       $race = $_POST['race'];
       $nom = $_POST['nom'];
       $age = $_POST['age'];

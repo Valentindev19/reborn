@@ -36,34 +36,6 @@ class membre
     $this->$cle = $cle;
   }
 
-  public function tlproduit($conn)
-  {
-    $sql = "select * from membre";
-    $req = $conn->query($sql);
-    return $req;
-  }
-
-  public function selectproduit($idp,$conn)
-  {
-    $sql = "select * from membre where idmembre = '$idm'";
-    $req = $conn->query($sql);
-    $res = $req->fetch();
-    return $res;
-  }
-
-  public function ajoutmembre($nomm,$prenomm,$genrem,$ddn,$mailm,$telephonem,$ruem,$compm,$mdpm,$id_ville,$cle)
-  {
-    $req = "INSERT INTO membre(nomm,prenomm,genrem,ddn,mailm,telephonem,ruem,compm,mdpm,ville_id,id_typem,validemembre,cle)
-            VALUES('$nomm','$prenomm','$genrem',$ddn,'$mailm','$telephonem','$ruem','$compm','$mdpm',$id_ville,2,1,'$cle');";
-    $conn -> Query($req);
-  }
-
-  public function modifproduit($idp,$des,$t,$conn)
-  {
-    $sql = "UPDATE `produit` SET `descp` = '$des', `prix` = '$t' WHERE `produit`.`idp` = $idp; ";
-    $conn->query($sql);
-  }
-
 ////////////////////////////////////// Le GET
   public function getidp()
   {
@@ -92,6 +64,53 @@ class membre
     $this->prixp = $nprixp;
   }
 
+  //////////////////////////////////////////// AFFICHAGE
+  public function affcle($mailm, $conn)
+  {
+    $req = "SELECT cle
+            FROM membre
+            WHERE mailm = '$mailm'";
+    $res = $conn -> Query($req);
+    $ligne = $res -> fetch();
+    return $ligne;
+  }
+
+  public function affsess($mailm, $conn)
+  {
+    $req = "SELECT mailm, mdpm, id_typem, validemembre FROM membre WHERE mailm = '$mailm' ";
+    $res=	$conn -> query($req);
+    $ligne = $res -> fetch();
+    return $ligne;
+  }
+
+  //////////////////////////////////////////// UPDATE
+  public function modifvalide($cleverif, $mailm, $conn)
+  {
+    $req = "UPDATE membre
+            SET cle = $cleverif,
+                validemembre = '1'
+            WHERE mailm = '$mailm'";
+    $res = $conn -> Query($req);
+  }
+
+  /////////////////////////////////////////// AJOUT
+  public function ajoutmembre($nom, $prenom, $sexe, $dn, $mailm, $phone, $adr, $comp, $mdp, $id_ville, $cle, $conn)
+  {
+    $req = "INSERT INTO membre(nomm,prenomm,genrem,ddn,mailm,telephonem,ruem,compm,mdpm,ville_id,id_typem,validemembre,cle)
+            VALUES('$nom','$prenom','$sexe',$dn,'$mailm','$phone','$adr','$comp','$mdp',$id_ville,2,1 /* il est mis en actif ici parceque l envoie de mail ne marche pas en local  */,'$cle');";
+    $conn -> Query($req);
+    header("Location:membre.php");
+  }
+
+  ////////////////////////////////////////// SUPPRIMER
+    public function suppmem($idm, $conn)
+    {
+      $SQL = "UPDATE membre
+              SET validemembre = 0
+              WHERE idmembre ='$idm'";
+      $conn -> query($SQL);
+      header("Location:gestionm.php");
+      }
 }
 
 

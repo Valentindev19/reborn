@@ -76,7 +76,7 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['mailm'],"</td>";
 		echo"<td>",$ligne['telephonem'],"</td>";
     echo"<td>",$ligne['ville_nom_reel'],"</td>";
-    echo"<td> <a href='supm.php?id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimerclasse' title='Supprimer' width=20 /></a></td>";
+    echo"<td> <a href='traitmembre.php?supm=supm&id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimerclasse' title='Supprimer' width=20 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";

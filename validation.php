@@ -2,6 +2,7 @@
 
   // Connexion à la base de données
   include('class/bdd.inc.php');
+  include('class/membre.class.php');
   // Vérification des données saisies par l'utilisateur
   if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['DN']) && isset($_POST['sexe']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['CP']) &&
   isset($_POST['ville']) && isset($_POST['adr']) && isset($_POST['comp']))
@@ -10,7 +11,7 @@
     $prenom = $_POST['prenom'];
     $dn = $_POST['DN'];
     $sexe = $_POST['sexe'];
-    $email = $_POST['email'];
+    $mailm = $_POST['email'];
     $phone = $_POST['phone'];
     $cp = $_POST['CP'];
     $ville = $_POST['ville'];
@@ -29,28 +30,21 @@
   // Si lien cliqué dans le mail passage du membre en actif
   if (isset($_GET['cle']))
   {
-    $email = $_GET['log'];
-    $req = "SELECT cle
-            FROM membre
-            WHERE mailm = '$email'";
-    $res = $conn -> Query($req);
-    $ligne = $res -> fetch();
+    $mailm = $_GET['log'];
+    $membre = new membre("","","","","","","","","","","","","","");
+    $membre->affcle($mailm,$conn);
     $cleverif = $ligne['cle'];
     if ($_GET['cle'] == $cleverif)
     {
-      $req = "UPDATE membre
-              SET cle = $cleverif,
-                  validemembre = '1'
-              WHERE mailm = '$email'";
-      $res = $conn -> Query($req);
+      $membre = new membre("","","","","","","","","","","","","","");
+      $cheval-> modifvalide($cleverif, $mailm, $conn);
       // Initialisation des variables sessions pour rester connecté
-      $req = "SELECT mailm, mdpm, id_typem, validemembre FROM membre WHERE mailm = '$mailm' ";
-      $res=	$conn -> query($req);
-      $ligne = $res -> fetch();
+      $membre = new membre("","","","","","","","","","","","","","");
+      $membre->affsess($mailm,$conn);
 
       session_start();
-      $_SESSION['mailm'] = $ligne[mailm];
-      $_SESSION['mdpm'] = $ligne[mdpm];
+      $_SESSION['mailm'] = $ligne['mailm'];
+      $_SESSION['mdpm'] = $ligne['mdpm'];
 
       header("membre.php");
     }
@@ -58,7 +52,7 @@
   else
   {
     // Récupération des variables nécessaires au mail de confirmation
-    $email = $_POST['email'];
+    $mailm = $_POST['email'];
 
     // Génération aléatoire d'une clé
     $cle = md5(microtime(TRUE)*100000);
@@ -66,15 +60,14 @@
     // Insertion de la clé et des autres valeurs dans la base de données
     if(isset($_POST['form_conex']))
     {
-        $req = "INSERT INTO membre(nomm,prenomm,genrem,ddn,mailm,telephonem,ruem,compm,mdpm,ville_id,id_typem,validemembre,cle)
-                VALUES('$nom','$prenom','$sexe',$dn,'$email','$phone','$adr','$comp','$mdp',$id_ville,2,1 /* il est mis en actif ici parceque l envoie de mail ne marche pas en local  */,'$cle');";
-        $conn -> Query($req);
-        header("Location:membre.php"); // header ici parceque l envoie de mail ne marche pas en local
+      $membre = new membre("","","","","","","","","","","","","","");
+      $membre->ajoutmembre($nom, $prenom, $sexe, $dn, $mailm, $phone, $adr, $comp, $mdp, $id_ville, $cle, $conn); 
+      // header ici parceque l envoie de mail ne marche pas en local
     }
 
 
     // Préparation du mail contenant le lien d'activation
-    $destinataire = $email;
+    $destinataire = $mailm;
     $sujet = "Activer votre compte" ;
     $entete = "From: inscription@centresaintvitrac.com" ;
 
@@ -84,7 +77,7 @@
     Pour activer votre compte, veuillez cliquer sur le lien ci dessous
     ou copier/coller dans votre navigateur internet.
 
-    http://localhost/ppe3/reborn/validation.php?log='.urlencode($email).'&cle='.urlencode($cle).'
+    http://localhost/ppe3/reborn/validation.php?log='.urlencode($mailm).'&cle='.urlencode($cle).'
 
 
     ---------------
