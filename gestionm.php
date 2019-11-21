@@ -32,13 +32,12 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 							<tr>
 								<th>Id</th>
 								<th>Nom</th>
-								<th>Mail</th>
+								<th>Prenom</th>
 								<th>Genre</th>
 								<th>Date Naissance</th>
 								<th>Mail</th>
 								<th>Téléphone</th>
 								<th>Ville</th>
-	                                <th>Modifier</th>
 	                                 <th>Supprimer</th>
 							</tr>
 					</thead>
@@ -60,7 +59,6 @@ $result = $conn -> query($SQL);
 							<th>Mail</th>
 							<th>Téléphone</th>
 							<th>Ville</th>
-                                <th>Modifier</th>
                                  <th>Supprimer</th>
 						</tr>
 					</tfoot>
@@ -78,7 +76,6 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['mailm'],"</td>";
 		echo"<td>",$ligne['telephonem'],"</td>";
     echo"<td>",$ligne['ville_nom_reel'],"</td>";
-    echo"<td> <a href='modclasse.php?id=$ligne[idmembre]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='supm.php?id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimerclasse' title='Supprimer' width=20 /></a></td>";
   echo"</tr>";
 }

@@ -79,8 +79,8 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['poids'],"</td>";
 		echo"<td>",$ligne['sexeche'],"</td>";
     echo"<td>",$ligne['imageche'],"</td>";
-    echo"<td> <a href='traitadmin.php?mod=mod&id=$ligne[idche]'><img src='images/modadmin.png' alt='edit' title='modifier' width=35 /></a></td>";
-    echo"<td> <a href='traitadmin.php?sup=sup&id=$ligne[idche]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 /></a></td>";
+    echo"<td> <a href='traitche.php?mod=mod&id=$ligne[idche]'><img src='images/modadmin.png' alt='edit' title='modifier' width=35 /></a></td>";
+    echo"<td> <a href='traitche.php?sup=sup&id=$ligne[idche]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
@@ -103,7 +103,7 @@ echo"</center>";
 
 
 
-          <form method="post" action="traitadmin.php" id="contact_form" class="p-5 bg-white">
+          <form method="post" action="traitche.php" id="contact_form" class="p-5 bg-white">
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">

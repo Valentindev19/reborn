@@ -1,5 +1,9 @@
 
-<!DOCTYPE html>
+<?php
+  include 'class/bdd.inc.php';
+  include 'class/cheval.class.php';
+?>
+
 <html lang="en">
   <head>
     <title>Centre Equestre Saint Vitrac</title>
@@ -136,212 +140,34 @@
       </div>
     </div>
 
+    <?php
+      $cheval = new cheval("","","","","","","","","");
+      $req = $cheval->affche2($conn);
+    ?>
 
     <!--Cheval Anglais-->
     <div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Cheval_anglais1.jpg" alt="" class="img-fluid">
-                </a>
+          <?php
+            while ($ligne = $req -> fetch())
+            {
+          ?>
+              <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+                <div class="media-with-text">
+                  <div class="img-border-sm mb-4">
+                    <a href="#">
+                      <img src="images/Chevaux/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
+                    </a>
+                  </div>
+                  <h2 class="heading mb-0"><a href="#"><?php echo $ligne['nomche']; ?></a></h2>
+                  <span class="mb-3 d-block post-date"><?php echo $ligne['race']; ?> &bullet; <a href="#"><?php echo $ligne['sexeche']; ?></a></span>
+                  <p><?php echo $ligne['ageche']; ?> &bullet; <?php echo $ligne['tailleche']; ?> &bullet; <?php echo $ligne['poids']; ?> </p>
+                </div>
               </div>
-              <h2 class="heading mb-0"><a href="#">Diablo</a></h2>
-              <span class="mb-3 d-block post-date">Cheval Anglais &bullet; <a href="#">Mâle</a></span>
-              <p>7 ans &bullet; 152cm &bullet; 450 kg </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-7 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Cheval_anglais2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Kaya</a></h2>
-              <span class="mb-3 d-block post-date">Cheval Anglais &bullet; <a href="#">Femelle</a></span>
-              <p>15 ans &bullet; 165cm  &bullet; 504 kg</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Cheval_anglais3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Ombre</a></h2>
-              <span class="mb-3 d-block post-date">Cheval Anglais &bullet;<a href="#">Male</a></span>
-              <p>20 ans &bullet; 170cm &bullet; 515 kg</p>
-            </div>
-          </div>
-
-
-          <!--Cheval Français-->
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Cheval_francais1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Foudre</a></h2>
-              <span class="mb-3 d-block post-date">Cheval Français &bullet; <a href="#">Femelle</a></span>
-              <p>12 ans &bullet; 165cm &bullet; 505 kg </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Cheval_francais2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Elvis</a></h2>
-              <span class="mb-3 d-block post-date">Cheval Français &bullet; <a href="#">Male</a></span>
-              <p>22 ans &bullet; 173cm &bullet; 530 kg </p>
-            </div>
-          </div>
-
-          <!--Cheval Lipizzan-->
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Lipizzan2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Flamme</a></h2>
-              <span class="mb-3 d-block post-date">Lipizzan &bullet; <a href="#">Femelle</a></span>
-              <p>14 ans &bullet; 160cm &bullet; 503 kg</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Lipizzan1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Nell</a></h2>
-              <span class="mb-3 d-block post-date">Lipizzan &bullet; <a href="#">Male</a></span>
-              <p>12 ans &bullet; 155cm &bullet; 496 kg </p>
-            </div>
-          </div>
-
-          <!--Cheval Mérens-->
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Mérens.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Simba</a></h2>
-              <span class="mb-3 d-block post-date">Lipizzan &bullet; <a href="#">Male</a></span>
-              <p>13 ans &bullet; 150cm &bullet; 439 kg </p>
-            </div>
-          </div>
-
-          <!--Poney Français-->
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Poney_francais3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Eclaireuse</a></h2>
-              <span class="mb-3 d-block post-date">Poney Français &bullet; <a href="#">Femelle</a></span>
-              <p>13 ans &bullet; 145cm &bullet; 130 kg  </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Poney_francais2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Histoire</a></h2>
-              <span class="mb-3 d-block post-date">Poney Français &bullet; <a href="#">Femelle</a></span>
-              <p>10 ans &bullet; 136cm &bullet; 121 kg  </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Poney_francais1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Jupiter</a></h2>
-              <span class="mb-3 d-block post-date">Poney Français &bullet; <a href="#">Male</a></span>
-              <p>8 ans &bullet; 130cm &bullet; 114 kg  </p>
-            </div>
-          </div>
-
-          <!--Shetland-->
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Shetland1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Hip-Hop</a></h2>
-              <span class="mb-3 d-block post-date">Shetland &bullet; <a href="#">Male</a></span>
-              <p>10 ans &bullet; 94 &bullet; 154 kg </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Shetland3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Hold-Up</a></h2>
-              <span class="mb-3 d-block post-date">Shetland &bullet; <a href="#">Male</a></span>
-              <p>5 ans &bullet; 85cm &bullet; 139 kg </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Shetland2.jpg " alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Melba</a></h2>
-              <span class="mb-3 d-block post-date">Shetland &bullet; <a href="#">Femelle</a></span>
-              <p>15 ans &bullet; 104cm &bullet; 179 kg </p>
-            </div>
-          </div>
-
-          <!--Trotteur-->
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#">
-                  <img src="images/Chevaux/Trotteur.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0"><a href="#">Johnny</a></h2>
-              <span class="mb-3 d-block post-date">Trotteur &bullet; <a href="#">Male</a></span>
-              <p>18 ans &bullet; 167cm &bullet; 595 kg </p>
-            </div>
-          </div>
+          <?php
+            }
+          ?>
 
 
         </div>

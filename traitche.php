@@ -26,7 +26,6 @@
   }
   if (isset($_GET['sup']))
   {
-    echo "dphshezop";
     $idche = $_GET['id'];
     $cheval = new cheval("","","","","","","","","");
     $cheval->suppche($idche,$conn);
@@ -58,7 +57,7 @@
 
 
 
-            <form method="post" action="traitadmin.php" id="modif_form" class="p-5 bg-white">
+            <form method="post" action="traitche.php" id="modif_form" class="p-5 bg-white">
 
               <input type="text" name="idche" id="idche" class="form-control" value="<?php echo $_GET['id']; ?>">
               <div class="row form-group">
@@ -132,7 +131,6 @@
     }
     if (isset($_POST['btn_modif_form']))
     {
-      echo "oigje";
       $idche = $_POST['idche'];
       $race = $_POST['race'];
       $nomche = $_POST['nom'];

@@ -61,7 +61,7 @@
               SET race = '$race', nomche = '$nomche', ageche = $ageche, tailleche = $taille, poids = $poids, sexeche = '$sexe', imageche = '$image'
               WHERE idche =$idche";
       $conn -> query($SQL);
-      //header("Location:gestionche.php");
+      header("Location:gestionche.php");
     }
 ////////////////////////////////////////// AFFICHER
     public function affche($idche, $conn)
@@ -73,7 +73,14 @@
       $ligne = $res -> fetch();
       return $ligne;
     }
-}
 
+    public function affche2($conn)
+    {
+      $SQL = "SELECT race, nomche, ageche, tailleche, poids, sexeche, imageche
+      FROM cheval";
+      $req = $conn -> query($SQL);
+      return $req;
+    }
+}
 
 ?>
