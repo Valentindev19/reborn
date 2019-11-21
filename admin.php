@@ -3,7 +3,7 @@
 session_start ();
 
 // On récupère nos variables de session
-//if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
+if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
 	<html lang="en">
 	  <head>
@@ -248,10 +248,10 @@ session_start ();
 
 
 <?php
-//}
-//else {
-//	header ('location: log.php');
+}
+else {
+	header ('location: log.php');
 
-//}
+}
 ?>
 </html>

@@ -75,8 +75,8 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['lien_article'],"</td>";
     echo"<td>",$ligne['contenue_article'],"</td>";
 		echo"<td>",$ligne['image_article'],"</td>";
-    echo"<td> <a href='traitadmin.php?modif=modif&id=$ligne[idarticle]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
-    echo"<td> <a href='traitadmin.php?sup=sup&id=$ligne[idarticle]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
+    echo"<td> <a href='traitarticle.php?modif=modif&id=$ligne[idarticle]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
+    echo"<td> <a href='traitarticle.php?sup=sup&id=$ligne[idarticle]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
@@ -129,16 +129,10 @@ echo"</center>";
                 <input name="contenue" id="contenue" class="form-control" placeholder="Contenue de l'article">
               </div>
             </div>
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="img">Image</label>
-                <input type="file" name="img" id="img" class="form-control">
-              </div>
-            </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <td><input type ="submit" name="btn_ajche_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+                <td><input type ="submit" name="btn_ajart_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
               </div>
             </div>
           </form>

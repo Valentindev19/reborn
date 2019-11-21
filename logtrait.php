@@ -31,8 +31,8 @@ else
         {
           session_start();
 
-        $_SESSION['mailm'] = $ligne[mailm];
-        $_SESSION['mdpm'] = $ligne[mdpm];
+        $_SESSION['mailm'] = $ligne['mailm'];
+        $_SESSION['mdpm'] = $ligne['mdpm'];
         $_SESSION['id_typem'] = $ligne['id_typem'];
         echo 'Vous êtes connecté !';
         header("Location:admin.php");
@@ -41,8 +41,8 @@ else
         {
           session_start();
 
-        $_SESSION['mailm'] = $ligne[mailm];
-        $_SESSION['mdpm'] = $ligne[mdpm];
+        $_SESSION['mailm'] = $ligne['mailm'];
+        $_SESSION['mdpm'] = $ligne['mdpm'];
         echo 'Vous êtes connecté !';
         header("Location:index.php");
       }

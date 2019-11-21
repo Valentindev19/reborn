@@ -42,30 +42,30 @@
 ////////////////////////////////////////// SUPPRIMER
     public function suppart($idarticle, $conn)
     {
-      $SQL = "UPDATE cheval
-              SET valideche = 0
-              WHERE idche ='$idche'";
+      $SQL = "UPDATE article
+              SET valide_article = 0
+              WHERE idarticle ='$idarticle'";
       $conn -> query($SQL);
-      header("Location:gestionche.php");
+
     }
 ////////////////////////////////////////// MODIFIER
-    public function modifche($idche ,$race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn)
+    public function modifart($idarticle, $titre_article, $resume_article, $lien_article, $contenue_article, $conn)
     {
-      $SQL = "UPDATE cheval
-              SET race = '$race' , nomche = '$nomche', ageche = '$ageche', tailleche = '$taille', poids = '$poids', sexeche = '$sexe', imageche = '$image'
-              WHERE idche ='$idche'";
+      $SQL = "UPDATE article
+              SET titre_article = '$titre_article' , resume_article = '$resume_article', lien_article = '$lien_article', contenue_article = '$contenue_article'
+              WHERE idarticle ='$idarticle'";
       $conn -> query($SQL);
-      header("Location:gestionche.php");
+
     }
-////////////////////////////////////////// MODIFIER
-    public function affche($idche, $conn)
+////////////////////////////////////////// AFFICHER
+    public function affart($idarticle, $conn)
     {
-      $SQL = "SELECT race, nomche, ageche, tailleche, poids, sexeche, imageche
-      FROM cheval
-      WHERE idche ='$idche'";
-      $res = $conn -> query($SQL);
-      $ligne = $res -> fetch();
-      header("Location:traitadmin.php");
+      $SQL = "SELECT titre_article, resume_article, lien_article, contenue_article
+      FROM article
+      WHERE idarticle ='$idarticle'";
+      $req = $conn -> query($SQL);
+      return $req;
+
     }
 
   }
