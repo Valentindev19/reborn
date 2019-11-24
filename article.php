@@ -1,6 +1,7 @@
 <?php
   include 'class/bdd.inc.php';
   include 'class/article.class.php';
+  $idarticle = $_GET['id'];
 ?>
 <html lang="en">
   <head>
@@ -141,38 +142,40 @@
 
     <?php
       $cheval = new article("","","","","","","","","");
-      $req = $cheval->affart2($conn);
+      $req = $cheval->affart($idarticle,$conn);
     ?>
 
-          <div class="site-section bg-light">
-            <div class="container">
-              <div class="row mb-5">
-                <?php
-                  while ($ligne = $req -> fetch())
-                  {
-                ?>
-                    <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                      <div class="media-with-text">
-                        <div class="img-border-sm mb-4">
-                          <a href="#">
-                            <img src="images/Chevaux/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
-                            <?php
-                          echo"<a href='article.php?id=$ligne[idarticle]'><img src='images/cent.jpg' width=260  class'img-fluid'>"
-                          ?>
-                          </a>
-                        </div>
-                        <h2 class="heading mb-0"><a><?php echo $ligne['titre_article']; ?></a></h2>
-                        <span class="mb-3 d-block post-date"><?php echo $ligne['resume_article']; ?> </a></span>
+
+                    
+                <div class="site-section">
+                  <div class="container">
+                    <div class="row align-items-center">
+                      <div class="col-md-6 mb-5 mb-md-0">
+                        <?php
+                          while ($ligne = $req -> fetch())
+                          {
+                        ?>
+
+                          <div class="img-border">
+
+                              <!--<img src="images/article/<?php echo $ligne['imageart']; ?>" alt="" class="img-fluid">!-->
+                              <img src="images/cent.jpg" alt="" class="img-fluid">
+                            </a>
+                          </div>
+
+                      </div>
+                      <div class="col-md-5 ml-auto">
+                        <h2 class="h2 mb-3"><?php echo $ligne['titre_article']; ?></h2>
+                        <p class="h5 mb-3"><?php echo $ligne['resume_article']; ?></p>
+                        <p class="mb-4"><?php echo $ligne['contenue_article']; ?></p>
                       </div>
                     </div>
+                  </div>
+                </div>
+
                 <?php
                   }
                 ?>
-
-
-              </div>
-            </div>
-          </div>
 
       <!--Image btn vers le haut-->
       <img id='btn_up' src="images/to_top.png"/>

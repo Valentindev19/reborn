@@ -145,7 +145,7 @@
       $req = $cheval->affche2($conn);
     ?>
 
-    <!--Cheval Anglais-->
+
     <div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
@@ -157,7 +157,7 @@
                 <div class="media-with-text">
                   <div class="img-border-sm mb-4">
                     <a href="#">
-                      <img src="images/Chevaux/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
+                      <<img src="images/Chevaux/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
                     </a>
                   </div>
                   <h2 class="heading mb-0"><a href="#"><?php echo $ligne['nomche']; ?></a></h2>

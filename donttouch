@@ -1,0 +1,33 @@
+<div class="image bg-image order-2" style="background-image: url('images/article.jpg');"></div>
+<div class="text">
+  <div class="section-heading text-left">
+      <h2 class="heading mb-0"><a href="#"><?php echo $ligne['titre_article']; ?></a></h2>
+    <p><?php echo $ligne['resume_article']; ?></p>
+    <p><a target="_blank" href="http://www.slate.fr/story/165992/aux-etats-unis-un-cheval-maltraite-fait-un-proces-son-ancien-proprietaire" class="text-uppercase">Lire <span class="icon-arrow-right small"></span></a></p>
+  </div>
+</div>
+</div>
+<?php
+}
+?>
+<div class="site-block-half d-flex">
+<div class="image bg-image" style="background-image: url('images/article2.jpg');"></div>
+<div class="text">
+  <div class="section-heading text-left">
+    <h2 class="mb-5">Quand les chevaux font aussi de bons coach d'entreprise.</h2>
+    <p>Dans ce haras normand, des salariés viennent apprendre à mieux communiquer grâce au cheval. Des exercices pour permettre "à chacun de mieux se connaître et à l'équipe de mieux fonctionner".</p>
+    <p><a target="_blank" href="https://www.bfmtv.com/economie/quand-les-chevaux-font-aussi-de-bons-coach-d-entreprise-1797208.html" class="text-uppercase">Lire <span class="icon-arrow-right small"></span></a></p>
+  </div>
+</div>
+</div>
+<div class="site-block-half d-flex">
+<div class="image bg-image order-2" style="background-image: url('images/article3.jpg');"></div>
+<div class="text">
+  <div class="section-heading text-left">
+    <h2 class="mb-5">Un cheval blessé par une balle perdue dans le Nord-Isère.</h2>
+    <p>L'émotion est toujours très vive à Moidieu-Détourbe (Isère). Samedi 26 octobre, la jument de la famille Olmos a reçu une balle perdue dans la mâchoire. Les dégâts sont importants mais l'animal devrait s'en sortir miraculeusement. Depuis, cette famille cherche à comprendre l'origine de l'accident.</p>
+    <p><a target="_blank" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=newssearch&cd=9&cad=rja&uact=8&ved=0ahUKEwiyiviw99DlAhW-AWMBHZ-7AwIQqQIISigAMAg&url=https%3A%2F%2Fwww.francebleu.fr%2Finfos%2Fsociete%2Fun-cheval-blesse-par-une-balle-perdue-dans-le-nord-isere-1572515450&usg=AOvVaw0YZE7lrxS9SlP_tDLcejLt" class="text-uppercase">Lire <span class="icon-arrow-right small"></span></a></p>
+  </div>
+</div>
+</div>
+</div>

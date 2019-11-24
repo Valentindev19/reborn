@@ -67,6 +67,17 @@
       return $req;
 
     }
+    ////////////////////////////////////////// AFFICHER
+        public function affart2($conn)
+        {
+          $SQL = "SELECT  idarticle, titre_article, resume_article, lien_article, contenue_article
+          FROM article
+          WHERE valide_article = 1";
+          $req = $conn -> query($SQL);
+          return $req;
+
+        }
+
 
   }
 
