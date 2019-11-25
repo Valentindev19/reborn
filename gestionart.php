@@ -111,7 +111,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="nom">Résumé</label>
-                <input type=text name="resume" id="resume" class="form-control" placeholder="Résumé de l'article" rows="5">
+                <input type=text name="resume" id="resume" class="form-control" placeholder="Résumé de l'article">
               </div>
             </div>
 

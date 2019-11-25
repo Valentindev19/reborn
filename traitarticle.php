@@ -28,9 +28,7 @@
     $idarticle = $_GET['id'];
     $article = new article("","","","","","","");
     $article->suppart($idarticle,$conn);
-
-
-
+    header('Location:gestionart.php');
   }
   if (isset($_GET['modif']))
   {
