@@ -90,7 +90,7 @@ echo"</center>";
 	</div>
 	</div>
 </div>
-	<a href ='admin.php'>RETOUR</a>
+	
 
   <div class="site-section bg-light">
     <div class="container">
