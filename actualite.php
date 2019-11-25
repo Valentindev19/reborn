@@ -140,8 +140,8 @@
 
 
     <?php
-      $cheval = new article("","","","","","","","","");
-      $req = $cheval->affart2($conn);
+      $article = new article("","","","","","","");
+      $req = $article->affart2($conn);
     ?>
 
           <div class="site-section bg-light">
@@ -155,10 +155,9 @@
                       <div class="media-with-text">
                         <div class="img-border-sm mb-4">
                           <a href="#">
-                            <img src="images/Chevaux/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
+                            <img src="images/Articles/<?php echo $ligne['image_article']; ?>" alt="" class="img-fluid">
                             <?php
-                          echo"<a href='article.php?id=$ligne[idarticle]'><img src='images/cent.jpg' width=260  class'img-fluid'>"
-                          ?>
+                          echo"<a href='article.php?id=$ligne[idarticle]'>"?> <img src='images/Articles/<?php echo $ligne['image_article']; ?>' width=260  class'img-fluid'>
                           </a>
                         </div>
                         <h2 class="heading mb-0"><a><?php echo $ligne['titre_article']; ?></a></h2>

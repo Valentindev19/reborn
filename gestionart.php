@@ -90,7 +90,7 @@ echo"</center>";
 	</div>
 	</div>
 </div>
-	
+
 
   <div class="site-section bg-light">
     <div class="container">
@@ -111,7 +111,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="nom">Résumé</label>
-                <input type=text name="resume" id="resume" class="form-control" placeholder="Résumé de l'article">
+                <input type=text name="resume" id="resume" class="form-control" placeholder="Résumé de l'article" rows="5">
               </div>
             </div>
 
@@ -130,6 +130,12 @@ echo"</center>";
               </div>
             </div>
 
+						<div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="img">Image</label>
+                <input type="file" name="img" id="img" class="form-control">
+              </div>
+            </div>
             <div class="row form-group">
               <div class="col-md-12">
                 <td><input type ="submit" name="btn_ajart_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">

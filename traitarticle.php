@@ -11,10 +11,11 @@
       $resume_article = $_POST['resume'];
       $lien_article = $_POST['lien'];
       $contenue_article = $_POST['contenue'];
+      $img_art = $_POST['img'];
 
 
-      $article = new article("","","","","","");
-      $article->ajoutart($titre_article, $resume_article, $lien_article, $contenue_article, $conn);
+      $article = new article("","","","","","","");
+      $article->ajoutart($titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
 
     }
     else
@@ -25,7 +26,7 @@
   if (isset($_GET['sup']))
   {
     $idarticle = $_GET['id'];
-    $article = new article("","","","","","");
+    $article = new article("","","","","","","");
     $article->suppart($idarticle,$conn);
 
 
@@ -34,7 +35,7 @@
   if (isset($_GET['modif']))
   {
     $idarticle = $_GET['id'];
-    $article = new article("","","","","","");
+    $article = new article("","","","","","","");
     $req = $article->affart($idarticle, $conn);
     $ligne = $req->fetch();
 
@@ -100,6 +101,13 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
+                  <label class="font-weight-bold" for="img">Image</label>
+                  <input type="file" name="img" id="img" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
                   <td><input type ="submit" name="btn_modif_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
                 </div>
               </div>
@@ -118,8 +126,9 @@
       $resume_article = $_POST['resume'];
       $lien_article = $_POST['lien'];
       $contenue_article = $_POST['contenue'];
-      $article = new article("","","","","","");
-      $article->modifart($idarticle,$titre_article, $resume_article, $lien_article, $contenue_article, $conn);
+      $img_art = $_POST['img'];
+      $article = new article("","","","","","","");
+      $article->modifart($idarticle,$titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
 
       header('Location:gestionart.php');
     }
