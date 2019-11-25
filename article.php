@@ -146,7 +146,7 @@
     ?>
 
 
-                    
+
                 <div class="site-section">
                   <div class="container">
                     <div class="row align-items-center">
@@ -158,8 +158,9 @@
 
                           <div class="img-border">
 
-                              <!--<img src="images/article/<?php echo $ligne['imageart']; ?>" alt="" class="img-fluid">!-->
-                              <img src="images/cent.jpg" alt="" class="img-fluid">
+                              <img src="images/articles/<?php echo $ligne['image_article']; ?>" alt="" class="img-fluid">
+
+
                             </a>
                           </div>
 
