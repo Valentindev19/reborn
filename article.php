@@ -141,8 +141,8 @@
 
 
     <?php
-      $cheval = new article("","","","","","","","","");
-      $req = $cheval->affart($idarticle,$conn);
+      $article = new article("","","","","","","");
+      $req = $article->affart($idarticle,$conn);
     ?>
 
 
