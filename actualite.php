@@ -155,7 +155,7 @@
                       <div class="media-with-text">
                         <div class="img-border-sm mb-4">
                           <a href="#">
-                            <img src="images/Articles/<?php echo $ligne['image_article']; ?>" alt="" class="img-fluid">
+                            
                             <?php
                           echo"<a href='article.php?id=$ligne[idarticle]'>"?> <img src='images/Articles/<?php echo $ligne['image_article']; ?>' width=260  class'img-fluid'>
                           </a>
