@@ -92,7 +92,7 @@ echo"</center>";
 	</div>
 	</div>
 </div>
-	<a href ='admin.php'>RETOUR</a>
+	
 
 		<script>
 		$(document).ready(function() {
