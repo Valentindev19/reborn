@@ -41,6 +41,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 								<th>Téléphone</th>
 								<th>Ville</th>
 	                                 <th>Supprimer</th>
+																	 <th>Modifier</th>
 							</tr>
 					</thead>
 					<?php
@@ -62,6 +63,7 @@ $result = $conn -> query($SQL);
 							<th>Téléphone</th>
 							<th>Ville</th>
                                  <th>Supprimer</th>
+																 <th>Modifier</th>
 						</tr>
 					</tfoot>
 
@@ -78,7 +80,8 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['mailm'],"</td>";
 		echo"<td>",$ligne['telephonem'],"</td>";
     echo"<td>",$ligne['ville_nom_reel'],"</td>";
-    echo"<td> <a href='traitmembre.php?supm=supm&id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimerclasse' title='Supprimer' width=20 /></a></td>";
+    echo"<td> <a href='traitmembre.php?supm=supm&id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimer' title='Supprimer' width=20 /></a></td>";
+		echo"<td> <a href='traitmembre.php?modm=modm&id=$ligne[idmembre]'><img src='images/modadmin.png' alt='mod' title='modifier' width=20 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
@@ -92,7 +95,7 @@ echo"</center>";
 	</div>
 	</div>
 </div>
-	
+
 
 		<script>
 		$(document).ready(function() {
