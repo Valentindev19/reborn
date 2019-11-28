@@ -49,14 +49,53 @@
   </table>
 </fieldset>
 
-public function aime($idcav, $idche, $e)
-{
-  $aime = new aime("","","");
-  $req = $aime->affaime($conn);
-  while ($ligne = $req -> fetch())
+  public function aime($idcav, $idche, $e)
   {
-    $e = $ligne['etoile'];
-    $meschevaux = new aime($idcav, $idche, $e);
-    $meschevaux[$i] = new cheval()
+    $aime = new aime("","","");
+    $req = $aime->affaime($conn);
+    while ($ligne = $req -> fetch())
+    {
+      $e = $ligne['etoile'];
+      $meschevaux = new aime($idcav, $idche, $e);
+      $meschevaux[$i] = new cheval()
+    }
   }
-}
+
+  <?php
+
+class chevaux
+{
+  private $idche;
+  private $nomche;
+
+
+
+    Public function poney($idche, $nomche)
+    {
+      $this->idche = $idche;
+      $this->nomche = $nomche;
+    }
+
+    Public function Get_idche()
+    {
+      return $this->idche;
+    }
+    Public function Get_nomche()
+    {
+      return $this->nomche;
+    }
+
+     Public function Setid($idche)
+    {
+      $this->idche = $idche;
+    }
+    Public function Setnom($nomche)
+    {
+      $this->nomche = $nomche;
+    }
+  Public function affichage($conn)
+ {
+   $SQL = "SELECT * FROM chevaux";
+           $req = $conn -> query($SQL);
+           return $req;
+ }
