@@ -159,6 +159,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 	  <script src="js/mediaelement-and-player.min.js"></script>
 
+<<<<<<< HEAD:gestionact.php
 	  <script src="js/main.js"></script>
 
 
@@ -175,3 +176,76 @@ else {
 }
 ?>
 </html>
+=======
+	</div>
+	</div>
+</div>
+	<a href ='admin.php'>RETOUR</a>
+
+  <div class="site-section bg-light">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-8 mb-5">
+
+
+
+          <form method="post" action="traitcours.php" id="contact_form" class="p-5 bg-white">
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="race">Date</label>
+                <input type="text" name="date" id="date" class="form-control" placeholder="Donner la date du cour">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="nom">Heure du début de cours</label>
+                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours">
+              </div>
+            </div>
+
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="age">Description du cours</label>
+                <input type="number" name="desccours" id="desccours" class="form-control" placeholder="Donner la description du cours">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
+                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Taille du cheval en cm">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <td><input type ="submit" name="btn_ajcours_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+		<script>
+		$(document).ready(function() {
+    $('#datatable').dataTable();
+
+     $("[data-toggle=tooltip]").tooltip();
+
+} );
+    </script>
+    </body>
+		<?php
+		}
+		else {
+			header ('location: log.php');
+
+		}
+		?>
+		</html>
+>>>>>>> a7c8ff069524748379508e3ca438aff3f3f8e35b:gestioncour.php

@@ -143,7 +143,7 @@
 
 
 
-            <form method="post" action="trait.php" id="contact_form" class="p-5 bg-white">
+            <form method="post" action="trait_contact.php" id="contact_form" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">

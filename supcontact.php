@@ -1,10 +1,8 @@
 <?php
-
+include 'class/contact.class.php';
 include 'class/bdd.inc.php';
-  $idcontact= $_GET['id'];
-  $SQL = "UPDATE contact
-          SET validecontact= 0
-          WHERE idcontact='$idcontact'";
-  $conn -> query($SQL);
-  header("Location:gestionmess.php");
+$idcontact = $_GET['id'];
+$contact = new contact("","","","","","","");
+$contact->suppcon($idcontact,$conn);
+header('Location:gestionmess.php');
 ?>
