@@ -42,10 +42,9 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 					</thead>
 					<?php
 include 'class/bdd.inc.php';
-$SQL= "SELECT idcontact,nomprecontact, mailcontact, phonecontact, messagecontact
-		FROM contact
-		WHERE validecontact= 1";
-$result = $conn -> query($SQL);
+include 'class/contact.class.php';
+$contact = new contact("","","","","","","");
+$req = $contact->affcon($conn);
 	?>
 					<tfoot>
 						<tr>
@@ -60,7 +59,7 @@ $result = $conn -> query($SQL);
 
 					<tbody>
 						<?php
-						while($ligne = $result -> fetch())
+						while($ligne = $req -> fetch())
 {
   echo"<tr>";
     echo"<td>",$ligne['idcontact'],"</td>";
@@ -68,7 +67,7 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['mailcontact'],"</td>";
 		echo"<td>",$ligne['phonecontact'],"</td>";
     echo"<td>",$ligne['messagecontact'],"</td>";
-    echo"<td> <a href='supmessage.php?id=$ligne[idcontact]'><img src='images/supadmin.png' alt='edit'name='supclasse' width=35 /></a></td>";
+    echo"<td> <a href='supcontact.php?id=$ligne[idcontact]'><img src='images/supadmin.png' alt='edit'name='supclasse' width=35 /></a></td>";
 
   echo"</tr>";
 }
@@ -83,7 +82,7 @@ echo"</center>";
 	</div>
 	</div>
 </div>
-	
+
 
 		<script>
 		$(document).ready(function() {
