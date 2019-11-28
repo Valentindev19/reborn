@@ -5,7 +5,7 @@
   include('class/membre.class.php');
   // Vérification des données saisies par l'utilisateur
   if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['DN']) && isset($_POST['sexe']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['CP']) &&
-  isset($_POST['ville']) && isset($_POST['adr']) && isset($_POST['comp']))
+  isset($_POST['ville']) && isset($_POST['adr']))
   {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
@@ -16,7 +16,14 @@
     $cp = $_POST['CP'];
     $ville = $_POST['ville'];
     $adr = $_POST['adr'];
-    $comp = $_POST['comp'];
+    if (isset($_POST['comp']))
+    {
+      $comp = $_POST['comp'];
+    }
+    else
+    {
+      $comp = "";
+    }
     $mdp = $_POST['mdp'];
     // Récupération de l'id de la ville
     $req = "SELECT ville_id
@@ -61,7 +68,7 @@
     if(isset($_POST['form_conex']))
     {
       $membre = new membre("","","","","","","","","","","","","","");
-      $membre->ajoutmembre($nom, $prenom, $sexe, $dn, $mailm, $phone, $adr, $comp, $mdp, $id_ville, $cle, $conn); 
+      $membre->ajoutmembre($nom, $prenom, $sexe, $dn, $mailm, $phone, $adr, $comp, $mdp, $id_ville, $cle, $conn);
       // header ici parceque l envoie de mail ne marche pas en local
     }
 
