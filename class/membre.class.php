@@ -111,6 +111,13 @@ class membre
       $conn -> query($SQL);
       header("Location:gestionm.php");
       }
+      public function affmembre($mailm, $conn)
+      {
+        $req = "SELECT nomm, prenomm, genrem, ddn, mailm, telephonem, ruem, FROM membre WHERE mailm = '$mailm' ";
+        $res=	$conn -> query($req);
+        $ligne = $res -> fetch();
+        return $ligne;
+      }
 
 }
 
