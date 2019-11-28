@@ -100,7 +100,7 @@ echo"</center>";
 
 
 
-          <form method="post" action="traitche.php" id="contact_form" class="p-5 bg-white">
+          <form method="post" action="traitche.php" id="contact_form" class="p-5 bg-white" enctype="multipart/form-data">
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
@@ -144,7 +144,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="img">Image</label>
-                <input type="file" name="img" id="img" class="form-control">
+                <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
               </div>
             </div>
 

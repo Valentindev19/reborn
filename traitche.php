@@ -6,13 +6,15 @@
   {
     if(isset($_POST['race']) && isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['sexe']) && isset($_POST['img']))
     {
+      $num_rand = rand(1,10000000);
+      include 'upload.php';
       $race = $_POST['race'];
       $nom = $_POST['nom'];
       $age = $_POST['age'];
       $taille = $_POST['taille'];
       $poids = $_POST['poids'];
       $sexe = $_POST['sexe'];
-      $img = $_POST['img'];
+      $img = $_FILES['fileToUpload']['name'].$num_rand;
 
       $cheval = new cheval("","","","","","","","","");
       $cheval->ajoutche($race,$nom,$age,$taille,$poids,$sexe,$img,$conn);

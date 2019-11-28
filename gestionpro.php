@@ -21,7 +21,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 <body>
 <div class="container">
 	<div class="row">
-		<h2 class="text-center">Gestion Chevaux</h2>
+		<h2 class="text-center">Gestion Promenade</h2>
 	</div>
 
         <div class="row">
