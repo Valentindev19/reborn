@@ -48,3 +48,15 @@
     </tr>
   </table>
 </fieldset>
+
+public function aime($idcav, $idche, $e)
+{
+  $aime = new aime("","","");
+  $req = $aime->affaime($conn);
+  while ($ligne = $req -> fetch())
+  {
+    $e = $ligne['etoile'];
+    $meschevaux = new aime($idcav, $idche, $e);
+    $meschevaux[$i] = new cheval()
+  }
+}
