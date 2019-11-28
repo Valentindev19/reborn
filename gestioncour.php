@@ -99,13 +99,13 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Date</label>
-                <input type="text" name="race" id="date" class="form-control" placeholder="Donner la date du cour">
+                <input type="text" name="date" id="date" class="form-control" placeholder="Donner la date du cour">
               </div>
             </div>
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="nom">Heure du début de cours</label>
-                <input type=text name="nom" id="heured" class="form-control" placeholder="Donner l'heure du début du cours">
+                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours">
               </div>
             </div>
 
@@ -113,14 +113,14 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="age">Description du cours</label>
-                <input type="number" name="age" id="desccours" class="form-control" placeholder="Donner la description du cours">
+                <input type="number" name="desccours" id="desccours" class="form-control" placeholder="Donner la description du cours">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
-                <input name="taille" id="heurefcours" class="form-control" placeholder="Taille du cheval en cm">
+                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Taille du cheval en cm">
               </div>
             </div>
 
