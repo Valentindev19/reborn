@@ -1,101 +1,22 @@
-<html>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Niramit');
-</style>
-<link rel="stylesheet" type="text/css" href="design.css">
-<form method = "POST" action = "traitement.php">
-<fieldset>
-    <legend><b>  Ajouter Cavalier </b></legend>
-
-  <table>
-    <tr>
-      <td><label><b> Nom : </b></label></td>
-      <td><input type = "text" name = "nom"
-          /></td>
-    </tr>
-
-    <tr>
-      <td><label><b> Prenom : </b></label></td>
-      <td><input type = "text" name = "prenom"
-         /></td>
-    </tr>
-
-    <?php
-      include 'bdd.inc.php';
-      $SQL="SELECT *  FROM galop";
-      $req=	$conn -> query($SQL);
-    ?>
-
-        <tr>
-          <td>
-          <select name="idgal">
-        <?php
-            while ($res = $req -> fetch())
-            {
-              ?>
-                <option value="<?php echo $res['idgal']?>"><?php echo $res['libgal']?></option>
-             <?php
-            }
-            ?>
-          </td>
-        </tr>
-
-    <tr>
-      	<td><input type ="submit" name="ajout" value="Ajouter">
-    </form>
-      <input type ="reset" name="raz" value="RAZ"></td>
-
-    </tr>
-  </table>
-</fieldset>
-
-  public function aime($idcav, $idche, $e)
-  {
-    $aime = new aime("","","");
-    $req = $aime->affaime($conn);
-    while ($ligne = $req -> fetch())
-    {
-      $e = $ligne['etoile'];
-      $meschevaux = new aime($idcav, $idche, $e);
-      $meschevaux[$i] = new cheval()
-    }
-  }
-
-  <?php
-
-class chevaux
+public function aime($conn,$idc)
 {
-  private $idche;
-  private $nomche;
-
-
-
-    Public function poney($idche, $nomche)
-    {
-      $this->idche = $idche;
-      $this->nomche = $nomche;
-    }
-
-    Public function Get_idche()
-    {
-      return $this->idche;
-    }
-    Public function Get_nomche()
-    {
-      return $this->nomche;
-    }
-
-     Public function Setid($idche)
-    {
-      $this->idche = $idche;
-    }
-    Public function Setnom($nomche)
-    {
-      $this->nomche = $nomche;
-    }
-  Public function affichage($conn)
- {
-   $SQL = "SELECT * FROM chevaux";
-           $req = $conn -> query($SQL);
-           return $req;
- }
+  $aime = new aime("","","");
+  $req = $aime->affaime($conn,$idc);
+  $i= 0;
+  while ($ligne = $req -> fetch())
+  {
+    $etoile = $ligne['etoile'];
+    $idcav = $ligne['idcav'];
+    $idche = $ligne['idche'];
+    return $etoile;
+    return $idcav;
+    return $idche;
+    $meschevaux = new aime($idc, $idche, $etoile);
+    $meschevaux[$i] = new chevaux(" "," ");
+    $i= $i +1;
+  }
+}
+  public function Get_aime()
+  {
+    return $this->unaime;
+  }
