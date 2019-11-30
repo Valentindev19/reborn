@@ -169,10 +169,9 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 
 <?php
-}
-else {
-	header ('location: log.php');
 
+	else{
+	header ('location: log.php');
 }
 ?>
 </html>
@@ -234,17 +233,13 @@ else {
 		<script>
 		$(document).ready(function() {
     $('#datatable').dataTable();
-
-     $("[data-toggle=tooltip]").tooltip();
-
-} );
+ 		$("[data-toggle=tooltip]").tooltip();
+	 	} );
     </script>
-    </body>
 		<?php
 		}
 		else {
 			header ('location: log.php');
-
 		}
 		?>
 		</html>

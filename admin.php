@@ -144,7 +144,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
   	          </div>
 	          <div class="text-center p-4 item">
 	            <span class="display-3 mb-3 d-block text-primary"><img src="images/activites.PNG"></span>
-	            <a href="gestionact.php"><h2 class="h5 text-uppercase"> Gestion activités</h2>
+	            <a href="gestioncour.php"><h2 class="h5 text-uppercase"> Gestion activités</h2>
 							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	        </div>
