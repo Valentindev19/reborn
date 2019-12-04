@@ -118,7 +118,17 @@ class membre
         $ligne = $res -> fetch();
         return $ligne;
       }
-      
+      public function affmembre1($idmembre, $conn)
+      {
+        $req = "SELECT membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, membre.ruem, membre.compm, membre.mdpm
+        		FROM membre, villes
+        		WHERE villes.ville_id= membre.ville_id
+            AND membre.idmembre = '$idmembre'
+        		 AND membre.validemembre= 1";
+        $res=	$conn -> query($req);
+        return $res;
+      }
+
 
 }
 

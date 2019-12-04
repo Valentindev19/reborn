@@ -11,9 +11,9 @@
   }
   if (isset($_GET['modm']))
   {
-    $idm = $_GET['id'];
+    $idmembre = $_GET['id'];
     $membre = new membre("","","","","","","","","","","","","","");
-    $req = $article->affart($idarticle, $conn);
+    $req = $membre->affmembre1($idmembre, $conn);
     $ligne = $req->fetch();
 
 
@@ -38,7 +38,7 @@
 
 
 
-            <form method="post" action="traitarticle.php" id="modif_form" class="p-5 bg-white">
+            <form method="post" action="traitmembre.php" id="modif_form" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -48,38 +48,65 @@
               </div>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="race">Titre</label>
-                  <input type="text" name="titre" id="titre" class="form-control"  value="<?php echo $ligne['titre_article']; ?>">
+                  <label class="font-weight-bold" for="race">Nom</label>
+                  <input type="text" name="nom" id="nom" class="form-control"  value="<?php echo $ligne['nomm']; ?>">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="nom">Résumé</label>
-                  <input type=text name="resume" id="resume" class="form-control" value="<?php echo $ligne['resume_article']; ?>">
+                  <label class="font-weight-bold" for="nom">Prenom</label>
+                  <input type=text name="prenom" id="prenom" class="form-control" value="<?php echo $ligne['prenomm']; ?>">
                 </div>
               </div>
 
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="age">Lien</label>
-                  <input type="texte" name="lien" id="lien" class="form-control" value="<?php echo $ligne['lien_article']; ?>">
+                  <label class="font-weight-bold" for="age">Genre</label>
+                  <input type="texte" name="genre" id="genre" class="form-control" value="<?php echo $ligne['genrem']; ?>">
                 </div>
               </div>
 
               <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="taille">Contenue</label>
-                  <input name="contenue" id="contenue" class="form-control" value="<?php echo $ligne['contenue_article']; ?>">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Date de Naissance</label>
+                  <input type="texte" name="ddn" id="ddn" class="form-control" value="<?php echo $ligne['ddn']; ?>">
                 </div>
               </div>
-                </div>
-              </div>
-
               <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="img">Image</label>
-                  <input type="file" name="img" id="img" class="form-control">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Mail</label>
+                  <input type="texte" name="mail" id="mail" class="form-control" value="<?php echo $ligne['mailm']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Téléphone</label>
+                  <input type="texte" name="tel" id="tel" class="form-control" value="<?php echo $ligne['telephonem']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Ville</label>
+                  <input type="texte" name="ville" id="ville" class="form-control" value="<?php echo $ligne['ville_nom_reel']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Addresse</label>
+                  <input type="texte" name="add" id="vadd" class="form-control" value="<?php echo $ligne['ruem']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Complément d'adresse</label>
+                  <input type="texte" name="ca" id="ca" class="form-control" value="<?php echo $ligne['compm']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Mot de Passe</label>
+                  <input type="password" name="mdpm" id="mdpm" class="form-control" value="<?php echo $ligne['mdpm']; ?>">
                 </div>
               </div>
 
