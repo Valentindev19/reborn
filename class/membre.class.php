@@ -128,6 +128,22 @@ class membre
         $res=	$conn -> query($req);
         return $res;
       }
+      public function modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $ruem, $comp, $mdpm, $conn)
+      {
+        $SQL = "UPDATE membre
+                SET nomm = '$nomm',
+                    prenomm = '$prenomm',
+                    genrem = '$genrem',
+                    ddn = '$ddn',
+                    mailm ='$mailm',
+                    telephonem = '$telephonem',
+                    ruem ='$ruem',
+                    compm ='$compm',
+                    mdpm = '$mdpm'
+                WHERE idmembre ='$idmembre'";
+        $conn -> query($SQL);
+        header("Location:gestionm.php");
+        }
 
 
 }

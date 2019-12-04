@@ -43,7 +43,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
 
-                  <input type="hidden" name="idart" id="idart" class="form-control" placeholder="Race du cheval" value="<?php echo $_GET['id']; ?>">
+                  <input type="hidden" name="id" id="id" class="form-control" placeholder="Race du cheval" value="<?php echo $_GET['id']; ?>">
                 </div>
               </div>
               <div class="row form-group">
@@ -94,7 +94,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="age">Addresse</label>
-                  <input type="texte" name="add" id="vadd" class="form-control" value="<?php echo $ligne['ruem']; ?>">
+                  <input type="texte" name="add" id="add" class="form-control" value="<?php echo $ligne['ruem']; ?>">
                 </div>
               </div>
               <div class="row form-group">
@@ -121,5 +121,23 @@
       </div>
     </div>
     <?php
+  }
+    if (isset($_POST['btn_modif_form']))
+    {
+      $idmembre = $_POST['id'];
+      $nomm = $_POST['nom'];
+      $prenomm = $_POST['prenom'];
+      $genrem = $_POST['genre'];
+      $ddn = $_POST['ddn'];
+      $mailm = $_POST['mail'];
+      $telephonem = $_POST['tel'];
+      $ruem = $_POST['add'];
+      $comp = $_POST['compm'];
+      $ruem = $_POST['add'];
+      $mdpm = $_POST['mdpm'];
+      $membre = new membre("","","","","","","","","","","","","","");
+      $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $ruem, $comp, $mdpm, $conn);
+
+      header('Location:gestionm.php');
     }
 ?>
