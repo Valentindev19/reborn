@@ -1,6 +1,8 @@
 <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
+include 'class/cours.class.php';
+include 'class/bdd.inc.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -159,7 +161,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 	  <script src="js/mediaelement-and-player.min.js"></script>
 
-<<<<<<< HEAD:gestionact.php
+
 	  <script src="js/main.js"></script>
 
 
@@ -169,13 +171,12 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 
 <?php
-
+}
 	else{
 	header ('location: log.php');
-}
+	}
 ?>
 </html>
-=======
 	</div>
 	</div>
 </div>
@@ -194,7 +195,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Date</label>
-                <input type="text" name="date" id="date" class="form-control" placeholder="Donner la date du cour">
+                <input type="text" name="date" id="date" class="form-control" placeholder="Donner la date du cours">
               </div>
             </div>
             <div class="row form-group">
@@ -208,14 +209,14 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="age">Description du cours</label>
-                <input type="number" name="desccours" id="desccours" class="form-control" placeholder="Donner la description du cours">
+                <input type="text" name="desccours" id="desccours" class="form-control" placeholder="Donner la description du cours">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
-                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Taille du cheval en cm">
+                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours">
               </div>
             </div>
 
@@ -231,16 +232,10 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
   </div>
 
 		<script>
-		$(document).ready(function() {
-    $('#datatable').dataTable();
- 		$("[data-toggle=tooltip]").tooltip();
-	 	} );
+			$(document).ready(function() {
+    	$('#datatable').dataTable();
+ 			$("[data-toggle=tooltip]").tooltip();
+	 		} );
     </script>
-		<?php
-		}
-		else {
-			header ('location: log.php');
-		}
-		?>
-		</html>
->>>>>>> a7c8ff069524748379508e3ca438aff3f3f8e35b:gestioncour.php
+
+</html>
