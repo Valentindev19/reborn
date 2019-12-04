@@ -1,11 +1,10 @@
 <?php
-
   // Connexion à la base de données
   include('class/bdd.inc.php');
   include('class/membre.class.php');
   // Vérification des données saisies par l'utilisateur
-  if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['DN']) && isset($_POST['sexe']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['CP']) &&
-  isset($_POST['ville']) && isset($_POST['adr']))
+  if ($_POST['nom'] != '' && $_POST['prenom'] != '' && $_POST['DN'] != '' && $_POST['sexe'] != '' && $_POST['email'] != '' && $_POST['phone'] != '' && $_POST['CP'] != '' &&
+  $_POST['ville'] != '' && $_POST['adr'] != '')
   {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
@@ -16,6 +15,13 @@
     $cp = $_POST['CP'];
     $ville = $_POST['ville'];
     $adr = $_POST['adr'];
+    $mdp = $_POST['mdp'];
+    $mdp2 = $_POST['mdp2'];
+    if ($mdp != $mdp2)
+    {
+      setcookie('mvmdp','Vos mots de passe ne correspondent pas.', time() + 3600);
+      header("Location:conex.php");
+    }
     if (isset($_POST['comp']))
     {
       $comp = $_POST['comp'];
@@ -24,7 +30,6 @@
     {
       $comp = "";
     }
-    $mdp = $_POST['mdp'];
     // Récupération de l'id de la ville
     $req = "SELECT ville_id
             FROM villes
@@ -33,31 +38,7 @@
     $res = $conn -> Query($req);
     $ligne = $res -> fetch();
     $id_ville = $ligne['ville_id'];
-  }
-  // Si lien cliqué dans le mail passage du membre en actif
-  if (isset($_GET['cle']))
-  {
-    $mailm = $_GET['log'];
-    $membre = new membre("","","","","","","","","","","","","","");
-    $membre->affcle($mailm,$conn);
-    $cleverif = $ligne['cle'];
-    if ($_GET['cle'] == $cleverif)
-    {
-      $membre = new membre("","","","","","","","","","","","","","");
-      $cheval-> modifvalide($cleverif, $mailm, $conn);
-      // Initialisation des variables sessions pour rester connecté
-      $membre = new membre("","","","","","","","","","","","","","");
-      $membre->affsess($mailm,$conn);
 
-      session_start();
-      $_SESSION['mailm'] = $ligne['mailm'];
-      $_SESSION['mdpm'] = $ligne['mdpm'];
-
-      header("membre.php");
-    }
-  }
-  else
-  {
     // Récupération des variables nécessaires au mail de confirmation
     $mailm = $_POST['email'];
 
@@ -92,7 +73,35 @@
 
 
     //mail($destinataire, $sujet, $message, $entete) ;  Envoi du mail
+  }
+  else
+  {
+    header('Location:conex.php');
+  }
+  // Si lien cliqué dans le mail passage du membre en actif
+  if (isset($_GET['cle']))
+  {
+    $mailm = $_GET['log'];
+    $membre = new membre("","","","","","","","","","","","","","");
+    $membre->affcle($mailm,$conn);
+    $cleverif = $ligne['cle'];
+    if ($_GET['cle'] == $cleverif)
+    {
+      $membre = new membre("","","","","","","","","","","","","","");
+      $cheval-> modifvalide($cleverif, $mailm, $conn);
+      // Initialisation des variables sessions pour rester connecté
+      $membre = new membre("","","","","","","","","","","","","","");
+      $membre->affsess($mailm,$conn);
 
+      session_start();
+      $_SESSION['mailm'] = $ligne['mailm'];
+      $_SESSION['mdpm'] = $ligne['mdpm'];
+
+      header("membre.php");
+    }
+  }
+  else {
+    header('Location:conex.php');
   }
 
 ?>

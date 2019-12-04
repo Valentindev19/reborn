@@ -44,7 +44,6 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 							</tr>
 					</thead>
 					<?php
-include 'class/bdd.inc.php';
 $cheval = new cheval("","","","","","","","","");
 $req = $cheval->affche2($conn);
 ?>

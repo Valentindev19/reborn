@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+  ini_set('display_errors', 0); // fait disparaitre les erreurs php
+  $error = $_COOKIE['mvmdp'];
+  setcookie('mvmdp',NULL,-1);
+  ?>
 <html lang="en">
 
 <head>
@@ -36,7 +40,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Insciption :</h2>
+                    <h2 class="title">Inscription :</h2>
                     <form method="POST">
                         <div class="row row-space">
                             <div class="col-2">
@@ -70,7 +74,7 @@
                                             <input type="radio" checked="checked" name="sexe" value="Homme" >
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="radio-container">Fémminin
+                                        <label class="radio-container">Féminin
                                             <input type="radio" name="sexe" value="Femme">
                                             <span class="checkmark"></span>
                                         </label>
@@ -132,7 +136,20 @@
                                     <input class="input--style-4" type="password" name="mdp">
                                 </div>
                             </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Mot de passe de vérification</label>
+                                    <input class="input--style-4" type="password" name="mdp2">
+                                </div>
+                            </div>
                       </div>
+
+
+                    <div id="dialog" title="Erreur Inscription" >
+                    <h4><p style="color : red;"><?php if ($error != '') {
+                      echo $error;
+                    } ?></p></h4>
+                    </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit" name="form_conex">Submit</button>
                         </div>

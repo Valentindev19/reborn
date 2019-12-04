@@ -4,7 +4,7 @@
 
   if (isset($_POST['btn_ajche_form']))
   {
-    if(isset($_POST['race']) && isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['sexe']) && isset($_POST['img']))
+    if(isset($_POST['race']) && isset($_POST['nom']))
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';

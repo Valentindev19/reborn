@@ -126,13 +126,13 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Taille</label>
-                <input name="taille" id="taille" class="form-control" placeholder="Taille du cheval en cm">
+                <input type="number" name="taille" id="taille" class="form-control" placeholder="Taille du cheval en cm">
               </div>
             </div>
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="poids">Poids</label>
-                <input name="poids" id="poids" class="form-control" placeholder="Poids du cheval en Kg">
+                <input type="number" name="poids" id="poids" class="form-control" placeholder="Poids du cheval en Kg">
               </div>
             </div>
             <div class="row form-group">

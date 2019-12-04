@@ -38,8 +38,8 @@
           <input type="text" placeholder="mail" name="mailm"/>
           <input type="password" placeholder="mot de passe" name="mdpm"/>
           <button name="form_log">Connexion</button>
-            <p class="message"> <a href="conex.html">Mot de passe oublié</a></p>
-          <p class="message">Pas inscrit ? <a href="conex.html">Créer un compte</a></p>
+            <p class="message"> <a href="conex.php">Mot de passe oublié</a></p>
+          <p class="message">Pas inscrit ? <a href="conex.php">Créer un compte</a></p>
         </form>
       </div>
     </div>
@@ -64,8 +64,7 @@ $( function() {
 <?php
     setcookie('non',0, time() - 3600);
   }
-  ?>
-  <?php
+
   if (isset($_COOKIE['erreur']))
   {
     ?>
