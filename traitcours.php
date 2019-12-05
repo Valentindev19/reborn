@@ -117,7 +117,7 @@
       $hd_cours = $_POST['hdcours'];
       $desc_cours = $_POST['desccours'];
       $hf_cours = $_POST['hfcours'];
-      $cours = new article("","","","","","","");
+      $cours = new cours("","","","","","","");
       $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
 
       header('Location:gestioncours.php');
