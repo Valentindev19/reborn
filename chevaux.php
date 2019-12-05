@@ -157,7 +157,8 @@
                 <div class="media-with-text">
                   <div class="img-border-sm mb-4">
                     <a href="#">
-                      <img src="images/upload/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
+                      <?php
+                    echo"<a href='che.php?id=$ligne[idche]'>"?> <img src='images/upload/<?php echo $ligne['imageche']; ?>' width=260  class'img-fluid'>
                     </a>
                   </div>
                   <h2 class="heading mb-0"><a href="#"><?php echo $ligne['nomche']; ?></a></h2>
