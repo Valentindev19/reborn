@@ -142,9 +142,10 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 					<a href="gestionsta.php"><h2 class="h5 text-uppercase">Stages</h2>
 					<p>Voir les stages <span class="icon-arrow-right small"></span></a></p>
 				</div>
-			</div>
+			</div> <a href='admin.php'><button class="boutonret">Retour</button></a>
 		</div>
 	</div>
+
 
 	  <script src="js/jquery-3.3.1.min.js"></script>
 	  <script src="js/jquery-migrate-3.0.1.min.js"></script>

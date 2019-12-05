@@ -51,6 +51,7 @@
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/creative.css">
     <body>
     <div class="site-section bg-light">
       <div class="container">
@@ -119,7 +120,7 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="img">Image</label>
-                  <input type="file" name="img" id="img" class="form-control" value="<?php echo $ligne['imageche']; ?>">
+                  <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
                 </div>
               </div>
 
@@ -133,6 +134,7 @@
         </div>
       </div>
     </div>
+    <a href='gestionche.php'><button class="boutonret">Retour</button></a>
 
     <script>
 		$(document).ready(function() {
@@ -151,13 +153,13 @@
       $num_rand = rand(1,10000000);
       include 'upload.php';
       $idche = $_POST['idche'];
-      $race = $_POST['race'];
+      $race = $_POST['idrace'];
       $nomche = $_POST['nom'];
       $ageche = $_POST['age'];
       $taille = $_POST['taille'];
       $poids = $_POST['poids'];
       $sexe = $_POST['sexe'];
-      $img = $_FILES['fileToUpload']['name'].$num_rand;
+      $image = $_FILES['fileToUpload']['name'].$num_rand;
       $cheval = new cheval("","","","","","","","","");
       $cheval-> modifche($idche, $race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn);
     }
