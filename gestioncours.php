@@ -26,6 +26,13 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	    <link href='css/to-top.css' rel='stylesheet' type='text/css'>
 			<link rel="stylesheet" type="text/css" href="css/creative.css">
 
+			<script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+			<script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+			<script language="JavaScript" src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+			<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+			<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 	    <!--JS Bouton vers le haut -->
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -127,62 +134,6 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 	<a href='gestionactivité.php'><button class="boutonret">Retour</button></a>
 
-	<div class="container">
-		<div class="row">
-			<h2 class="text-center">Gestion Cours</h2>
-		</div>
-
-					<div class="row">
-
-							<div class="col-md-12">
-
-
-	<table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
-							<thead>
-								<tr>
-									<th>Id</th>
-									<th>Heure Début du Cours</th>
-									<th>Description</th>
-									<th>Heure Fin du Cours</th>
-																		<th>Modifier</th>
-																		 <th>Supprimer</th>
-								</tr>
-						</thead>
-
-	<?php
-	include 'class/bdd.inc.php';
-	$SQL= "SELECT idcours, heuredcours, desccours, heurefcours
-			FROM cours
-			WHERE validecours= 1";
-	$result = $conn -> query($SQL);
-	?>
-						<tfoot>
-							<tr>
-								<th>Id</th>
-								<th>Heure Début du Cours</th>
-								<th>Description</th>
-								<th>Heure Fin du Cours</th>
-																	<th>Modifier</th>
-																	 <th>Supprimer</th>
-							</tr>
-						</tfoot>
-
-						<tbody>
-							<?php
-							while($ligne = $result -> fetch())
-	{
-		echo"<tr>";
-			echo"<td>",$ligne['idcours'],"</td>";
-			echo"<td>",$ligne['heuredcours'],"</td>";
-			echo"<td>",$ligne['desccours'],"</td>";
-			echo"<td>",$ligne['heurefcours'],"</td>";
-			echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
-			echo"<td> <a href='traitcours.php?sup=sup&id=$ligne[idcours]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
-		echo"</tr>";
-	}
-	echo"</center>";
-
-	?>
 
   <div class="site-section bg-light">
     <div class="container">
