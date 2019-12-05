@@ -51,6 +51,7 @@
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/creative.css">
     <body>
     <div class="site-section bg-light">
       <div class="container">
@@ -133,6 +134,7 @@
         </div>
       </div>
     </div>
+    <a href='gestionche.php'><button class="boutonret">Retour</button></a>
 
     <script>
 		$(document).ready(function() {
