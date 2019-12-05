@@ -39,7 +39,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	    <link rel="stylesheet" href="css/style.css">
 
 	  </head>
-	  <body>
+		<body>
 
 	  <div class="site-wrap">
 
@@ -124,7 +124,65 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	</div>
 	</div>
 </div>
-	<a href='admin.php'><button class="boutonret">Retour</button></a>
+
+	<a href='gestionactivité.php'><button class="boutonret">Retour</button></a>
+
+	<div class="container">
+		<div class="row">
+			<h2 class="text-center">Gestion Cours</h2>
+		</div>
+
+					<div class="row">
+
+							<div class="col-md-12">
+
+
+	<table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Heure Début du Cours</th>
+									<th>Description</th>
+									<th>Heure Fin du Cours</th>
+																		<th>Modifier</th>
+																		 <th>Supprimer</th>
+								</tr>
+						</thead>
+
+	<?php
+	include 'class/bdd.inc.php';
+	$SQL= "SELECT idcours, heuredcours, desccours, heurefcours
+			FROM cours
+			WHERE validecours= 1";
+	$result = $conn -> query($SQL);
+	?>
+						<tfoot>
+							<tr>
+								<th>Id</th>
+								<th>Heure Début du Cours</th>
+								<th>Description</th>
+								<th>Heure Fin du Cours</th>
+																	<th>Modifier</th>
+																	 <th>Supprimer</th>
+							</tr>
+						</tfoot>
+
+						<tbody>
+							<?php
+							while($ligne = $result -> fetch())
+	{
+		echo"<tr>";
+			echo"<td>",$ligne['idcours'],"</td>";
+			echo"<td>",$ligne['heuredcours'],"</td>";
+			echo"<td>",$ligne['desccours'],"</td>";
+			echo"<td>",$ligne['heurefcours'],"</td>";
+			echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
+			echo"<td> <a href='traitcours.php?sup=sup&id=$ligne[idcours]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
+		echo"</tr>";
+	}
+	echo"</center>";
+
+	?>
 
   <div class="site-section bg-light">
     <div class="container">
