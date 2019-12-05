@@ -1,6 +1,7 @@
 <?php
   include 'class/bdd.inc.php';
   include 'class/cheval.class.php';
+  include 'class/race.class.php';
 
   if (isset($_POST['btn_ajche_form']))
   {
@@ -8,7 +9,7 @@
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';
-      $race = $_POST['race'];
+      $race = $_POST['idrace'];
       $nom = $_POST['nom'];
       $age = $_POST['age'];
       $taille = $_POST['taille'];
@@ -36,6 +37,8 @@
     $idche = $_GET['id'];
     $cheval = new cheval("","","","","","","","","");
     $ligne = $cheval->affche($idche, $conn);
+    $unerace = new race("","","");
+    $res = $unerace->affrace($conn);
     ?>
     <html>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -59,11 +62,25 @@
 
             <form method="post" action="traitche.php" id="modif_form" class="p-5 bg-white">
 
-              <input type="text" name="idche" id="idche" class="form-control" value="<?php echo $_GET['id']; ?>">
+              <input type="hidden" name="idche" id="idche" class="form-control" value="<?php echo $_GET['id']; ?>">
+              <br>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="race">Race</label>
-                  <input type="text" name="race" id="race" class="form-control" placeholder="Race du cheval" value="<?php echo $ligne['race']; ?>">
+                  <tr>
+  				<td>
+  				<select name="idrace">
+  			<?php
+  					while ($l = $res -> fetch())
+  					{
+  						?>
+  							<option value="<?php echo $l['idrace']?>"><?php echo $l['librace']?></option>
+  					 <?php
+  					}
+  					?>
+  				</select>
+  				</td>
+  			</tr>
                 </div>
               </div>
               <div class="row form-group">
@@ -102,7 +119,7 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="img">Image</label>
-                  <input type="file" name="img" id="img" class="form-control">
+                  <input type="file" name="img" id="img" class="form-control" value="<?php echo $ligne['imageche']; ?>">
                 </div>
               </div>
 

@@ -23,24 +23,7 @@
     $this->idgalop = $idgalop;
     }
 
-    //AJOUT
-    public function ajoutgalop($datecours, $heuredcours, $desccours, $heurefcours, $conn){
-      $SQL = "INSERT INTO cours (datecours, heuredcours, desccours, heurefcours, validecours)
-              VALUES ('$datecours', '$heuredcours', '$desccours', '$heurefcours',  1)";
-      $conn->query($SQL);
-      header('Location:gestioncour.php');
-    }
-
-
-
-    //UPDATE
-    public function modifcours($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $conn)
-    {
-      $SQL = "UPDATE cours
-              SET datecours = '$datecours', heuredcours = '$heuredcours', desccours = '$desccours', heurefcours = '$heurefcours',
-              WHERE idcours ='$idcours'";
-      $conn -> query($SQL);
-    }
+    
 
     // AFFICHER
 

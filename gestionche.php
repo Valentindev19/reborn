@@ -70,7 +70,7 @@ $res = $unerace->affrace($conn);
 	            while ($ligne = $req -> fetch())
 	            {
   echo"<tr>";
-    echo"<td>",$ligne['race'],"</td>";
+    echo"<td>",$ligne['librace'],"</td>";
 		echo"<td>",$ligne['nomche'],"</td>";
 		echo"<td>",$ligne['ageche'],"</td>";
     echo"<td>",$ligne['tailleche'],"</td>";
