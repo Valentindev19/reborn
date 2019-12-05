@@ -5,7 +5,7 @@
 
   if (isset($_POST['btn_ajche_form']))
   {
-    if(isset($_POST['race']) && isset($_POST['nom']))
+    if(isset($_POST['idrace']) && isset($_POST['nom']))
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';
@@ -22,7 +22,8 @@
     }
     else
     {
-      header('Location:gestionche.php');
+      echo "a";
+      //header('Location:gestionche.php');
     }
   }
   if (isset($_GET['sup']))

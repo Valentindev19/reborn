@@ -82,7 +82,7 @@ $result = $conn -> query($SQL);
   echo"<tr>";
     echo"<td>",$ligne['idcours'],"</td>";
     echo"<td>",$ligne['datecours'],"</td>";
-		echo"<td>",$ligne['heuredcours'],"</td>";
+		echo"<td>",substr($ligne['heuredcours'], -2),"h",substr($ligne['heuredcours'], -5, -3),"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
     echo"<td>",$ligne['heurefcours'],"</td>";
     echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
