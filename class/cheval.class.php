@@ -72,8 +72,7 @@
       AND idche ='$idche'";
 
       $res = $conn -> query($SQL);
-      $ligne = $res -> fetch();
-      return $ligne;
+      return $res;
     }
 
     public function affche2($conn)
