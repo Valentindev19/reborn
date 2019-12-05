@@ -34,7 +34,7 @@
       $SQL = "INSERT INTO cours (datecours, heuredcours, desccours, heurefcours, validecours)
               VALUES ('$datecours', '$heuredcours', '$desccours', '$heurefcours',  1)";
       $conn->query($SQL);
-      header('Location:gestioncour.php');
+      header('Location:gestioncours.php');
     }
 
     //DELETE

@@ -5,7 +5,8 @@
   if (isset($_POST['btn_ajcours_form']))
   {
 
-    if(isset($_POST['date']) && isset($_POST['hdcours']) && isset($_POST['desccours']) && isset($_POST['hfcours']))
+    //if(isset($_POST['date']) && isset($_POST['hdcours']) && isset($_POST['desccours']) && isset($_POST['hfcours']))
+    if ($_POST['date'] != '' && $_POST['hdcours'] != '' && $_POST['desccours'] != '' && $_POST['hfcours'] != '')
     {
       $date_cours = $_POST['date'];
       $hd_cours = $_POST['hdcours'];
@@ -32,7 +33,7 @@
   if (isset($_GET['modif']))
   {
     $idcours = $_GET['id'];
-    $article = new cours("","","","","","","");
+    $cours = new cours("","","","","","","");
     $req = $cours->affcours($idcours, $conn);
     $ligne = $req->fetch();
 
@@ -69,7 +70,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="Date_cours">Date du Cours</label>
-                  <input type="text" name="date" id="date" class="form-control"  value="<?php echo $ligne['date_cours']; ?>">
+                  <input type="text" name="date" id="date" class="form-control"  value="<?php echo $ligne['datecours']; ?>">
                 </div>
               </div>
               <div class="row form-group">
