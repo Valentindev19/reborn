@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/animate.css">
     <link href='css/to-top.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="etoile/ListeEtoile.js"></script>
+    <link href='css/etoile.css' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
     <!--JS Bouton vers le haut -->
@@ -158,7 +160,7 @@
                       <img src="images/upload/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
 
 
-                    
+
 
               </div>
               <div class="col-md-5 ml-auto">
@@ -168,15 +170,21 @@
                 <p class="mb-4"><?php echo $ligne['tailleche']; ?> centimètres</p>
                 <p class= "mb-4"><?php echo $ligne['poids']; ?> kilos</p>
                 <p class="mb-4"><?php echo $ligne['sexeche']; ?></p>
+                <?php
+                  }
+                ?>
+                <form method="post" action="traitetoile.php" id="traitetoile" class="p-5 bg-white">
+                <td><div id='A1'><script type='text/javascript'>CreateListeEtoile('A1',5);</script></div></td>
+                <td><div id='A1'><script type='text/javascript'>GestionHover('A1',3,5);</script></div></td>
+                <td><input type ="submit" name="etoile" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
-        <?php
-          }
-        ?>
+
 
 
               </div>

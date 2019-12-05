@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>Système de notation avec étoiles</title>
+	
+	<script type="text/javascript" src="ListeEtoile.js"></script>
+	<style type="text/css">
+		.listeEtoile ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		.listeEtoile ul li {
+			display:inline-block;
+			width: 16px;
+			text-align: left;
+			list-style-type: none;
+		}
+		.listeEtoile ul li img {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		#tableau-sondage{
+			font-family:verdana;
+			font-size:12px;
+		}
+		#tableau-sondage th{
+			font-size:13px;
+			border:solid 1px black;
+			padding:8px;
+			cursor:default;
+		}
+		#tableau-sondage td{
+			border:solid 1px black;
+			padding:12px 3px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+
+	<table id='tableau-sondage' style='width:600px; border-collapse:collapse;' cellspacing='0'>
+		<thead>
+			<tr>
+				<th style='width:150px; border-top:none; border-left:none;'>&nbsp;</th>
+				<th style='padding:15px; width:210px;border-top:solid 3px #AFCC52; background-color:#EDEDED;'> Rubrique 1</th>
+				<th style='padding:15px; width:210px;border-top:solid 3px steelblue; background-color:#E7E7E7;'> Rubrique 2</th>
+				<th style='padding:15px; width:210px;border-top:solid 3px #EB7A17; background-color:#E0E0E0;'> Rubrique 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style='height:45px;'>
+				<td>Ligne1</td>
+				<td><div id='A1'><script type='text/javascript'>CreateListeEtoile('A1',5);</script></div></td>
+				<td><div id='B1'><script type='text/javascript'>CreateListeEtoile('B1',5);</script></div></td>
+				<td><div id='C1'><script type='text/javascript'>CreateListeEtoile('C1',5);</script></div></td>
+			</tr>
+			<tr style='height:45px;'>
+				<td>Ligne2</td>
+				<td><div id='A2'><script type='text/javascript'>CreateListeEtoile('A2',5);</script></div></td>
+				<td><div id='B2'><script type='text/javascript'>CreateListeEtoile('B2',5);</script></div></td>
+				<td><div id='C2'><script type='text/javascript'>CreateListeEtoile('C2',5);</script></div></td>
+			</tr>
+			<tr style='height:45px;'>
+				<td>Ligne3</td>
+				<td><div id='A3'><script type='text/javascript'>CreateListeEtoile('A3',5);</script></div></td>
+				<td><div id='B3'><script type='text/javascript'>CreateListeEtoile('B3',5);</script></div></td>
+				<td><div id='C3'><script type='text/javascript'>CreateListeEtoile('C3',5);</script></div></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
