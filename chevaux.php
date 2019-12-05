@@ -161,7 +161,7 @@
                     </a>
                   </div>
                   <h2 class="heading mb-0"><a href="#"><?php echo $ligne['nomche']; ?></a></h2>
-                  <span class="mb-3 d-block post-date"><?php echo $ligne['race']; ?> &bullet; <a href="#"><?php echo $ligne['sexeche']; ?></a></span>
+                  <span class="mb-3 d-block post-date"><?php echo $ligne['librace']; ?> &bullet; <a href="#"><?php echo $ligne['sexeche']; ?></a></span>
                   <p><?php echo $ligne['ageche']; ?> ans &bullet; <?php echo $ligne['tailleche']; ?> cm &bullet; <?php echo $ligne['poids']; ?> Kg </p>
                 </div>
               </div>
