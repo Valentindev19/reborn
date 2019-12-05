@@ -62,7 +62,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 	              <div class="col-2">
 
-	                  <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
+	                  <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.php">Centre Equestre Saint Vitrac</a></h2>
 
 	              </div>
 	              <div class="col-10">
@@ -101,12 +101,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 											</ul>
 											<?php
 											}
-											else {
 												?>
-												<li><a href="log.php">Connexion</a></li>
-												<?php
-											}
-											?>
 	                    </ul>
 
 	                  </div>
@@ -250,7 +245,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 <?php
 }
 else {
-	header ('location: log.php');
+	header ('location:log.php');
 
 }
 ?>

@@ -59,7 +59,7 @@
 
               <div class="col-2">
 
-                  <h2 class="mb-0 site-logo"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
+                  <h2 class="mb-0 site-logo"><a href="index.php">Centre Equestre Saint Vitrac</a></h2>
 
               </div>
               <div class="col-10">
@@ -68,17 +68,16 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li>
+                      <li class="active">
                         <a href="index.php">Accueil</a>
                       </li>
-                      <li class="active">
-                      <a href="actualite.php">Actualités</a></li>
+                      <li><a href="actualite.php">Actualités</a></li>
                       <li><a href="chevaux.php">Chevaux</a></li>
-                      <li><a href="pensions.php">Pensions</a></li>
+                      <li><a href="pensions.php">Pension</a></li>
                       <li class="has-children">
                         <a href="cours.php">Activités</a>
                         <ul class="dropdown arrow-top">
-                          <li><a href="cours.php">Cours</a></li>
+                          <li><a href="cours.php">Cour</a></li>
                           <li><a href="stage.php">Stage</a></li>
                           <li><a href="promenade.php">Promenade</a></li>
                           </li>
@@ -96,13 +95,13 @@
                       if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
                         if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
                         ?>
-                        <li><a href="admin.php">Page Admin</a></li>
+                        <li><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                       </ul>
                       <?php
                       }
                       else {
                         ?>
-                        <li><a href="membre.php">Page Membre</a></li>
+                        <li><a href="membre.php">Mon Espace</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                         <?php
                       }
 
