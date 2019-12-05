@@ -133,7 +133,7 @@ echo"</center>";
 						<div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="img">Image</label>
-                <input type="file" name="img" id="img" class="form-control">
+                <input type="file" name="fileToUpload" id="img" class="form-control">
               </div>
             </div>
             <div class="row form-group">

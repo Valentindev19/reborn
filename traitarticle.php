@@ -5,7 +5,7 @@
   if (isset($_POST['btn_ajart_form']))
   {
 
-    if(isset($_POST['titre']) && isset($_POST['resume']) && isset($_POST['contenue']) && isset($_POST['img']))
+    if(isset($_POST['titre']) && isset($_POST['resume']) && isset($_POST['contenue']) && isset($_POST['fileToUpload']))
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';
@@ -110,6 +110,7 @@
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="img">Image</label>
                   <input type="file" name="fileToUpload" id="img" class="form-control">
+                  <input type="hidden" name="fileToUpload2" id="fileToUpload2" class="form-control" value="<?php echo $_GET['img']; ?>">
                 </div>
               </div>
 
@@ -135,7 +136,14 @@
       $resume_article = $_POST['resume'];
       $lien_article = $_POST['lien'];
       $contenue_article = $_POST['contenue'];
-      $img_art = $_FILES['fileToUpload']['name'].$num_rand;
+      if ($_POST['fileToUpload'] != '')
+      {
+        $img_art = $_FILES['fileToUpload']['name'].$num_rand;
+      }
+      else
+      {
+        $img_art = $_POST['fileToUpload2'];
+      }
       $article = new article("","","","","","","");
       $article->modifart($idarticle,$titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
 
