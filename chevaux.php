@@ -70,50 +70,50 @@
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
 
-                      <li><a href="index.php">Accueil</a>
-                    </li>
-                    <li>
-                    <a href="actualite.php">Actualités</a></li>
-                    <li class="active"><a href="chevaux.php">Chevaux</a></li>
-                    <li><a href="pensions.php">Pensions</a></li>
-                    <li class="has-children">
-                      <a href="cours.php">Activités</a>
-                      <ul class="dropdown arrow-top">
-                        <li><a href="cours.php">Cours</a></li>
-                        <li><a href="stage.php">Stage</a></li>
-                        <li><a href="promenade.php">Promenade</a></li>
-                        </li>
+                      <li class="active">
+                        <a href="index.php">Accueil</a>
+                      </li>
+                      <li><a href="actualite.php">Actualités</a></li>
+                      <li><a href="chevaux.php">Chevaux</a></li>
+                      <li><a href="pensions.php">Pension</a></li>
+                      <li class="has-children">
+                        <a href="cours.php">Activités</a>
+                        <ul class="dropdown arrow-top">
+                          <li><a href="cours.php">Cour</a></li>
+                          <li><a href="stage.php">Stage</a></li>
+                          <li><a href="promenade.php">Promenade</a></li>
+                          </li>
 
+                        </ul>
+
+                      </li>
+                      <li><a href="contact.php">Contact</a></li>
+                      </html>
+                      <?php
+                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+                      session_start ();
+
+                      // On récupère nos variables de session
+                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
+                        if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
+                        ?>
+                        <li><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                       </ul>
+                      <?php
+                      }
+                      else {
+                        ?>
+                        <li><a href="membre.php">Mon Espace</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
+                        <?php
+                      }
 
-                    </li>
-                    <li><a href="contact.php">Contact</a></li>
-                    </html>
-                    <?php
-                    // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-                    session_start ();
-
-                    // On récupère nos variables de session
-                    if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
-                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
-                      ?>
-                      <li><a href="admin.php">Page Admin</a></li>
-                    </ul>
-                    <?php
                     }
                     else {
                       ?>
-                      <li><a href="log.php">Page Membre</a></li>
+                      <li><a href="log.php">Connexion</a></li>
                       <?php
                     }
-
-                  }
-                  else {
                     ?>
-                    <li><a href="log.php">Connexion</a></li>
-                    <?php
-                  }
-                  ?>
                     </ul>
                   </div>
                 </nav>

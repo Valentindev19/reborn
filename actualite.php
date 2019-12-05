@@ -95,13 +95,13 @@
                       if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
                         if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
                         ?>
-                        <li><a href="admin.php">Page Admin</a></li>
+                        <li><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                       </ul>
                       <?php
                       }
                       else {
                         ?>
-                        <li><a href="membre.php">Page Membre</a></li>
+                        <li><a href="membre.php">Mon Espace</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                         <?php
                       }
 
@@ -155,7 +155,7 @@
                       <div class="media-with-text">
                         <div class="img-border-sm mb-4">
                           <a href="#">
- 
+
                             <?php
                           echo"<a href='article.php?id=$ligne[idarticle]'>"?> <img src='images/Articles/<?php echo $ligne['image_article']; ?>' width=260  class'img-fluid'>
                           </a>
