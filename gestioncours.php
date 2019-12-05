@@ -115,7 +115,7 @@ echo"</center>";
 						<div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Date</label>
-                <input type="text" name="date" id="date" class="form-control" placeholder="Donner la date du cours">
+                <input type="text" name="date" id="date" class="form-control" placeholder="AAAA-MM-JJ">
               </div>
             </div>
             <div class="row form-group">
