@@ -5,11 +5,18 @@
   if (isset($_POST['btn_ajart_form']))
   {
 
-    if(isset($_POST['titre']) && isset($_POST['resume']) && isset($_POST['lien']) && isset($_POST['contenue']) && isset($_POST['img']))
+    if(isset($_POST['titre']) && isset($_POST['resume']) && isset($_POST['contenue']) && isset($_POST['img']))
     {
       $titre_article = $_POST['titre'];
       $resume_article = $_POST['resume'];
-      $lien_article = $_POST['lien'];
+      if (isset($_POST['lien']))
+      {
+        $lien_article = $_POST['lien'];
+      }
+      else
+      {
+        $lien_article = "";
+      }
       $contenue_article = $_POST['contenue'];
       $img_art = $_POST['img'];
 
