@@ -5,7 +5,6 @@
   if (isset($_POST['btn_ajcours_form']))
   {
 
-    //if(isset($_POST['date']) && isset($_POST['hdcours']) && isset($_POST['desccours']) && isset($_POST['hfcours']))
     if ($_POST['date'] != '' && $_POST['hdcours'] != '' && $_POST['desccours'] != '' && $_POST['hfcours'] != '')
     {
       $date_cours = $_POST['date'];
@@ -114,9 +113,9 @@
     {
       $idcours = $_POST['idcours'];
       $date_cours = $_POST['date'];
-      $hd_cours = $_POST['hdcours'];
+      $hd_cours = $_POST['heuredcours'];
       $desc_cours = $_POST['desccours'];
-      $hf_cours = $_POST['hfcours'];
+      $hf_cours = $_POST['heurefcours'];
       $cours = new cours("","","","","","","");
       $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
 

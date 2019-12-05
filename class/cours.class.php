@@ -49,7 +49,7 @@
     public function modifcours($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $conn)
     {
       $SQL = "UPDATE cours
-              SET datecours = '$datecours', heuredcours = '$heuredcours', desccours = '$desccours', heurefcours = '$heurefcours',
+              SET datecours = '$datecours', heuredcours = '$heuredcours', desccours = '$desccours', heurefcours = '$heurefcours'
               WHERE idcours ='$idcours'";
       $conn -> query($SQL);
     }
