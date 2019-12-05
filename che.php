@@ -2,6 +2,7 @@
   include 'class/bdd.inc.php';
   include 'class/cheval.class.php';
   $idche = $_GET['id'];
+  setcookie('idche',$idche);
 ?>
 <html lang="en">
   <head>
