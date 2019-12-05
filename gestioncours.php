@@ -7,7 +7,7 @@ include 'class/bdd.inc.php';
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
-	<html lang="en">
+<html lang="en">
 	  <head>
 	    <title>Centre Equestre Saint Vitrac</title>
 	    <meta charset="utf-8">
@@ -24,6 +24,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 	    <link rel="stylesheet" href="css/animate.css">
 	    <link href='css/to-top.css' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" type="text/css" href="css/creative.css">
 
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 	    <!--JS Bouton vers le haut -->
@@ -51,9 +52,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	      <div class="site-mobile-menu-body"></div>
 	    </div> <!-- .site-mobile-menu -->
 
-
 	    <div class="site-navbar-wrap js-site-navbar bg-white">
-
 
 	      <div class="container">
 	        <div class="site-navbar bg-light">
@@ -64,7 +63,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 	              <div class="col-2">
 
-	                  <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
+	                <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
 
 	              </div>
 	              <div class="col-10">
@@ -104,11 +103,12 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 											<?php
 											}
 											else {
-												?>
+											?>
 												<li><a href="log.php">Connexion</a></li>
 												<?php
 											}
 											?>
+
 	                    </ul>
 
 	                  </div>
@@ -120,67 +120,11 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	      </div>
 	    </div>
 
-			<div style="height: 113px;"></div>
-	    <div class="slide-one-item home-slider owl-carousel"></div>
-
-			<div class="site-section site-block-feature bg-light">
-	      <div class="container">
-			<div class="d-block d-md-flex">
-				<div class="text-center p-4 item border-right">
-					<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
-					<a href="gestioncour.php"><h2 class="h5 text-uppercase">Cours</h2>
-					<p>Voir les cours <span class="icon-arrow-right small"></span></a></p>
-				</div>
-
-				<div class="text-center p-4 item border-right">
-						<span class="display-3 mb-3 d-block text-primary"><img src="images/articles.PNG"></span>
-						<a href="gestionpro.php"><h2 class="h5 text-uppercase">Promenades</h2>
-						<p>Voir les promenades <span class="icon-arrow-right small"></span></a></p>
-					</div>
-				<div class="text-center p-4 item">
-					<span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-					<a href="gestionsta.php"><h2 class="h5 text-uppercase">Stages</h2>
-					<p>Voir les stages <span class="icon-arrow-right small"></span></a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	  <script src="js/jquery-3.3.1.min.js"></script>
-	  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-	  <script src="js/jquery-ui.js"></script>
-	  <script src="js/popper.min.js"></script>
-	  <script src="js/bootstrap.min.js"></script>
-	  <script src="js/owl.carousel.min.js"></script>
-	  <script src="js/jquery.stellar.min.js"></script>
-	  <script src="js/jquery.countdown.min.js"></script>
-	  <script src="js/jquery.magnific-popup.min.js"></script>
-	  <script src="js/bootstrap-datepicker.min.js"></script>
-	  <script src="js/aos.js"></script>
-
-
-	  <script src="js/mediaelement-and-player.min.js"></script>
-
-
-	  <script src="js/main.js"></script>
-
-
-
-	  </body>
-	</html>
-
-
-<?php
-}
-	else{
-	header ('location: log.php');
-	}
-?>
 </html>
 	</div>
 	</div>
 </div>
-	<a href ='admin.php'>RETOUR</a>
+	<a href='admin.php'><button class="boutonret">Retour</button></a>
 
   <div class="site-section bg-light">
     <div class="container">
@@ -239,3 +183,9 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
     </script>
 
 </html>
+<?php
+}
+else{
+header ('location: log.php');
+}
+?>

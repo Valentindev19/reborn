@@ -107,20 +107,19 @@
       </div>
     </div>
     <?php
-    //}
+    }
 
-    //if (isset($_POST['btn_modif_form']))
+    if (isset($_POST['btn_modif_form']))
     {
-      //$idarticle = $_POST['idart'];
-      //$titre_article = $_POST['titre'];
-      //$resume_article = $_POST['resume'];
-      //$lien_article = $_POST['lien'];
-      //$contenue_article = $_POST['contenue'];
-      //$img_art = $_POST['img'];
-      //$article = new article("","","","","","","");
-      //$article->modifart($idarticle,$titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
+      $idcours = $_POST['idcours'];
+      $date_cours = $_POST['date'];
+      $hd_cours = $_POST['hdcours'];
+      $desc_cours = $_POST['desccours'];
+      $hf_cours = $_POST['hfcours'];
+      $cours = new article("","","","","","","");
+      $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
 
-      //header('Location:gestionart.php');
+      header('Location:gestioncours.php');
     }
 
 ?>
