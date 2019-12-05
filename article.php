@@ -128,15 +128,6 @@
 
 
 
-      <div class="site-blocks-cover" style="background-image: url(images/couv.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center" data-aos="fade">
-              <h1>Actualités</h1>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
 

@@ -131,6 +131,8 @@
     }
     if (isset($_POST['btn_modif_form']))
     {
+      $num_rand = rand(1,10000000);
+      include 'upload.php';
       $idche = $_POST['idche'];
       $race = $_POST['race'];
       $nomche = $_POST['nom'];
@@ -138,7 +140,7 @@
       $taille = $_POST['taille'];
       $poids = $_POST['poids'];
       $sexe = $_POST['sexe'];
-      $image = $_POST['img'];
+      $img = $_FILES['fileToUpload']['name'].$num_rand;
       $cheval = new cheval("","","","","","","","","");
       $cheval-> modifche($idche, $race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn);
     }
