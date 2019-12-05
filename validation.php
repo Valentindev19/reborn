@@ -97,7 +97,7 @@
       $_SESSION['mailm'] = $ligne['mailm'];
       $_SESSION['mdpm'] = $ligne['mdpm'];
 
-      header("membre.php");
+      header("Location:membre.php");
     }
   }
   else {

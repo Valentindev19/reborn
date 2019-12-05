@@ -118,8 +118,7 @@ class membre
         $ligne = $res -> fetch();
         return $ligne;
       }
-<<<<<<< HEAD
-=======
+
       public function affmembre1($idmembre, $conn)
       {
         $req = "SELECT membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, membre.ruem, membre.compm, membre.mdpm
@@ -146,7 +145,7 @@ class membre
         $conn -> query($SQL);
         header("Location:gestionm.php");
         }
->>>>>>> 83773ea8389c5550ea780a0011da038642f9818b
+
 
 
 }

@@ -45,8 +45,11 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 					</thead>
 					<?php
 include 'class/bdd.inc.php';
+include 'class/race.class.php';
 $cheval = new cheval("","","","","","","","","");
 $req = $cheval->affche2($conn);
+$unerace = new race("","","");
+$res = $unerace->affrace($conn);
 ?>
 					<tfoot>
             <tr>
@@ -105,7 +108,20 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Race</label>
-                <input type="text" name="race" id="race" class="form-control" placeholder="Race du cheval">
+								<tr>
+				<td>
+				<select name="idrace">
+			<?php
+					while ($l = $res -> fetch())
+					{
+						?>
+							<option value="<?php echo $l['idrace']?>"><?php echo $l['librace']?></option>
+					 <?php
+					}
+					?>
+				</select>
+				</td>
+			</tr>
               </div>
             </div>
             <div class="row form-group">
