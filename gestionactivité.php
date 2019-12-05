@@ -1,11 +1,13 @@
 <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
+include 'class/cours.class.php';
+include 'class/bdd.inc.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
-	<html lang="en">
+<html lang="en">
 	  <head>
 	    <title>Centre Equestre Saint Vitrac</title>
 	    <meta charset="utf-8">
@@ -22,6 +24,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 	    <link rel="stylesheet" href="css/animate.css">
 	    <link href='css/to-top.css' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" type="text/css" href="css/creative.css">
 
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 	    <!--JS Bouton vers le haut -->
@@ -49,9 +52,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	      <div class="site-mobile-menu-body"></div>
 	    </div> <!-- .site-mobile-menu -->
 
-
 	    <div class="site-navbar-wrap js-site-navbar bg-white">
-
 
 	      <div class="container">
 	        <div class="site-navbar bg-light">
@@ -62,7 +63,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 
 	              <div class="col-2">
 
-	                  <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
+	                <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
 
 	              </div>
 	              <div class="col-10">
@@ -102,11 +103,12 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 											<?php
 											}
 											else {
-												?>
+											?>
 												<li><a href="log.php">Connexion</a></li>
 												<?php
 											}
 											?>
+
 	                    </ul>
 
 	                  </div>
@@ -119,110 +121,30 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	    </div>
 
 			<div style="height: 113px;"></div>
-	    <div class="slide-one-item home-slider owl-carousel">
+	    <div class="slide-one-item home-slider owl-carousel"></div>
 
-
-
-	      <div class="site-blocks-cover" style="background-image: url(images/chevauxad.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-	        <div class="container">
-	          <div class="row align-items-center justify-content-center">
-	            <div class="col-md-7 text-center" data-aos="fade">
-	              <h1>Espace Administrateur</h1>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-
-	    <div class="site-section site-block-feature bg-light">
+			<div class="site-section site-block-feature bg-light">
 	      <div class="container">
-	        <div class="d-block d-md-flex border-bottom">
-	          <div class="text-center p-4 item border-right">
-  	            <span class="flaticon-avatar display-3 mb-3 d-block text-primary"></span>
-  	            <a href="gestionm.php"><h2 class="h5 text-uppercase">Gestion Membres</h2>
-  	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
-  	          </div>
-	          <div class="text-center p-4 item">
-	            <span class="display-3 mb-3 d-block text-primary"><img src="images/activites.PNG"></span>
-	            <a href="gestionactivité.php"><h2 class="h5 text-uppercase"> Gestion activités</h2>
-							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
-	          </div>
-	        </div>
-	        <div class="d-block d-md-flex">
-	          <div class="text-center p-4 item border-right">
-							<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
-	            <a href="gestionmess.php"><h2 class="h5 text-uppercase"> Messages</h2>
-							<p>Voir les messages <span class="icon-arrow-right small"></span></a></p>
-	          </div>
+			<div class="d-block d-md-flex">
+				<div class="text-center p-4 item border-right">
+					<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
+					<a href="gestioncours.php"><h2 class="h5 text-uppercase">Cours</h2>
+					<p>Voir les cours <span class="icon-arrow-right small"></span></a></p>
+				</div>
 
-						<div class="text-center p-4 item border-right">
-  	            <span class="display-3 mb-3 d-block text-primary"><img src="images/articles.PNG"></span>
-  	            <a href="gestionart.php"><h2 class="h5 text-uppercase">Gestion Articles</h2>
-  	            <p> Gérer <span class="icon-arrow-right small"></span></a></p>
-  	          </div>
-	          <div class="text-center p-4 item">
-	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-	            <a href="gestionche.php"><h2 class="h5 text-uppercase"> Gestion Chevaux</h2>
-							<p>Gérer <span class="icon-arrow-right small"></span></a></p>
-	          </div>
-	        </div>
-
-					<div class="d-block d-md-flex">
-						<div class="text-center p-4 item">
-							<span class="display-3 mb-3 d-block"></span>
-						</div>
-
-	          <div class="text-center p-4 item  border-top">
-	            <span class="display-3 mb-3 d-block text-primary"><img src="images/icon-power-off.PNG"></span>
-	            <a href="deco.php"><h2 class="h5 text-uppercase">Deconnexion</h2>
-	            <p>Deconnectez vous <span class="icon-arrow-right small"></span></a></p>
-	          </div>
-
-							<div class="text-center p-4 item">
-								<span class="display-3 mb-3 d-block"></span>
-							</div>
+				<div class="text-center p-4 item border-right">
+						<span class="display-3 mb-3 d-block text-primary"><img src="images/articles.PNG"></span>
+						<a href="gestionpro.php"><h2 class="h5 text-uppercase">Promenades</h2>
+						<p>Voir les promenades <span class="icon-arrow-right small"></span></a></p>
 					</div>
-	        </div>
-	      </div>
-	    </div>
-	    <!--Image btn vers le haut-->
-	    <img id='btn_up' src="images/to_top.png"/>
-
-	    </div>-->
-
-
-	    <div class="py-5 quick-contact-info">
-	      <div class="container">
-	        <div class="row">
-	          <div class="col-md-4">
-	            <div>
-	              <h2><span class="icon-room"></span> Localisation</h2>
-	              <p class="mb-0">Saint Vitrac - 24200 <br>  10 Allée du Petit Buy </p>
-	            </div>
-	          </div>
-	          <div class="col-md-4">
-	            <div>
-	              <h2><span class="icon-clock-o"></span> Heures d'ouvertures </h2>
-	              <p class="mb-0">Mercredi de 9:30 - 17:30 <br>
-	              Lundi au Vendredi 9:00 - 17:30 <br>
-	              Dimanche de  8:00 - 16:30 </p>
-	            </div>
-	          </div>
-	          <div class="col-md-4">
-	            <h2><span class="icon-comments"></span> Contact</h2>
-	            <p class="mb-0">Email: centresaintvitrac@gmail.com <br>
-	            Téléphone: 05-55-55-78-19</p>
-	            <br>
-	            <h1><a href="https://facebook.com/"><span class="icon-facebook"></span></a> <a href="https://twitter.com"><span class="icon-twitter"></span></a> <a href="https://twitter.com"><span class="icon-instagram"></span></a></h1>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-
-
-
-
-
+				<div class="text-center p-4 item">
+					<span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
+					<a href="gestionsta.php"><h2 class="h5 text-uppercase">Stages</h2>
+					<p>Voir les stages <span class="icon-arrow-right small"></span></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	  <script src="js/jquery-3.3.1.min.js"></script>
 	  <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -236,22 +158,16 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	  <script src="js/bootstrap-datepicker.min.js"></script>
 	  <script src="js/aos.js"></script>
 
-
 	  <script src="js/mediaelement-and-player.min.js"></script>
 
 	  <script src="js/main.js"></script>
 
-
-
 	  </body>
-	</html>
-
-
-<?php
-}
-else {
-	header ('location: log.php');
-
-}
-?>
 </html>
+
+	<?php
+	}
+	else{
+	header ('location: log.php');
+	}
+?>
