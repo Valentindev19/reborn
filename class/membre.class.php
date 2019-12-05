@@ -129,6 +129,17 @@ class membre
         $res=	$conn -> query($req);
         return $res;
       }
+
+      public function affmembre2($conn)
+      {
+        $req = "SELECT membre.idmembre, membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, membre.ruem, membre.compm, membre.mdpm
+        		FROM membre, villes
+        		WHERE villes.ville_id= membre.ville_id
+        		 AND membre.validemembre= 1";
+        $res=	$conn -> query($req);
+        return $res;
+      }
+
       public function modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $ruem, $comp, $mdpm, $conn)
       {
         $SQL = "UPDATE membre

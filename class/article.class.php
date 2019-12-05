@@ -21,7 +21,7 @@
       $this->img_art = $img_art;
       $this->conn = $conn;
     }
-    
+
 ////////////////////////////////////// Le GET
     public function getidarticle()
     {

@@ -1,6 +1,7 @@
 <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
+include 'class/bdd.inc.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -40,18 +41,15 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 								<th>Mail</th>
 								<th>Téléphone</th>
 								<th>Ville</th>
-	                                 <th>Supprimer</th>
-																	 <th>Modifier</th>
+								<th>Modifier</th>
+	              <th>Supprimer</th>
 							</tr>
 					</thead>
 					<?php
-include 'class/bdd.inc.php';
-$SQL= "SELECT membre.idmembre, membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel
-		FROM membre, villes
-		WHERE villes.ville_id= membre.ville_id
-		 AND membre.validemembre= 1";
-$result = $conn -> query($SQL);
-?>
+					include 'class/membre.class.php';
+					$membre = new membre("","","","","","","","","","","","","","");
+					$req = $membre->affmembre2($conn);
+					?>
 					<tfoot>
 						<tr>
 							<th>Id</th>
@@ -62,14 +60,14 @@ $result = $conn -> query($SQL);
 							<th>Mail</th>
 							<th>Téléphone</th>
 							<th>Ville</th>
-                                 <th>Supprimer</th>
-																 <th>Modifier</th>
+							<th>Modifier</th>
+							<th>Supprimer</th>
 						</tr>
 					</tfoot>
 
 					<tbody>
 						<?php
-						while($ligne = $result -> fetch())
+						while($ligne = $req -> fetch())
 {
   echo"<tr>";
     echo"<td>",$ligne['idmembre'],"</td>";
@@ -80,8 +78,8 @@ $result = $conn -> query($SQL);
 		echo"<td>",$ligne['mailm'],"</td>";
 		echo"<td>",$ligne['telephonem'],"</td>";
     echo"<td>",$ligne['ville_nom_reel'],"</td>";
+		echo"<td> <a href='traitmembre.php?modm=modm&id=$ligne[idmembre]'><img src='images/modadmin.png' alt='mod' title='modifier' width=35 /></a></td>";
     echo"<td> <a href='traitmembre.php?supm=supm&id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimer' title='Supprimer' width=20 /></a></td>";
-		echo"<td> <a href='traitmembre.php?modm=modm&id=$ligne[idmembre]'><img src='images/modadmin.png' alt='mod' title='modifier' width=20 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";

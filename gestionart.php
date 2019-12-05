@@ -45,11 +45,10 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 							</tr>
 					</thead>
 					<?php
-include 'class/bdd.inc.php';
-$SQL= "SELECT idarticle, titre_article, resume_article, lien_article, contenue_article, image_article
-		FROM article
-		WHERE valide_article= 1";
-$result = $conn -> query($SQL);
+	include 'class/bdd.inc.php';
+	include 'class/race.class.php';
+	$article = new article("","","","","","","");
+	$req = $article->affart2($conn);
 ?>
 					<tfoot>
 						<tr>
@@ -66,7 +65,7 @@ $result = $conn -> query($SQL);
 
 					<tbody>
 						<?php
-						while($ligne = $result -> fetch())
+						while($ligne = $req -> fetch())
 {
   echo"<tr>";
     echo"<td>",$ligne['idarticle'],"</td>";
@@ -133,7 +132,7 @@ echo"</center>";
 						<div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="img">Image</label>
-                <input type="file" name="fileToUpload" id="img" class="form-control">
+                <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
               </div>
             </div>
             <div class="row form-group">
