@@ -148,7 +148,7 @@
 
                           <div class="img-border">
 
-                              <img src="images/articles/<?php echo $ligne['image_article']; ?>" alt="" class="img-fluid">
+                              <img src="images/upload/<?php echo $ligne['image_article']; ?>" alt="" class="img-fluid">
 
 
                             </a>

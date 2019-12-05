@@ -174,7 +174,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	    <!--Image btn vers le haut-->
 	    <img id='btn_up' src="images/to_top.png"/>
 
-	    </div>-->
+	    </div>
 
 
 	    <div class="py-5 quick-contact-info">

@@ -156,7 +156,7 @@
                           <a href="#">
 
                             <?php
-                          echo"<a href='article.php?id=$ligne[idarticle]'>"?> <img src='images/Articles/<?php echo $ligne['image_article']; ?>' width=260  class'img-fluid'>
+                          echo"<a href='article.php?id=$ligne[idarticle]'>"?> <img src='images/upload/<?php echo $ligne['image_article']; ?>' width=260  class'img-fluid'>
                           </a>
                         </div>
                         <h2 class="heading mb-0"><a><?php echo $ligne['titre_article']; ?></a></h2>

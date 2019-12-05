@@ -7,6 +7,8 @@
 
     if(isset($_POST['titre']) && isset($_POST['resume']) && isset($_POST['contenue']) && isset($_POST['img']))
     {
+      $num_rand = rand(1,10000000);
+      include 'upload.php';
       $titre_article = $_POST['titre'];
       $resume_article = $_POST['resume'];
       if (isset($_POST['lien']))
@@ -18,7 +20,7 @@
         $lien_article = "";
       }
       $contenue_article = $_POST['contenue'];
-      $img_art = $_POST['img'];
+      $img_art = $_FILES['fileToUpload']['name'].$num_rand;
 
 
       $article = new article("","","","","","","");

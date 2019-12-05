@@ -97,7 +97,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 												// On récupère nos variables de session
 												if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 												?>
-												 <li class="active"><a href="admin.php">Page Admin</a></li>
+												 <li class="active"><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
 											</ul>
 											<?php
 											}
