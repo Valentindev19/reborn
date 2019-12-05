@@ -61,7 +61,7 @@
 
 
 
-            <form method="post" action="traitche.php" id="modif_form" class="p-5 bg-white">
+            <form method="post" action="traitche.php" id="modif_form" class="p-5 bg-white" enctype="multipart/form-data">
 
               <input type="hidden" name="idche" id="idche" class="form-control" value="<?php echo $_GET['id']; ?>">
               <br>

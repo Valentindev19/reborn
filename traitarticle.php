@@ -128,12 +128,14 @@
 
     if (isset($_POST['btn_modif_form']))
     {
+      $num_rand = rand(1,10000000);
+      include 'upload.php';
       $idarticle = $_POST['idart'];
       $titre_article = $_POST['titre'];
       $resume_article = $_POST['resume'];
       $lien_article = $_POST['lien'];
       $contenue_article = $_POST['contenue'];
-      $img_art = $_POST['fileToUpload'];
+      $img_art = $_FILES['fileToUpload']['name'].$num_rand;
       $article = new article("","","","","","","");
       $article->modifart($idarticle,$titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
 
