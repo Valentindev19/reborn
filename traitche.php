@@ -36,9 +36,9 @@
   {
     $idche = $_GET['id'];
     $cheval = new cheval("","","","","","","","","");
-    $ligne = $cheval->affche($idche, $conn);
+    $res = $cheval->affche($idche, $conn);
     $unerace = new race("","","");
-    $res = $unerace->affrace($conn);
+    $req = $unerace->affrace($conn);
     ?>
     <html>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -72,7 +72,7 @@
   				<td>
   				<select name="idrace">
   			<?php
-  					while ($l = $res -> fetch())
+  					while ($l = $req -> fetch())
   					{
   						?>
   							<option value="<?php echo $l['idrace']?>"><?php echo $l['librace']?></option>
@@ -82,6 +82,10 @@
   				</select>
   				</td>
   			</tr>
+        <?php
+          while ($ligne = $res -> fetch())
+          {
+        ?>
                 </div>
               </div>
               <div class="row form-group">
@@ -123,6 +127,9 @@
                   <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
                 </div>
               </div>
+              <?php
+                }
+              ?>
 
               <div class="row form-group">
                 <div class="col-md-12">
