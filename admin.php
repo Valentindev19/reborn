@@ -77,7 +77,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 												<li>
 												<a href="actualite.php">Actualités</a></li>
 												<li><a href="chevaux.php">Chevaux</a></li>
-												<li><a href="pensions.php">Pensions</a></li>
+												<li><a href="pensions.php">Pension</a></li>
 												<li class="has-children">
 													<a href="cours.php">Activités</a>
 													<ul class="dropdown arrow-top">

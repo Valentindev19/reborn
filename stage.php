@@ -55,7 +55,7 @@
 
               <div class="col-2">
 
-                  <h2 class="mb-0 site-logo"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
+                  <h2 class="mb-0 site-logo"><a href="index.php">Centre Equestre Saint Vitrac</a></h2>
 
               </div>
               <div class="col-10">
@@ -70,7 +70,7 @@
                       <li>
                       <a href="actualite.php">Actualités</a></li>
                       <li><a href="chevaux.php">Chevaux</a></li>
-                      <li><a href="pensions.php">Pensions</a></li>
+                      <li><a href="pensions.php">Pension</a></li>
                       <li class="has-children">
                         <a href="cours.php">Activités</a>
                         <ul class="dropdown arrow-top">
@@ -92,13 +92,13 @@
                       if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
                         if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
                         ?>
-                        <li><a href="admin.php">Page Admin</a></li>
+                        <li><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                       </ul>
                       <?php
                       }
                       else {
                         ?>
-                        <li><a href="membre.php">Page Membre</a></li>
+                        <li><a href="membre.php">Mon Espace</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
                         <?php
                       }
 

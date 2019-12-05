@@ -62,7 +62,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 
 	              <div class="col-2">
 
-	                  <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.html">Centre Equestre Saint Vitrac</a></h2>
+	                  <h2 class="mb-0 site-logo" style="position : relative; left : 50%;"><a href="index.php">Centre Equestre Saint Vitrac</a></h2>
 
 	              </div>
 	              <div class="col-10">
@@ -71,13 +71,13 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                    <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
 	                    <ul class="site-menu js-clone-nav d-none d-lg-block">
-	                      <li class="active">
+	                      <li>
 													<a href="index.php">Accueil</a>
 	                      </li>
-	                      <li
+	                      <li>
 	                      <a href="actualite.php">Actualités</a></li>
 	                      <li><a href="chevaux.php">Chevaux</a></li>
-	                      <li><a href="pensions.php">Pensions</a></li>
+	                      <li><a href="pensions.php">Pension</a></li>
 	                      <li class="has-children">
 	                        <a href="cours.php">Activités</a>
 	                        <ul class="dropdown arrow-top">
@@ -93,19 +93,19 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                      </html>
 												<?php
 	                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-	                      
 
-	                      // On récupère nos variables de session
+
+												// On récupère nos variables de session
 	                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                        if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 	                        ?>
-	                        <li><a href="admin.php">Page Admin</a></li>
+	                        <li class='active'><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
 	                      </ul>
 	                      <?php
 	                      }
 	                      else {
 	                        ?>
-	                        <li><a href="membre.php">Page Membre</a></li>
+	                        <li class='active'><a href="membre.php">Mon Espace</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
 	                        <?php
 	                      }
 
