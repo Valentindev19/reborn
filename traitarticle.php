@@ -68,7 +68,7 @@
 
 
 
-            <form method="post" action="traitarticle.php" id="modif_form" class="p-5 bg-white">
+            <form method="post" action="traitarticle.php" id="modif_form" class="p-5 bg-white" enctype="multipart/form-data">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -109,7 +109,7 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="img">Image</label>
-                  <input type="file" name="img" id="img" class="form-control">
+                  <input type="file" name="fileToUpload" id="img" class="form-control">
                 </div>
               </div>
 
@@ -133,7 +133,7 @@
       $resume_article = $_POST['resume'];
       $lien_article = $_POST['lien'];
       $contenue_article = $_POST['contenue'];
-      $img_art = $_POST['img'];
+      $img_art = $_POST['fileToUpload'];
       $article = new article("","","","","","","");
       $article->modifart($idarticle,$titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
 

@@ -100,7 +100,7 @@ echo"</center>";
 
 
 
-          <form method="post" action="traitarticle.php" id="contact_form" class="p-5 bg-white">
+          <form method="post" action="traitarticle.php" id="contact_form" class="p-5 bg-white" enctype="multipart/form-data">
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
