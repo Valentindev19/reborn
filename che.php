@@ -144,21 +144,21 @@
       $req = $cheval->affche($idche,$conn);
     ?>
 
-          <div class="site-section bg-light">
-            <div class="container">
-              <div class="row mb-5">
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-5 mb-md-0">
                 <?php
                   while ($ligne = $req -> fetch())
                   {
                 ?>
 
-                  <div class="img-border">
+
 
                       <img src="images/upload/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
 
 
-                    </a>
-                  </div>
+                    
 
               </div>
               <div class="col-md-5 ml-auto">
@@ -172,6 +172,7 @@
             </div>
           </div>
         </div>
+      </div>
 
         <?php
           }
