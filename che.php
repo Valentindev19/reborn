@@ -1,6 +1,7 @@
 <?php
   include 'class/bdd.inc.php';
   include 'class/cheval.class.php';
+  include 'class/etoile.class.php';
   $idche = $_GET['id'];
   setcookie('idche',$idche);
 ?>
@@ -145,6 +146,10 @@
     <?php
       $cheval = new cheval("","","","","","","","","");
       $req = $cheval->affche($idche,$conn);
+      $etoile = new etoile("","","","","");
+      $res = $etoile->moyaime($conn,$idche);
+      $aime = $res->fetch();
+
     ?>
 
     <div class="site-section">
@@ -159,6 +164,11 @@
 
 
                       <img src="images/upload/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
+                      <h2 class="h5 mb-3">Moyenne des membres :</h2>
+                      <td><div id='0'><script type='text/javascript'>CreateListeEtoile('0',5);</script></div></td>
+                      <td><div id='0'><script type='text/javascript'>GestionHover('0',<?php echo $aime['round(avg(aime))'];?>,5);</script></div></td>
+
+
 
 
 

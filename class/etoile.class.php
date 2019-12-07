@@ -21,27 +21,32 @@
 
     public function ajoutetoile($idche, $idmembre, $etoile,$conn)
     {
-      echo $idche;
-      echo $idmembre;
-      echo $etoile;
       $SQL = "INSERT INTO aime (idche, idmembre, aime)
               VALUES ('$idche', '$idmembre', '$etoile')";
       $conn->query($SQL);
-       header('Location:che.php');
+      echo $idmembre;
+      header('Location:chevaux .php');
+    }
+    public function affid($conn, $mail, $mdpm)
+    {
+      $SQL = "SELECT idmembre
+      FROM membre
+      WHERE mailm ='$mail'
+      AND mdpm='$mdpm'";
+      $res = $conn -> query($SQL);
+      return $res;
+
+    }
+    public function moyaime($conn, $idche)
+    {
+      $SQL = "SELECT round(avg(aime))
+      FROM aime
+      WHERE idche ='$idche' ";
+      $res = $conn -> query($SQL);
+      return $res;
+
     }
 
 
-          public function affid($conn, $mail, $mdpm)
-          {
-            $SQL = "SELECT  idmembre
-            FROM membre
-            WHERE mailm ='$mail'
-            AND mdpm='$mdpm'";
-            $idmembre = $conn -> query($SQL);
-            echo $idmembre;
-            die();
-            return $idmembre;
-
-          }
-      }
+  }
 ?>
