@@ -82,7 +82,7 @@ $result = $conn -> query($SQL);
   echo"<tr>";
     echo"<td>",$ligne['idcours'],"</td>";
     echo"<td>",$ligne['datecours'],"</td>";
-		echo"<td>",substr($ligne['heuredcours'], -2),"h",substr($ligne['heuredcours'], -5, -3),"</td>";
+		echo"<td>",$ligne['heuredcours'],"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
     echo"<td>",$ligne['heurefcours'],"</td>";
     echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
@@ -121,7 +121,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="nom">Heure du début de cours</label>
-                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours">
+                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours xx:xx:xx">
               </div>
             </div>
 
@@ -136,7 +136,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
-                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours">
+                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours xx:xx:xx">
               </div>
             </div>
 

@@ -9,13 +9,56 @@
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';
-      $race = $_POST['idrace'];
+      if(isset($_POST['race'])
+      {
+        $race = $_POST['idrace'];
+      }
+      else
+      {
+        $race = 'race inconnue';
+      }
       $nom = $_POST['nom'];
-      $age = $_POST['age'];
-      $taille = $_POST['taille'];
-      $poids = $_POST['poids'];
-      $sexe = $_POST['sexe'];
+      if(isset($_POST['age'])
+      {
+        $race = $_POST['age'];
+      }
+      else
+      {
+        $age = 'age inconnu';
+      }
+      if(isset($_POST['taille'])
+      {
+        $taille = $_POST['taille'];
+      }
+      else
+      {
+        $taille = 'taille inconnu';
+      }
+      if(isset($_POST['poids'])
+      {
+        $poids = $_POST['poids'];
+      }
+      else
+      {
+        $poids = 'poids inconnu';
+      }
+      if(isset($_POST['sexe'])
+      {
+        $sexe = $_POST['sexe'];
+      }
+      else
+      {
+        $sexe = 'sexe inconnu';
+      }
       $img = $_FILES['fileToUpload']['name'].$num_rand;
+      if(isset($_POST['fileToUpload'])
+      {
+        $img = $_FILES['fileToUpload']['name'].$num_rand;
+      }
+      else
+      {
+        $img = 'image inconnue';
+      }
 
       $cheval = new cheval("","","","","","","","","");
       $cheval->ajoutche($race,$nom,$age,$taille,$poids,$sexe,$img,$conn);
@@ -126,6 +169,7 @@
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="img">Image</label>
                   <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
+                  <input type="hidden" name="fileToUpload2" id="fileToUpload2" value='<?php echo $ligne['imageche']; ?>'>
                 </div>
               </div>
               <?php
@@ -167,7 +211,14 @@
       $taille = $_POST['taille'];
       $poids = $_POST['poids'];
       $sexe = $_POST['sexe'];
-      $image = $_FILES['fileToUpload']['name'].$num_rand;
+      if ( $_FILES['fileToUpload']['name'].$num_rand == $num_rand)
+      {
+        $image = $_POST['fileToUpload2'];
+      }
+      else
+      {
+        $image = $_FILES['fileToUpload']['name'].$num_rand;
+      }
       $cheval = new cheval("","","","","","","","","");
       $cheval-> modifche($idche, $race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn);
     }
