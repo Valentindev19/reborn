@@ -165,7 +165,7 @@
 
 
                       <img src="images/upload/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
-                      <h2 class="h5 mb-3">Moyenne des membres :</h2>
+                      <h2 class="h5 mb-3">Moyenne des membres:</h2>
                       <td><div id='0'><script type='text/javascript'>CreateListeEtoile('0',5);</script></div></td>
                       <td><div id='0'><script type='text/javascript'>GestionHover('0',<?php echo $aime['round(avg(aime))'];?>,5);</script></div></td>
                       <td><div id='0'><script type='text/javascript'>ChoixSelection('0',<?php echo $aime['round(avg(aime))'];?>,5);</script></div></td>
