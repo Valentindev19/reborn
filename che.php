@@ -115,6 +115,7 @@
                       <li><a href="log.php">Connexion</a></li>
                       <?php
                     }
+
                     ?>
                     </ul>
                   </div>
@@ -183,11 +184,21 @@
                 <p class="mb-4"><?php echo $ligne['sexeche']; ?></p>
                 <?php
                   }
-                ?>
+
+                  if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']))
+                  {
+
+
+                  ?>
+
                 <form method="post" action="traitetoile.php" id="traitetoile" class="p-5 bg-white">
                 <td><div id='A1'><script type='text/javascript'>CreateListeEtoile('A1',5);</script></div></td>
                 <td><div id='A1'><script type='text/javascript'>GestionHover('A1',3,5);</script></div></td>
                 <td><input type ="submit" name="etoile" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+                  <?php
+                  }
+                  ?>
+
 
               </div>
             </div>
