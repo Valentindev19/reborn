@@ -24,7 +24,7 @@
       $SQL = "INSERT INTO aime (idche, idmembre, aime)
               VALUES ('$idche', '$idmembre', '$etoile')";
       $conn->query($SQL);
-      echo $idmembre;
+
       header('Location:che.php?id='.urlencode($idche));
     }
     public function affid($conn, $mail, $mdpm)
@@ -51,6 +51,16 @@
       $SQL = "SELECT aime FROM aime WHERE idmembre = '$idmembre' AND idche ='$idche' ";
       $aime = $conn -> query($SQL);
       return $aime;
+
+    }
+    public function update($conn, $idche, $idmembre, $etoi)
+    {
+      $SQL = " UPDATE aime
+                SET aime = '$etoi'
+                WHERE idmembre = '$idmembre'
+                AND idche ='$idche'";
+      $aime = $conn -> query($SQL);
+      header('Location:che.php?id='.urlencode($idche));
 
     }
 
