@@ -70,8 +70,7 @@ function CreateListeEtoile(idListe, nbEtoile){
 	}
 
 	renduListe += "	</ul>";
-	renduListe += "</div>";
-	renduListe += "<label id=\"score-" + idListe + "\"></label>";
+	renduListe += "</div><br>";
 
 	document.getElementById(idListe).outerHTML = renduListe;
 }
