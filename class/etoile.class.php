@@ -60,7 +60,7 @@
                 WHERE idmembre = '$idmembre'
                 AND idche ='$idche'";
       $aime = $conn -> query($SQL);
-      header('Location:che.php?id='.urlencode($idche));
+      header('Location:che.php?id='.urlencode($idche)); 
 
     }
 
