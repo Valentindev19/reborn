@@ -50,7 +50,7 @@
     {
       $membre = new membre("","","","","","","","","","","","","","");
       $membre->ajoutmembre($nom, $prenom, $sexe, $dn, $mailm, $phone, $adr, $comp, $mdp, $id_ville, $cle, $conn);
-      // header ici parceque l envoie de mail ne marche pas en local
+      header("Location:log.php"); // header ici parceque l envoie de mail ne marche pas en local
     }
 
 
@@ -101,7 +101,7 @@
     }
   }
   else {
-    header('Location:conex.php');
+    header('Location:membre.php');
   }
 
 ?>
