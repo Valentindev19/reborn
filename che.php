@@ -176,14 +176,32 @@
                   if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']))
                   {
 
-
-                  ?>
-
+                    $mailm = $_SESSION['mailm'];
+                    $mdpm = $_SESSION['mdpm'];
+                    $etoile = new etoile("","","","","");
+                    $req = $etoile->affid($conn,$mailm, $mdpm);
+                    $idmembre = $req->fetch();
+                    $idmembre = $idmembre['idmembre'];
+                    $aime = $etoile->vote($conn, $idche, $idmembre);
+                    $aime = $aime->fetch();
+                    $aime = $aime['aime'];
+                    if ($aime == NULL)
+                    {
+                      ?>
                 <form method="post" action="traitetoile.php" id="traitetoile" class="p-5 bg-white">
                 <td><div id='A1'><script type='text/javascript'>CreateListeEtoile('A1',5);</script></div></td>
-                <td><div id='A1'><script type='text/javascript'>GestionHover('A1',3,5);</script></div></td>
+                <td><div id='A1'><script type='text/javascript'>GestionHover('A1',0,5);</script></div></td>
                 <td><input type ="submit" name="etoile" value="Envoyer" class="btn btn-primary pill px-4 py-2">
                   <?php
+                  }
+                  else{
+                    ?>
+                    <form method="post" action="traitetoile.php" id="traitetoile" class="p-5 bg-white">
+                    <td><div id='A1'><script type='text/javascript'>CreateListeEtoile('A1',5);</script></div></td>
+                    <td><div id='A1'><script type='text/javascript'>GestionHover('A1',<?php echo $aime?>,5);</script></div></td>
+                    <td><input type ="submit" name="etoile" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+                      <?php
+                  }
                   }
                   ?>
 
