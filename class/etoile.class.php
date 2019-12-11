@@ -46,6 +46,13 @@
       return $res;
 
     }
+    public function vote($conn, $idche, $idmembre)
+    {
+      $SQL = "SELECT aime FROM aime WHERE idmembre = '$idmembre' AND idche ='$idche' ";
+      $aime = $conn -> query($SQL);
+      return $aime;
+
+    }
 
 
   }
