@@ -81,7 +81,7 @@ $result = $conn -> query($SQL);
 {
   echo"<tr>";
     echo"<td>",$ligne['idcours'],"</td>";
-    echo"<td>",$ligne['datecours'],"</td>";
+    echo"<td>",DATE_FORMAT($ligne['datecours'],'%d/%m/%Y'),"</td>";
 		echo"<td>",$ligne['heuredcours'],"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
     echo"<td>",$ligne['heurefcours'],"</td>";
