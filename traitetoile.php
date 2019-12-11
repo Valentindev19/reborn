@@ -22,6 +22,6 @@ $etoile->ajoutetoile($idche,$idmembre ,$etoi,$conn);
 }
 else
 {
-$etoile->update($idche,$idmembre ,$etoi,$conn);
+$etoile->update($conn, $idche, $idmembre, $etoi);
 }
 ?>
