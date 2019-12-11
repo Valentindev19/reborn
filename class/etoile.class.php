@@ -25,7 +25,7 @@
               VALUES ('$idche', '$idmembre', '$etoile')";
       $conn->query($SQL);
       echo $idmembre;
-      header('Location:chevaux.php');
+      header('Location:che.php?id='.urlencode($idche));
     }
     public function affid($conn, $mail, $mdpm)
     {

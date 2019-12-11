@@ -128,20 +128,7 @@
     </div>
 
     <div style="height: 113px;"></div>
-    <div class="slide-one-item home-slider owl-carousel">
-
-
-
-      <div class="site-blocks-cover inner-page" style="background-image: url(images/noschevaux.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center" data-aos="fade">
-              <h1>Nos chevaux</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="slide-one-item home-slider owl-carousel"></div>
 
 
     <?php
@@ -165,8 +152,8 @@
 
 
                       <img src="images/upload/<?php echo $ligne['imageche']; ?>" alt="" class="img-fluid">
-                      <h2 class="h5 mb-3">Moyenne des membres:</h2>
-                      <td><div id='0'><script type='text/javascript'>CreateListeEtoile('0',5);</script></div></td>
+                      <h2 class="h5 mb-3">Moyenne du Cheval :</h2>
+                      <td><div id='0'><script type='text/javascript'>CreateListeEtoile2('0',5);</script></div></td>
                       <td><div id='0'><script type='text/javascript'>GestionHover('0',<?php echo $aime['round(avg(aime))'];?>,5);</script></div></td>
                       <td><div id='0'><script type='text/javascript'>ChoixSelection('0',<?php echo $aime['round(avg(aime))'];?>,5);</script></div></td>
 
