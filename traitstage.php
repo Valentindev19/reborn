@@ -1,40 +1,46 @@
 <?php
   include 'class/bdd.inc.php';
-  include 'class/cours.class.php';
+  include 'class/stage.class.php';
+  include 'class/typestage.class.php';
 
-  if (isset($_POST['btn_ajcours_form']))
+  if (isset($_POST['btn_ajstage_form']))
   {
 
-    if ($_POST['date'] != '' && $_POST['hdcours'] != '' && $_POST['desccours'] != '' && $_POST['hfcours'] != '')
+    if ($_POST['dated'] != '' && $_POST['datef'] != '' && $_POST['heured'] != '' && $_POST['heuref'] != '' && $_POST['descstage'] != '' && $_POST['repas'] != '')
     {
-      $date_cours = $_POST['date'];
-      $hd_cours = $_POST['hdcours'];
-      $desc_cours = $_POST['desccours'];
-      $hf_cours = $_POST['hfcours'];
+      $dated = $_POST['dated'];
+      $datef = $_POST['datef'];
+      $heured = $_POST['heured'];
+      $heuref = $_POST['heuref'];
+      $des = $_POST['descstage'];
+      $repas = $_POST['repas'];
+      $idtype_stage = $_POST['idtype_stage'];
 
 
-      $cours = new cours("","","","","","");
-      $cours->ajoutcours($date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
-
+      $stage = new stage("","","","","","","","","","");
+      $req = $stage->ajoutstage($idtype_stage, $dated, $datef, $des, $heured, $heuref, $repas, $conn);
+      header('Location:gestionsta.php');
     }
     else
     {
-      header('Location:gestioncours.php');
+      header('Location:gestionsta.php');
     }
   }
   if (isset($_GET['sup']))
   {
-    $idcours = $_GET['id'];
-    $cours = new cours("","","","","","","");
-    $cours->suppcours($idcours,$conn);
-    header('Location:gestioncours.php');
+    $idstage = $_GET['id'];
+    $stage = new stage("","","","","","","","","","");
+  $req= $stage->suppstage($idstage,$conn);
+    header('Location:gestionsta.php');
   }
-  if (isset($_GET['modif']))
+  if (isset($_GET['mod']))
   {
-    $idcours = $_GET['id'];
-    $cours = new cours("","","","","","","");
-    $req = $cours->affcours($idcours, $conn);
-    $ligne = $req->fetch();
+    $idstage = $_GET['id'];
+    $stage = new stage("","","","","","","","","","");
+    $res = $stage->affstage1($idstage,$conn);
+    $ligne = $res->fetch();
+    $stage = new typestage("","","");
+    $res = $stage->afftype($conn);
 
 
     ?>
@@ -58,41 +64,70 @@
 
 
 
-            <form method="post" action="traitcours.php" id="modif_form" class="p-5 bg-white">
+            <form method="post" action="traitstage.php" id="modif_form" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-
-                  <input type="hidden" name="idcours" id="idcours" class="form-control" placeholder="Race du cheval" value="<?php echo $_GET['id']; ?>">
+                  <label class="font-weight-bold" for="race">Type de Stage </label>
+  								<tr>
+  				<td>
+  				<select name="idtype_stage">
+  			<?php
+  					while ($l = $res -> fetch())
+  					{
+  						?>
+  							<option value="<?php echo $l['idtype_stage']?>"><?php echo $l['typestage']?></option>
+  					 <?php
+  					}
+  					?>
+  				</select>
+  				</td>
+  			</tr>
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="Date_cours">Date du Cours</label>
-                  <input type="text" name="date" id="date" class="form-control"  value="<?php echo $ligne['datecours']; ?>">
+
+                  <input type="hidden" name="idstage" id="idstage" class="form-control" placeholder="Type stage" value="<?php echo $_GET['id']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="race">Date Début</label>
+                  <input type="text" name="dated" id="dated" class="form-control" placeholder="AAAA-MM-JJ" value="<?php echo $ligne['datedstage']; ?>">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="Heure_début_cours">Heure de début du cours</label>
-                  <input type=text name="heuredcours" id="heuredcours" class="form-control" value="<?php echo $ligne['heuredcours']; ?>">
+                  <label class="font-weight-bold" for="nom">Heure Début</label>
+                  <input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure du début du stage xx:xx:xx" value="<?php echo $ligne['heuredstage']; ?>">
                 </div>
               </div>
 
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="Description_cours">Description du cours</label>
-                  <input type="texte" name="desccours" id="desccours" class="form-control" value="<?php echo $ligne['desccours']; ?>">
+                  <label class="font-weight-bold" for="age">Description du Stage</label>
+                  <input type="text" name="descstage" id="descstage" class="form-control" placeholder="Donner la description du stage"value="<?php echo $ligne['descstage']; ?>">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="Heure_fin_cours">Heure de fin du cours</label>
-                  <input type="text" name="heurefcours" id="heurefcours" class="form-control" value="<?php echo $ligne['heurefcours']; ?>">
+                  <label class="font-weight-bold" for="taille">Date Fin</label>
+                  <input type=text name="datef" id="datef" class="form-control" placeholder="AAAA-MM-JJ"value="<?php echo $ligne['datefstage']; ?>">
                 </div>
               </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="nom">Heure Fin</label>
+                  <input type=text name="heuref" id="heuref" class="form-control" placeholder="Donner l'heure de fin du cours xx:xx:xx"value="<?php echo $ligne['heurefstage']; ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="nom">Repas</label>
+                  <input type=text name="repas" id="repas" class="form-control" placeholder="Oui ou Non"value="<?php echo $ligne['repas']; ?>">
                 </div>
               </div>
 
@@ -111,15 +146,20 @@
 
     if (isset($_POST['btn_modif_form']))
     {
-      $idcours = $_POST['idcours'];
-      $date_cours = $_POST['date'];
-      $hd_cours = $_POST['heuredcours'];
-      $desc_cours = $_POST['desccours'];
-      $hf_cours = $_POST['heurefcours'];
-      $cours = new cours("","","","","","","");
-      $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
+      $dated = $_POST['dated'];
+      $datef = $_POST['datef'];
+      $heured = $_POST['heured'];
+      $heuref = $_POST['heuref'];
+      $des = $_POST['descstage'];
+      $repas = $_POST['repas'];
+      $idtype_stage = $_POST['idtype_stage'];
+      $idstage = $_POST['idstage'];
 
-      header('Location:gestioncours.php');
+
+      $stage = new stage("","","","","","","","","","");
+      $stage->modifstage($idstage,$idtype_stage, $dated, $datef, $des, $heured, $heuref, $repas, $conn);
+
+      header('Location:gestionsta.php');
     }
 
 ?>

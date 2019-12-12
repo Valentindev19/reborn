@@ -9,7 +9,7 @@
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';
-      if(isset($_POST['race']))
+      if(isset($_POST['idrace']))
       {
         $race = $_POST['idrace'];
       }

@@ -142,9 +142,9 @@
       $hd_cours = $_POST['heuredcours'];
       $desc_cours = $_POST['desccours'];
       $hf_cours = $_POST['heurefcours'];
-      $id_type_cours = $_POST['id_type_cours']
+      $id_type_cours = $_POST['id_type_cours'];
       $cours = new cours("","","","","","","","");
-      $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $id_type_cours $conn);
+      $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $id_type_cours, $conn);
 
       header('Location:gestioncours.php');
     }
