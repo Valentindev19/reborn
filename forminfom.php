@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']))
   {
     ini_set('display_errors', 0); // fait disparaitre les erreurs php
