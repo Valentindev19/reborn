@@ -1,6 +1,7 @@
 <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
+
 //include 'class/cours.class.php';
 include 'class/cours.class.php';
 include 'class/bdd.inc.php';
@@ -59,9 +60,10 @@ $('#datatable').dataTable(
 							</tr>
 					</thead>
 					<?php
-include 'class/bdd.inc.php';
+
 $cours = new cours("","","","","","","");
 $req = $cours->affcours2($conn);
+//var_dump($req);
 ?>
 					<tfoot>
 						<tr>
@@ -123,7 +125,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="nom">Heure du début de cours</label>
-                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours xx:xx:xx">
+                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours hh:mm:ss">
               </div>
             </div>
 
@@ -138,7 +140,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
-                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours xx:xx:xx">
+                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours hh:mm:ss">
               </div>
             </div>
 

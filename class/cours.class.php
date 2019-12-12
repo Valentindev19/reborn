@@ -48,7 +48,7 @@
     }
 
     //UPDATE
-    public function modifcours($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $conn)
+    public function modifcours($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $id_type_cours, $conn)
     {
       $SQL = "UPDATE cours
               SET datecours = '$datecours', heuredcours = '$heuredcours', desccours = '$desccours', heurefcours = '$heurefcours', id_type_cours = '$id_type_cours'
