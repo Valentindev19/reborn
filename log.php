@@ -38,7 +38,7 @@
           <input type="text" placeholder="mail" name="mailm"/>
           <input type="password" placeholder="mot de passe" name="mdpm"/>
           <button name="form_log">Connexion</button>
-            <p class="message"> <a href="conex.php">Mot de passe oublié</a></p>
+            <p class="message"> <a href="conex.php">Mot de passe oublié</a></p> <!-- Probleme !! -->
           <p class="message">Pas inscrit ? <a href="conex.php">Créer un compte</a></p>
         </form>
       </div>

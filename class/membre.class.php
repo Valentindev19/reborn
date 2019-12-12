@@ -99,7 +99,6 @@ class membre
     $req = "INSERT INTO membre(nomm,prenomm,genrem,ddn,mailm,telephonem,ruem,compm,mdpm,ville_id,id_typem,validemembre,cle)
             VALUES('$nom','$prenom','$sexe',$dn,'$mailm','$phone','$adr','$comp','$mdp',$id_ville,2,1 /* il est mis en actif ici parceque l envoie de mail ne marche pas en local  */,'$cle')";
     $conn -> Query($req);
-    header("Location:membre.php");
   }
 
   ////////////////////////////////////////// SUPPRIMER

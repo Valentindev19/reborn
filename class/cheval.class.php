@@ -80,7 +80,8 @@
       $SQL = "SELECT idche, race.librace, nomche, ageche, tailleche, poids, sexeche, imageche
       FROM cheval,race
       WHERE cheval.idrace = race.idrace
-      AND valideche= 1";
+      AND valideche= 1
+      GROUP BY nomche ASC";
       $req = $conn -> query($SQL);
       return $req;
     }

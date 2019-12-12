@@ -13,16 +13,15 @@ $req = $etoile->affid($conn,$mailm, $mdpm);
 $idmembre = $req->fetch();
 $idmembre = $idmembre['idmembre'];
 $aime = $etoile->vote($conn, $idche, $idmembre);
-$aime = $req->fetch();
+$aime = $aime->fetch();
 $aime = $aime['aime'];
-return $aime;
-if ($aime === NULL)
+if ($aime == NULL)
 {
 $etoile = new etoile("","","","","");
 $etoile->ajoutetoile($idche,$idmembre ,$etoi,$conn);
 }
 else
 {
-
+$etoile->update($conn, $idche, $idmembre, $etoi);
 }
 ?>
