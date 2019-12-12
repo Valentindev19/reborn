@@ -9,7 +9,7 @@
     {
       $num_rand = rand(1,10000000);
       include 'upload.php';
-      if(isset($_POST['race'])
+      if(isset($_POST['race']))
       {
         $race = $_POST['idrace'];
       }
@@ -18,7 +18,7 @@
         $race = 'race inconnue';
       }
       $nom = $_POST['nom'];
-      if(isset($_POST['age'])
+      if(isset($_POST['age']))
       {
         $race = $_POST['age'];
       }
@@ -26,7 +26,7 @@
       {
         $age = 'age inconnu';
       }
-      if(isset($_POST['taille'])
+      if(isset($_POST['taille']))
       {
         $taille = $_POST['taille'];
       }
@@ -34,7 +34,7 @@
       {
         $taille = 'taille inconnu';
       }
-      if(isset($_POST['poids'])
+      if(isset($_POST['poids']))
       {
         $poids = $_POST['poids'];
       }
@@ -42,7 +42,7 @@
       {
         $poids = 'poids inconnu';
       }
-      if(isset($_POST['sexe'])
+      if(isset($_POST['sexe']))
       {
         $sexe = $_POST['sexe'];
       }
@@ -51,7 +51,7 @@
         $sexe = 'sexe inconnu';
       }
       $img = $_FILES['fileToUpload']['name'].$num_rand;
-      if(isset($_POST['fileToUpload'])
+      if(isset($_POST['fileToUpload']))
       {
         $img = $_FILES['fileToUpload']['name'].$num_rand;
       }
