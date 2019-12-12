@@ -75,6 +75,16 @@ class membre
     return $res;
   }
 
+  public function affinfocontact($mail, $mdpm, $conn)
+  {
+    $SQL = "SELECT nomm, prenomm, telephonem
+    FROM membre
+    WHERE mailm ='$mail'
+    AND mdpm='$mdpm'";
+    $res = $conn -> query($SQL);
+    return $res;
+  }
+
   public function affcle($mailm, $conn)
   {
     $req = "SELECT cle

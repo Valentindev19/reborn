@@ -60,7 +60,6 @@ $('#datatable').dataTable(
 					</thead>
 					<?php
 include 'class/bdd.inc.php';
-include 'class/cours.class.php';
 $cours = new cours("","","","","","","");
 $req = $cours->affcours2($conn);
 ?>

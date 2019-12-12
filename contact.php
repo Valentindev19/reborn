@@ -82,11 +82,11 @@
 
                       </li>
                       <li class="active"><a href="contact.php">Contact</a></li>
-                      </html>
                       <?php
                       // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
                       session_start ();
-
+                      // on vérifie si c'est un membre pour lui personnaliser la page
+                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
                       // On récupère nos variables de session
                       if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
                         if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -107,6 +107,16 @@
                       <li><a href="log.php">Connexion</a></li>
                       <?php
                     }
+                    include 'class/bdd.inc.php';
+                    include 'class/membre.class.php';
+                    $mail = $_SESSION['mailm'];
+                    $mdp = $_SESSION['mdpm'];
+                    $membre = new membre("","","","","","","","","","","","","","");
+                    $req = $membre->affinfocontact($mail, $mdp, $conn);
+                    $ligne = $req -> fetch();
+                    $tel = $ligne['telephonem'];
+                    $nomm = $ligne['nomm'];
+                    $prenomm = $ligne['prenomm'];
                     ?>
                     </ul>
                   </div>
@@ -147,13 +157,13 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Nom</label>
-                  <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom prenom">
+                  <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom prenom" value="<?php echo $nomm," ",$prenomm; ?>">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="email">Email</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="<?php echo $mail ?>">
                 </div>
               </div>
 
@@ -161,7 +171,7 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="phone">Téléphone</label>
-                  <input type="text" name="phone" id="phone" class="form-control" placeholder="Téléphone">
+                  <input type="text" name="phone" id="phone" class="form-control" placeholder="Téléphone" value="<?php echo $tel ?>">
                 </div>
               </div>
 
@@ -253,6 +263,163 @@
             </script>
 
             <script src="cookie/cookiechoices.js"></script>
+
+            <?php
+          }
+          else
+          {
+            ?>
+            <li><a href="log.php">Connexion</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="height: 113px;"></div>
+<div class="slide-one-item home-slider owl-carousel">
+
+
+
+<div class="site-blocks-cover" style="background-image: url(images/contact.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="container">
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-7 text-center" data-aos="fade">
+    <h1>Contact </h1>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="site-section bg-light">
+<div class="container">
+<div class="row">
+
+<div class="col-md-12 col-lg-8 mb-5">
+
+
+
+  <form method="post" action="trait_contact.php" id="contact_form" class="p-5 bg-white">
+
+    <div class="row form-group">
+      <div class="col-md-12 mb-3 mb-md-0">
+        <label class="font-weight-bold" for="fullname">Nom</label>
+        <input type="text" name="nom" id="nom" class="form-control" placeholder="Nom prenom">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-12">
+        <label class="font-weight-bold" for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+      </div>
+    </div>
+
+
+    <div class="row form-group">
+      <div class="col-md-12 mb-3 mb-md-0">
+        <label class="font-weight-bold" for="phone">Téléphone</label>
+        <input type="text" name="phone" id="phone" class="form-control" placeholder="Téléphone">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-12">
+        <label class="font-weight-bold" for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Votre message..."></textarea>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-12">
+        <td><input type ="submit" name="btn_contact_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16487.670893629707!2d1.2213861096393634!3d44.82721581606987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aca7ec036b85b7%3A0x81d6690adf9d6450!2s24200%20Vitrac!5e0!3m2!1sfr!2sfr!4v1570699872709!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+  </form>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--Image btn vers le haut-->
+<img id='btn_up' src="images/to_top.png"/>
+
+  <div class="py-5 quick-contact-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            <h2><span class="icon-room"></span> Localisation</h2>
+            <p class="mb-0">Saint Vitrac - 24200 <br>  10 Allée du Petit Buy </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div>
+            <h2><span class="icon-clock-o"></span> Heures d'ouvertures </h2>
+            <p class="mb-0">Mercredi de 9:30 - 17:30 <br>
+            Lundi au Vendredi 9:00 - 17:30 <br>
+            Dimanche de  8:00 - 16:30 </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h2><span class="icon-comments"></span> Contact</h2>
+          <p class="mb-0">Email: centresaintvitrac@gmail.com <br>
+          Téléphone: 05-55-55-78-19</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/aos.js"></script>
+
+
+<script src="js/mediaelement-and-player.min.js"></script>
+
+<script src="js/main.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+              var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+              for (var i = 0; i < total; i++) {
+                  new MediaElementPlayer(mediaElements[i], {
+                      pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
+                      shimScriptAccess: 'always',
+                      success: function () {
+                          var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                          for (var j = 0; j < targetTotal; j++) {
+                              target[j].style.visibility = 'visible';
+                          }
+                }
+              });
+              }
+          });
+  </script>
+
+  <script src="cookie/cookiechoices.js"></script>
+
+
+        <?php
+          }
+          ?>
 
           </body>
         </html>
