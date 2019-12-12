@@ -1,7 +1,7 @@
 <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
-include 'class/cours.class.php';
+//include 'class/cours.class.php';
 include 'class/bdd.inc.php';
 
 // On récupère nos variables de session
@@ -58,10 +58,9 @@ $('#datatable').dataTable(
 					</thead>
 					<?php
 include 'class/bdd.inc.php';
-$SQL= "SELECT idcours, datecours, heuredcours, desccours, heurefcours
-		FROM cours
-		WHERE validecours= 1";
-$result = $conn -> query($SQL);
+include 'class/cours.class.php';
+$cours = new cours("","","","","");
+$req = $cours->affcours2($conn);
 ?>
 					<tfoot>
 						<tr>
