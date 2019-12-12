@@ -6,16 +6,18 @@
     private $heuredcours;
     private $desccours;
     private $heurefcours;
+    private $id_type_cours;
     private $conn;
 
     //construct
-    public function cours ($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $conn)
+    public function cours ($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $id_type_cours, $conn)
     {
       $this->idcours = $idcours;
       $this->datecours = $datecours;
       $this->heuredcours = $heuredcours;
       $this->desccours  = $desccours;
       $this->heurefcours = $heurefcours;
+      $this->id_type_cours = $id_type_cours;
       $this->conn = $conn;
     }
 
@@ -30,9 +32,9 @@
     }
 
     //AJOUT
-    public function ajoutcours($datecours, $heuredcours, $desccours, $heurefcours, $conn){
-      $SQL = "INSERT INTO cours (datecours, heuredcours, desccours, heurefcours, validecours)
-              VALUES ('$datecours', '$heuredcours', '$desccours', '$heurefcours',  1)";
+    public function ajoutcours($datecours, $heuredcours, $desccours, $heurefcours, $id_type_pro, $conn){
+      $SQL = "INSERT INTO cours (datecours, heuredcours, desccours, heurefcours, validecours, id_type_cours)
+              VALUES ('$datecours', '$heuredcours', '$desccours', '$heurefcours',  1, $id_type_cours)";
       $conn->query($SQL);
       header('Location:gestioncours.php');
     }
@@ -49,25 +51,27 @@
     public function modifcours($idcours, $datecours, $heuredcours, $desccours, $heurefcours, $conn)
     {
       $SQL = "UPDATE cours
-              SET datecours = '$datecours', heuredcours = '$heuredcours', desccours = '$desccours', heurefcours = '$heurefcours'
+              SET datecours = '$datecours', heuredcours = '$heuredcours', desccours = '$desccours', heurefcours = '$heurefcours', id_type_cours = '$id_type_cours'
               WHERE idcours ='$idcours'";
       $conn -> query($SQL);
     }
 
     // AFFICHER
         public function affcours($idcours, $conn){
-          $SQL = "SELECT datecours, heuredcours, desccours, heurefcours
-          FROM cours
-          WHERE idcours ='$idcours'";
+          $SQL = "SELECT datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
+          FROM cours, type_cours
+          WHERE cours.id_type_cours = type_cours.id_type_cours
+          AND idcours ='$idcours'";
           $req = $conn -> query($SQL);
           return $req;
         }
 
         public function affcours2($conn)
         {
-          $SQL = "SELECT  idcours, datecours, heuredcours, desccours, heurefcours
-          FROM cours
-          WHERE validecours = 1";
+          $SQL = "SELECT  idcours, type_cours.id_type_cours, datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
+          FROM cours, type_cours
+          WHERE cours.id_type_cours = type_cours.id_type_cours
+          AND validecours = 1";
           $req = $conn -> query($SQL);
           return $req;
         }

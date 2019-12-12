@@ -1,20 +1,22 @@
 <?php
   include 'class/bdd.inc.php';
   include 'class/cours.class.php';
+  include 'class/type_cours.class.php';
 
   if (isset($_POST['btn_ajcours_form']))
   {
 
-    if ($_POST['date'] != '' && $_POST['hdcours'] != '' && $_POST['desccours'] != '' && $_POST['hfcours'] != '')
+    if ($_POST['date'] != '' && $_POST['hdcours'] != '' && $_POST['desccours'] != '' && $_POST['hfcours'] != ''&& $_POST['id_type_cours'] != 0)
     {
       $date_cours = $_POST['date'];
       $hd_cours = $_POST['hdcours'];
       $desc_cours = $_POST['desccours'];
       $hf_cours = $_POST['hfcours'];
+      $id_type_cours = $_POST['id_type_cours'];
+      echo $id_type_cours;
 
-
-      $cours = new cours("","","","","","");
-      $cours->ajoutcours($date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
+      $cours = new cours("","","","","","","");
+      $cours->ajoutcours($date_cours, $hd_cours, $desc_cours, $hf_cours, $id_type_cours, $conn);
 
     }
     else
@@ -98,6 +100,30 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
+  								<label class="font-weight-bold" for="type_cours">Type cours</label>
+  								<tr>
+  									<td>
+  										<select name="id_type_cours">
+  											<?php
+  												$untype = new type_cours("","","");
+  												$req = $untype->afftype_cours($conn);
+  												while ($l = $req -> fetch())
+  												{
+  											?>
+  											<option value="<?php echo $l['id_type_cours']?>"><?php echo $l['nom_type_cours']?></option>
+  					 						<?php
+  												}
+  											?>
+  										</select>
+  									</td>
+  								</tr>
+                </div>
+              </div>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
                   <td><input type ="submit" name="btn_modif_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
                 </div>
               </div>
@@ -116,8 +142,9 @@
       $hd_cours = $_POST['heuredcours'];
       $desc_cours = $_POST['desccours'];
       $hf_cours = $_POST['heurefcours'];
-      $cours = new cours("","","","","","","");
-      $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $conn);
+      $id_type_cours = $_POST['id_type_cours']
+      $cours = new cours("","","","","","","","");
+      $cours->modifcours($idcours,$date_cours, $hd_cours, $desc_cours, $hf_cours, $id_type_cours $conn);
 
       header('Location:gestioncours.php');
     }

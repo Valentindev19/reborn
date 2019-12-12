@@ -2,6 +2,7 @@
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
 //include 'class/cours.class.php';
+include 'class/cours.class.php';
 include 'class/bdd.inc.php';
 
 // On récupère nos variables de session
@@ -52,6 +53,7 @@ $('#datatable').dataTable(
 								<th>Heure du début de Cours</th>
 								<th>Descrition du Cours</th>
 								<th>Heure de fin du Cours</th>
+								<th>Type Cours</th>
 	                                <th>Modifier</th>
 	                                 <th>Supprimer</th>
 							</tr>
@@ -59,7 +61,7 @@ $('#datatable').dataTable(
 					<?php
 include 'class/bdd.inc.php';
 include 'class/cours.class.php';
-$cours = new cours("","","","","");
+$cours = new cours("","","","","","","");
 $req = $cours->affcours2($conn);
 ?>
 					<tfoot>
@@ -69,6 +71,7 @@ $req = $cours->affcours2($conn);
 							<th>Heure du début de Cours</th>
 							<th>Descrition du Cours</th>
 							<th>Heure de fin du Cours</th>
+							<th>Type Cours</th>
 																<th>Modifier</th>
 																 <th>Supprimer</th>
 						</tr>
@@ -76,7 +79,7 @@ $req = $cours->affcours2($conn);
 
 					<tbody>
 						<?php
-						while($ligne = $result -> fetch())
+						while($ligne = $req -> fetch())
 {
   echo"<tr>";
     echo"<td>",$ligne['idcours'],"</td>";
@@ -84,6 +87,7 @@ $req = $cours->affcours2($conn);
 		echo"<td>",$ligne['heuredcours'],"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
     echo"<td>",$ligne['heurefcours'],"</td>";
+		echo"<td>",$ligne['nom_type_cours'],"</td>";
     echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='traitcours.php?sup=sup&id=$ligne[idcours]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
   echo"</tr>";
@@ -136,6 +140,29 @@ echo"</center>";
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
                 <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours xx:xx:xx">
+              </div>
+            </div>
+
+						<div class="row form-group">
+              <div class="col-md-12">
+								<label class="font-weight-bold" for="type_promenade">Type cours</label>
+								<tr>
+									<td>
+										<select name="id_type_cours">
+											<?php
+												include 'class/type_cours.class.php';
+												$untype = new type_cours("","","");
+												$req = $untype->afftype_cours($conn);
+												while ($l = $req -> fetch())
+												{
+											?>
+											<option value="<?php echo $l['id_type_cours']?>"><?php echo $l['nom_type_cours']?></option>
+					 						<?php
+												}
+											?>
+										</select>
+									</td>
+								</tr>
               </div>
             </div>
 
