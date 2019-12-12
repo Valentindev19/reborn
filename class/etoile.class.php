@@ -27,6 +27,7 @@
 
       header('Location:che.php?id='.urlencode($idche));
     }
+
     public function affid($conn, $mail, $mdpm)
     {
       $SQL = "SELECT idmembre

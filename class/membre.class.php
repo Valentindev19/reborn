@@ -65,6 +65,26 @@ class membre
   }
 
   //////////////////////////////////////////// AFFICHAGE
+  public function affidm($mail, $mdpm, $conn)
+  {
+    $SQL = "SELECT idmembre
+    FROM membre
+    WHERE mailm ='$mail'
+    AND mdpm='$mdpm'";
+    $res = $conn -> query($SQL);
+    return $res;
+  }
+
+  public function affinfocontact($mail, $mdpm, $conn)
+  {
+    $SQL = "SELECT nomm, prenomm, telephonem
+    FROM membre
+    WHERE mailm ='$mail'
+    AND mdpm='$mdpm'";
+    $res = $conn -> query($SQL);
+    return $res;
+  }
+
   public function affcle($mailm, $conn)
   {
     $req = "SELECT cle
@@ -151,7 +171,7 @@ class membre
         return $res;
       }
 
-      public function modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $ruem, $comp, $mdpm, $conn)
+      public function modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem,$idville, $ruem, $comp, $mdpm, $conn)
       {
         $SQL = "UPDATE membre
                 SET nomm = '$nomm',
@@ -161,11 +181,11 @@ class membre
                     mailm ='$mailm',
                     telephonem = '$telephonem',
                     ruem ='$ruem',
-                    compm ='$compm',
-                    mdpm = '$mdpm'
+                    compm ='$comp',
+                    mdpm = '$mdpm',
+                    ville_id = $idville
                 WHERE idmembre ='$idmembre'";
         $conn -> query($SQL);
-        header("Location:gestionm.php");
         }
 
 

@@ -1,6 +1,7 @@
 <?php
   include 'class/bdd.inc.php';
   include 'class/membre.class.php';
+  include 'class/ville.class.php';
 
   if (isset($_GET['supm']))
   {
@@ -11,21 +12,35 @@
   }
   if (isset($_POST['form_mod_m']))
   {
-    $idmembre = $_POST['id'];
+    $mailm = $_POST['email'];
+    $mdpm = $_POST['mdp'];
+    $mdp2 = $_POST['mdp2'];
+    if ($mdpm != $mdp2)
+    {
+      setcookie('mvmdp','Vos mots de passe ne correspondent pas.', time() + 3600);
+      header("Location:forminfom.php");
+    }
+    $membre = new membre("","","","","","","","","","","","","","");
+    $req = $membre->affidm($mailm, $mdpm, $conn);
+    $ligne = $req->fetch();
+    $idmembre = $ligne['idmembre'];
     $nomm = $_POST['nom'];
     $prenomm = $_POST['prenom'];
-    $genrem = $_POST['genre'];
-    $ddn = $_POST['ddn'];
-    $mailm = $_POST['mail'];
-    $telephonem = $_POST['tel'];
+    $genrem = $_POST['sexe'];
+    $ddn = $_POST['DN'];
+    $telephonem = $_POST['phone'];
     $ruem = $_POST['adr'];
-    $comp = $_POST['compm'];
-    $ruem = $_POST['add'];
-    $mdpm = $_POST['mdpm'];
+    $comp = $_POST['comp'];
+    $nomville = $_POST['ville'];
+    $cp = $_POST['CP'];
+    $idville = new ville("","","","");
+    $req = $idville->affville($nomville, $cp, $conn);
+    $ligne = $req->fetch();
+    $idville = $ligne['ville_id'];
     $membre = new membre("","","","","","","","","","","","","","");
-    $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm, $telephonem, $ruem, $comp, $mdpm, $conn);
+    $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm, $telephonem, $idville, $ruem, $comp, $mdpm, $conn);
 
-    header('Location:gestionm.php');
+    header('Location:membre.php');
   }
   if (isset($_GET['modm']))
   {
@@ -155,7 +170,6 @@
       $mdpm = $_POST['mdpm'];
       $membre = new membre("","","","","","","","","","","","","","");
       $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $ruem, $comp, $mdpm, $conn);
-
       header('Location:gestionm.php');
     }
 ?>

@@ -28,7 +28,7 @@
 
 
     <!-- Title Page-->
-    <title>Inscription</title>
+    <title>Modification</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -50,19 +50,19 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Inscription :</h2>
+                    <h2 class="title">Modification :</h2>
                     <form method="POST">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nom de famille</label>
-                                    <input class="input--style-4" type="text" name="nom" value="<?php ?>">
+                                    <input class="input--style-4" type="text" name="nom" value="<?php echo $ligne['nomm']; ?>">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Prénom</label>
-                                    <input class="input--style-4" type="text" name="prenom" value="<?php ?>">
+                                    <input class="input--style-4" type="text" name="prenom" value="<?php echo $ligne['prenomm']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                                 <div class="input-group">
                                     <label class="label">Date de naissance</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker" value="<?php ?>">
+                                        <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker" value="<?php echo $ligne['ddn']; ?>">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -81,15 +81,18 @@
                                     <label class="label">Sexe</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Masculin
-                                            <input type="radio" checked="checked" name="sexe" value="Homme" >
+                                            <input type="radio" <?php if ($ligne['genrem'] == 'Homme' ) {?>
+                                              checked="checked" <?php } ?> name="sexe" value="Homme" >
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Féminin
-                                            <input type="radio" name="sexe" value="Femme">
+                                            <input type="radio" <?php if ($ligne['genrem'] == 'Femme' ) {?>
+                                              checked="checked" <?php } ?> name="sexe" value="Femme">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Autres
-                                            <input type="radio" name="sexe" value="Autre">
+                                            <input type="radio" <?php if ($ligne['genrem'] == 'Autre' ) {?>
+                                              checked="checked" <?php } ?> name="sexe" value="Autre">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -100,13 +103,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" value="<?php ?>">
+                                    <input class="input--style-4" type="email" name="email" value="<?php echo $ligne['mailm']; ?>">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Numéro de téléphone</label>
-                                    <input class="input--style-4" type="text" name="phone" value="<?php ?>">
+                                    <input class="input--style-4" type="text" name="phone" value="<?php echo $ligne['telephonem']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -114,14 +117,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Code Postal</label>
-                                    <input  class="input--style-4" type="text" id="nom_id" onkeyup="autocomplet()" name="CP" value="<?php ?>">
+                                    <input  class="input--style-4" type="text" id="nom_id" onkeyup="autocomplet()" name="CP" value="<?php echo $ligne['ville_code_postal']; ?>">
                                     <ul id="nom_list_id"></ul>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Ville</label>
-                                    <input  class="input--style-4" type="text" id="nom2_id" name="ville" value="<?php ?>">
+                                    <input  class="input--style-4" type="text" id="nom2_id" name="ville" value="<?php echo $ligne['ville_nom_reel']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -129,13 +132,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Adresse</label>
-                                    <input class="input--style-4" type="text" name="adr" value="<?php ?>">
+                                    <input class="input--style-4" type="text" name="adr" value="<?php echo $ligne['ruem']; ?>">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Compléménent d'adresse</label>
-                                    <input class="input--style-4" type="text" name="comp" value="<?php ?>">
+                                    <input class="input--style-4" type="text" name="comp" value="<?php echo $ligne['compm']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -143,13 +146,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Mot de passe</label>
-                                    <input class="input--style-4" type="password" name="mdp" value="<?php ?>">
+                                    <input class="input--style-4" type="password" name="mdp" value="<?php echo $ligne['mdpm']; ?>">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Mot de passe de vérification</label>
-                                    <input class="input--style-4" type="password" name="mdp2" value="<?php ?>">
+                                    <input class="input--style-4" type="password" name="mdp2" value="<?php echo $ligne['mdpm']; ?>">
                                 </div>
                             </div>
                       </div>

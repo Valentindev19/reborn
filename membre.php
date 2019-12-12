@@ -92,9 +92,6 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                      <li><a href="contact.php">Contact</a></li>
 	                      </html>
 												<?php
-	                      // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-
-
 												// On récupère nos variables de session
 	                      if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 	                        if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -153,7 +150,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
   	          </div>
 	          <div class="text-center p-4 item">
 	            <span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-	            <h2 class="h5 text-uppercase">Voir vos activités</h2>
+	            <a href="gestionactivitém.php"><h2 class="h5 text-uppercase">Voir vos activités</h2>
 							<p>Afficher <span class="icon-arrow-right small"></span></a></p>
 	          </div>
 	        </div>

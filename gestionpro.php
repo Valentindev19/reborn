@@ -151,28 +151,7 @@ echo"</center>";
               </div>
             </div>
 
-						<div class="row form-group">
-              <div class="col-md-12">
-								<label class="font-weight-bold" for="type_promenade">Type promenade</label>
-								<tr>
-									<td>
-										<select name="id_type_pro">
-											<?php
-												include 'class/type_pro.class.php';
-												$untype = new type_pro("","","");
-												$req = $untype->afftype_pro($conn);
-												while ($l = $req -> fetch())
-												{
-											?>
-											<option value="<?php echo $l['id_type_pro']?>"><?php echo $l['nom_type_pro']?></option>
-					 						<?php
-												}
-											?>
-										</select>
-									</td>
-								</tr>
-              </div>
-            </div>
+						 
 
             <div class="row form-group">
               <div class="col-md-12">
