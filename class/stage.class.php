@@ -9,11 +9,11 @@
     private $heured;
     private $heuref;
     private $repas;
-    private $untype;
+    private $type;
     private $conn;
 
 
-    public function stage($idstage, $dated, $datef, $des, $heured, $heuref, $repas, $idtype_stage,$libtype_stage, $conn)
+    public function stage($idstage, $dated, $datef, $des, $heured, $heuref, $repas, $idtype_stage,$conn)
     {
       $this->idstage = $idstage;
       $this->dated = $dated;
@@ -22,8 +22,7 @@
       $this->heured = $heured;
       $this->heuref = $heuref;
       $this->repas = $repas;
-    //  $type= new type_stage($idtype_stage,$libtype_stage);
-    //  $this->untype= $type;
+      $this->type= $idtype_stage;
       $this->conn = $conn;
     }
 ////////////////////////////////////// Le GET
@@ -85,8 +84,8 @@
     {
       $SQL = "SELECT idtype_stage, typestage
       FROM type_stage";
-      $req = $conn -> query($SQL);
-      return $req;
+      $res = $conn -> query($SQL);
+      return $res;
     }
 }
 

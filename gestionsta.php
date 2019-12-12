@@ -2,6 +2,7 @@
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
 include 'class/stage.class.php';
+include 'class/typestage.class.php';
 include 'class/bdd.inc.php';
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -61,7 +62,8 @@ $('#datatable').dataTable(
 
 $stage = new stage("","","","","","","","","","");
 $req = $stage->affstage($conn);
-//$res = $untype->afftypestage($conn);
+$stage = new typestage("","","");
+$res = $stage->afftype($conn);
 ?>
 					<tfoot>
             <tr>
@@ -119,7 +121,7 @@ echo"</center>";
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
-                <label class="font-weight-bold" for="race">Race</label>
+                <label class="font-weight-bold" for="race">Type de Stage </label>
 								<tr>
 				<td>
 				<select name="idrace">
@@ -127,7 +129,7 @@ echo"</center>";
 					while ($l = $res -> fetch())
 					{
 						?>
-							<option value="<?php echo $l['idrace']?>"><?php echo $l['librace']?></option>
+							<option value="<?php echo $l['id_typem']?>"><?php echo $l['typestage']?></option>
 					 <?php
 					}
 					?>
@@ -137,55 +139,59 @@ echo"</center>";
               </div>
             </div>
             <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="nom">Nom cheval</label>
-                <input type=text name="nom" id="nom" class="form-control" placeholder="Nom du cheval">
-              </div>
-            </div>
+							<form method="post" action="traitstage.php" id="contact_form" class="p-5 bg-white">
+
+								<div class="row form-group">
+									<div class="col-md-12 mb-3 mb-md-0">
+										<label class="font-weight-bold" for="race">Date Début</label>
+										<input type="text" name="dated" id="dated" class="form-control" placeholder="AAAA-MM-JJ">
+									</div>
+								</div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<label class="font-weight-bold" for="nom">Heure Début</label>
+										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure du début du cours xx:xx:xx">
+									</div>
+								</div>
 
 
-            <div class="row form-group">
-              <div class="col-md-12 mb-3 mb-md-0">
-                <label class="font-weight-bold" for="age">Age</label>
-                <input type="number" name="age" id="age" class="form-control" placeholder="Age du cheval">
-              </div>
-            </div>
+								<div class="row form-group">
+									<div class="col-md-12 mb-3 mb-md-0">
+										<label class="font-weight-bold" for="age">Description du Stage</label>
+										<input type="text" name="descstage" id="descstage" class="form-control" placeholder="Donner la description du stage">
+									</div>
+								</div>
 
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="taille">Taille</label>
-                <input type="number" name="taille" id="taille" class="form-control" placeholder="Taille du cheval en cm">
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="poids">Poids</label>
-                <input type="number" name="poids" id="poids" class="form-control" placeholder="Poids du cheval en Kg">
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="sexe">Sexe cheval</label>
-                <input name="sexe" id="sexe" class="form-control" placeholder="Sexe du cheval">
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label class="font-weight-bold" for="img">Image</label>
-                <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
-              </div>
-            </div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<label class="font-weight-bold" for="taille">Date Fin</label>
+										<input type=text name="datef" id="datef" class="form-control" placeholder="AAAA-MM-JJ">
+									</div>
+								</div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<label class="font-weight-bold" for="nom">Heure Fin</label>
+										<input type=text name="heuref" id="heuref" class="form-control" placeholder="Donner l'heure de fin du cours xx:xx:xx">
+									</div>
+								</div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<label class="font-weight-bold" for="nom">Repas</label>
+										<input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Oui ou Non">
+									</div>
+								</div>
 
-            <div class="row form-group">
-              <div class="col-md-12">
-                <td><input type ="submit" name="btn_ajche_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<td><input type ="submit" name="btn_ajcours_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
 
 		<script>
 		$(document).ready(function() {
