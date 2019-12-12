@@ -117,19 +117,19 @@ echo"</center>";
 
 
 
-          <form method="post" action="traitche.php" id="contact_form" class="p-5 bg-white" enctype="multipart/form-data">
+          <form method="post" action="traitstage.php" id="stage_form" class="p-5 bg-white" enctype="multipart/form-data">
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Type de Stage </label>
 								<tr>
 				<td>
-				<select name="idrace">
+				<select name="idtype_stage">
 			<?php
 					while ($l = $res -> fetch())
 					{
 						?>
-							<option value="<?php echo $l['id_typem']?>"><?php echo $l['typestage']?></option>
+							<option value="<?php echo $l['idtype_stage']?>"><?php echo $l['typestage']?></option>
 					 <?php
 					}
 					?>
@@ -139,8 +139,6 @@ echo"</center>";
               </div>
             </div>
             <div class="row form-group">
-							<form method="post" action="traitstage.php" id="contact_form" class="p-5 bg-white">
-
 								<div class="row form-group">
 									<div class="col-md-12 mb-3 mb-md-0">
 										<label class="font-weight-bold" for="race">Date Début</label>
@@ -150,7 +148,7 @@ echo"</center>";
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label class="font-weight-bold" for="nom">Heure Début</label>
-										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure du début du cours xx:xx:xx">
+										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure du début du stage xx:xx:xx">
 									</div>
 								</div>
 
@@ -177,13 +175,13 @@ echo"</center>";
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label class="font-weight-bold" for="nom">Repas</label>
-										<input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Oui ou Non">
+										<input type=text name="repas" id="repas" class="form-control" placeholder="Oui ou Non">
 									</div>
 								</div>
 
 								<div class="row form-group">
 									<div class="col-md-12">
-										<td><input type ="submit" name="btn_ajcours_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
+										<td><input type ="submit" name="btn_ajstage_form" value="Envoyer" class="btn btn-primary pill px-4 py-2">
 									</div>
 								</div>
 							</form>

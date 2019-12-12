@@ -36,10 +36,10 @@
 ////////////////////////////////////////// AJOUT
     public function ajoutstage($idtype_stage, $dated, $datef, $des, $heured, $heuref, $repas, $conn)
     {
-      $SQL = "INSERT INTO stage (idtype_stage, dated, datef, des, heured, heured, repas, validestage)
-              VALUES ('$idtype_stage', '$dated', $datef, $des, $heured, '$heuref', '$repas', 1)";
+      $SQL = "INSERT INTO stage (idtype_stage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas, validestage)
+              VALUES ('$idtype_stage', '$dated', '$datef', '$des', '$heured', '$heuref', '$repas', 1)";
       $conn->query($SQL);
-      header('Location:gestionsta.php');
+      //header('Location:gestionsta.php');
     }
 ////////////////////////////////////////// SUPPRIMER
     public function suppstage($idstage, $conn)
@@ -48,24 +48,24 @@
               SET validestage = 0
               WHERE idstage ='$idstage'";
       $conn -> query($SQL);
-      header("Location:gestionsta.php");
+
     }
 ////////////////////////////////////////// MODIFIER
-    public function modifche($idche ,$race, $nomche, $ageche, $taille, $poids, $sexe, $image, $conn)
+    public function modifstage($idstage,$idtype_stage, $dated, $datef, $des, $heured, $heuref, $repas, $conn)
     {
-      $SQL = "UPDATE cheval
-              SET idrace = '$race', nomche = '$nomche', ageche = $ageche, tailleche = $taille, poids = $poids, sexeche = '$sexe', imageche = '$image'
-              WHERE idche =$idche";
+      $SQL = "UPDATE stage
+              SET idtype_stage = '$idtype_stage', datedstage = '$dated', datefstage = '$datef', descstage = '$des', heuredstage = '$heured', heurefstage = '$heuref', repas = '$repas'
+              WHERE idstage ='$idstage'";
       $conn -> query($SQL);
-      header("Location:gestionche.php");
+      
     }
 ////////////////////////////////////////// AFFICHER
-    public function affche($idche, $conn)
+    public function affstage1($idstage, $conn)
     {
-      $SQL = "SELECT race.librace, nomche, ageche, tailleche, poids, sexeche, imageche
-      FROM cheval,race
-      WHERE cheval.idrace = race.idrace
-      AND idche ='$idche'";
+        $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+        FROM stage,type_stage
+        WHERE stage.idtype_stage = type_stage.idtype_stage
+        AND idstage= '$idstage'";
 
       $res = $conn -> query($SQL);
       return $res;
