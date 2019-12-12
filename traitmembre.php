@@ -9,6 +9,24 @@
     $membre->suppmem($idm,$conn);
     header('Location:gestionm.php');
   }
+  if (isset($_POST['form_mod_m']))
+  {
+    $idmembre = $_POST['id'];
+    $nomm = $_POST['nom'];
+    $prenomm = $_POST['prenom'];
+    $genrem = $_POST['genre'];
+    $ddn = $_POST['ddn'];
+    $mailm = $_POST['mail'];
+    $telephonem = $_POST['tel'];
+    $ruem = $_POST['adr'];
+    $comp = $_POST['compm'];
+    $ruem = $_POST['add'];
+    $mdpm = $_POST['mdpm'];
+    $membre = new membre("","","","","","","","","","","","","","");
+    $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm, $telephonem, $ruem, $comp, $mdpm, $conn);
+
+    header('Location:gestionm.php');
+  }
   if (isset($_GET['modm']))
   {
     $idmembre = $_GET['id'];
@@ -131,7 +149,7 @@
       $ddn = $_POST['ddn'];
       $mailm = $_POST['mail'];
       $telephonem = $_POST['tel'];
-      $ruem = $_POST['add'];
+      $ruem = $_POST['adr'];
       $comp = $_POST['compm'];
       $ruem = $_POST['add'];
       $mdpm = $_POST['mdpm'];

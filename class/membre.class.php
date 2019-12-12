@@ -118,6 +118,18 @@ class membre
         return $ligne;
       }
 
+      public function affinfom($mailm, $mdpm, $conn)
+      {
+        $req = "SELECT membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, villes.ville_code_postal, membre.ruem, membre.compm, membre.mdpm
+            		FROM membre, villes
+            		WHERE villes.ville_id = membre.ville_id
+                AND membre.mailm = '$mailm'
+                AND membre.mdpm = '$mdpm'
+            		AND membre.validemembre= 1";
+        $res=	$conn -> query($req);
+        return $res;
+      }
+
       public function affmembre1($idmembre, $conn)
       {
         $req = "SELECT membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, membre.ruem, membre.compm, membre.mdpm
