@@ -177,8 +177,6 @@
 
 
 
-
-
     <!--Image btn vers le haut-->
     <img id='btn_up' src="images/to_top.png"/>
 
