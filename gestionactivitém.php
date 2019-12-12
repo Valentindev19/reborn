@@ -98,7 +98,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 												// On récupère nos variables de session
 												if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 												?>
-												 <li class="active"><a href="admin.php">Page Admin</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
+												 <li class="active"><a href="membre.php">mon espace</a><a href="deco.php"><img src="images/deco.PNG" /></a></li>
 											</ul>
 											<?php
 											}
@@ -137,7 +137,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 					<a href=""><h2 class="h5 text-uppercase">Stages</h2>
 					<p>Voir les stages <span class="icon-arrow-right small"></span></a></p>
 				</div>
-			</div> <a href='admin.php'><button class="boutonret">Retour</button></a>
+			</div> <a href='membre.php'><button class="boutonret">Retour</button></a>
 		</div>
 	</div>
 
