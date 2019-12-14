@@ -49,6 +49,13 @@
       $conn -> query($SQL);
     }
 
+    public function suppprom($idpro, $conn){
+      $SQL = "UPDATE inscriptionp
+              SET valide_inscriptionp = 0
+              WHERE idpro ='$idpro'";
+      $conn -> query($SQL);
+    }
+
     //UPDATE
     public function modifpro($idpro, $datepro, $heuredpro, $descpro, $heurefpro, $lieuxpro, $id_type_pro, $conn)
     {
@@ -77,5 +84,20 @@
           $req = $conn -> query($SQL);
           return $req;
         }
+
+        public function affprom($idm, $conn)
+        {
+          $SQL = "SELECT  promenade.idpro, type_pro.id_type_pro, datepro, heuredpro, type_pro.nom_type_pro, descpro, heurefpro, lieuxpro
+          FROM promenade, type_pro, membre, inscriptionp
+          WHERE promenade.id_type_pro = type_pro.id_type_pro
+          AND membre.idmembre = inscriptionp.idmembre
+          AND promenade.idpro = inscriptionp.idpro
+          AND validepro = 1
+          AND membre.idmembre = 5
+          AND valide_inscriptionp = 1";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
       }
 ?>

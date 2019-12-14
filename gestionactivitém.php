@@ -129,7 +129,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 
 				<div class="text-center p-4 item border-right">
 						<span class="display-3 mb-3 d-block text-primary"><img src="images/articles.PNG"></span>
-						<a href=""><h2 class="h5 text-uppercase">Promenades</h2>
+						<a href="affprom.php"><h2 class="h5 text-uppercase">Promenades</h2>
 						<p>Voir les promenades <span class="icon-arrow-right small"></span></a></p>
 					</div>
 				<div class="text-center p-4 item">

@@ -32,6 +32,13 @@
     $promenade->supppro($idpro,$conn);
     header('Location:gestionpro.php');
   }
+  if (isset($_GET['supm']))
+  {
+    $idpro = $_GET['idpro'];
+    $promenade = new promenade("","","","","","","","");
+    $promenade->suppprom($idpro,$conn);
+    header('Location:affprom.php');
+  }
   if (isset($_GET['modif']))
   {
     $idpro = $_GET['idpro'];
