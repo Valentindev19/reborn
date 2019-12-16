@@ -134,7 +134,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 					</div>
 				<div class="text-center p-4 item">
 					<span class="flaticon-chat-1 display-3 mb-3 d-block text-primary"></span>
-					<a href=""><h2 class="h5 text-uppercase">Stages</h2>
+					<a href="affstage.php"><h2 class="h5 text-uppercase">Stages</h2>
 					<p>Voir les stages <span class="icon-arrow-right small"></span></a></p>
 				</div>
 			</div> <a href='membre.php'><button class="boutonret">Retour</button></a>

@@ -97,6 +97,15 @@
       $req = $conn -> query($SQL);
       return $req;
     }
+    public function affstageres1($conn,$idmembre)
+    {
+      $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+      FROM stage,type_stage
+      WHERE stage.idtype_stage = type_stage.idtype_stage
+      AND validestage= 1";
+      $req = $conn -> query($SQL);
+      return $req;
+    }
     public function ajoutres($conn,$id,$idmembre)
     {
       $SQL = "INSERT INTO inscriptions (idstage,idmembre,valide_stage)

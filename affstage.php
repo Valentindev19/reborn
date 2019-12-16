@@ -1,10 +1,11 @@
 <?php
 
 
-  $id=$_GET['id'];
+
   session_start ();
   include 'class/stage.class.php';
   include 'class/typestage.class.php';
+  include 'class/membre.class.php';
   include 'class/bdd.inc.php';
   // On récupère nos variables de session
   if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
@@ -37,7 +38,7 @@
   <body>
   <div class="container">
   	<div class="row">
-  		<h2 class="text-center">Réserver un stage :</h2>
+  		<h2 class="text-center">Vos stages réservés</h2>
   	</div>
 
           <div class="row">
@@ -55,15 +56,22 @@
   								<th>Heure Début</th>
   								<th>Heure Fin</th>
   								<th>Repas</th>
-  	                                <th>Réserver</th>
+                  <th>Supprimer</th>
+
 
   							</tr>
   					</thead>
   					<?php
 
 
-  $stage = new stage("","","","","","","","","","");
-  $req = $stage->affstageres($conn,$id);
+            $mailm = $_SESSION['mailm'];
+            $mdpm = $_SESSION['mdpm'];
+            $membre = new membre("","","","","","","","","","","","","","");
+            $req = $membre->affidm($mailm, $mdpm, $conn);
+            $ligne = $req->fetch();
+            $idmembre = $ligne['idmembre'];
+            $stage = new stage("","","","","","","","","","");
+            $req= $stage->affstageres1($conn,$idmembre);
   ?>
   					<tfoot>
               <tr>
@@ -74,7 +82,8 @@
                 <th>Heure Début</th>
                 <th>Heure Fin</th>
                 <th>Repas</th>
-                                  <th>Réserver</th>
+                <th>Supprimer</th>
+
 
               </tr>
   					</tfoot>
@@ -91,7 +100,7 @@
   		echo"<td>",$ligne['heuredstage'],"</td>";
   		echo"<td>",$ligne['heurefstage'],"</td>";
       echo"<td>",$ligne['repas'],"</td>";
-      echo"<td> <a href='traitstage.php?res=res&id=$ligne[idstage]'><img src='images/modadmin.png' alt='edit' title='reserver' width=35 /></a></td>";
+    echo"<td> <a href='traitstage.php?sup=sup&id=$ligne[idstage]'><img src='images/modadmin.png' alt='edit' title='reserver' width=35 /></a></td>";
     echo"</tr>";
   }
   echo"</center>";
