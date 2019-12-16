@@ -176,7 +176,7 @@ Le centre équestre Saint Vitrac vous propose plus de 4 heures équestres par jo
 L’enfant apprend à brosser son poney, le respecter, le préparer pour la séance, l’emmener en main au manège pour enfin découvrir des petits jeux en groupe. Une activité ludique ou l’enfant s’amuse avec d’autres cavaliers à dos de poney.
 
 L’équitation permet à l’enfant de développer son équilibre, sa confiance en soi, son sens de la responsabilité en s’occupant du poney, sa socialisation…</p>
-            <p><a href="#" class="btn btn-primary pill px-4">En savoir plus</a></p> <!-- lien vers connex.html si client non connecté et si il est connecté liens vers les horraires et autres du cours -->
+            <p><a href="resstage.php?id=1" class="btn btn-primary pill px-4">Réserver un stage "découverte"</a></p> <!-- lien vers connex.html si client non connecté et si il est connecté liens vers les horraires et autres du cours -->
           </div>
           <div class="col-md-12 col-lg-6 mr-auto order-2">
             <img src="images/stageini.jpeg" alt="Image" class="img-fluid">
@@ -196,9 +196,7 @@ L’équitation permet à l’enfant de développer son équilibre, sa confiance
             <p class="mb-4">Les débutants et cavaliers de petits niveaux sont encadrés lors de la préparation jusqu’à totale autonomie. Les cavaliers confirmés sont laissés en autonomie mais toujours avec possibilité d’être aidés et secondés en cas de besoin.
 
 Les cours sont adaptés au niveau des cavaliers et à leurs préférences: Initiation,   dressage et d'obstacle en alternance ou  cours specifiques tels que dressage,  compétition,  voltige cosaque, attelage, pleine nature.</p>
-            <form method="post" action="log.php">
-              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
-            </form>
+              <p><a href="resstage.php?id=2" class="btn btn-primary pill px-4">Réserver un stage "d'apprentissage"</a></p>
           </div>
         </div>
       </div>
@@ -210,9 +208,7 @@ Les cours sont adaptés au niveau des cavaliers et à leurs préférences: Initi
           <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
             <h2 class="mb-3 text-uppercase">Stage <strong class="text-black font-weight-bold"> de perfectionnement</strong></h2>
             <p class="mb-4"> Stage de perfectionnement </p>
-            <form method="post" action="log.php">
-              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
-            </form>
+              <p><a href="resstage.php?id=3" class="btn btn-primary pill px-4">Réserver un stage "de perfectionnement"</a></p>
           </div>
           <div class="col-md-12 col-lg-6 mr-auto order-2">
             <img src="images/stageadulte.jpg" alt="Image" class="img-fluid">

@@ -57,7 +57,7 @@
               SET idtype_stage = '$idtype_stage', datedstage = '$dated', datefstage = '$datef', descstage = '$des', heuredstage = '$heured', heurefstage = '$heuref', repas = '$repas'
               WHERE idstage ='$idstage'";
       $conn -> query($SQL);
-      
+
     }
 ////////////////////////////////////////// AFFICHER
     public function affstage1($idstage, $conn)
@@ -86,6 +86,16 @@
       FROM type_stage";
       $res = $conn -> query($SQL);
       return $res;
+    }
+    public function affstageres($conn,$id)
+    {
+      $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+      FROM stage,type_stage
+      WHERE stage.idtype_stage = type_stage.idtype_stage
+      AND stage.idtype_stage = '$id'
+      AND validestage= 1";
+      $req = $conn -> query($SQL);
+      return $req;
     }
 }
 

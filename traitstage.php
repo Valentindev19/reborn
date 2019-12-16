@@ -30,8 +30,15 @@
   {
     $idstage = $_GET['id'];
     $stage = new stage("","","","","","","","","","");
-  $req= $stage->suppstage($idstage,$conn);
+    $req= $stage->suppstage($idstage,$conn);
     header('Location:gestionsta.php');
+  }
+  if (isset($_GET['res']))
+  {
+    $idstage = $_GET['id'];
+    $stage = new stage("","","","","","","","","","");
+  $req= $stage->suppstage($idstage,$conn);
+    header('Location:affstage.php');
   }
   if (isset($_GET['mod']))
   {
