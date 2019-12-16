@@ -32,7 +32,7 @@
     }
 
     //AJOUT
-    public function ajoutcours($datecours, $heuredcours, $desccours, $heurefcours, $id_type_pro, $conn){
+    public function ajoutcours($datecours, $heuredcours, $desccours, $heurefcours, $id_type_cours, $conn){
       $SQL = "INSERT INTO cours (datecours, heuredcours, desccours, heurefcours, validecours, id_type_cours)
               VALUES ('$datecours', '$heuredcours', '$desccours', '$heurefcours',  1, $id_type_cours)";
       $conn->query($SQL);
@@ -72,6 +72,20 @@
           FROM cours, type_cours
           WHERE cours.id_type_cours = type_cours.id_type_cours
           AND validecours = 1";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
+        public function affcoursm($idm, $conn)
+        {
+          $SQL = "SELECT  cours.idcours, type_cours.id_type_cours, datecours, heuredcours, type_cours.nom_type_cours, desccours, heurefcours
+          FROM cours, type_cours, membre, inscriptionc
+          WHERE cours.id_type_cours = type_cours.id_type_cours
+          AND membre.idmembre = inscriptionc.idmembre
+          AND cours.idcours = inscriptionc.idcours
+          AND validecours = 1
+          AND membre.idmembre = $idm
+          AND valide_inscriptionc = 1";
           $req = $conn -> query($SQL);
           return $req;
         }
