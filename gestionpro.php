@@ -47,7 +47,6 @@ $('#datatable').dataTable(
 <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
     				<thead>
 							<tr>
-								<th>Id</th>
 								<th>Date du promenade</th>
 								<th>Heure du début de promenade</th>
 								<th>Descrition du la promenade</th>
@@ -56,6 +55,7 @@ $('#datatable').dataTable(
 								<th>Type de promenade</th>
 	                                <th>Modifier</th>
 	                                 <th>Supprimer</th>
+																	 <th>Voir les membres</th>
 							</tr>
 					</thead>
 					<?php
@@ -65,7 +65,6 @@ $req = $promenade->affpro2($conn);
 ?>
 					<tfoot>
 						<tr>
-							<th>Id</th>
 							<th>Date du promenade</th>
 							<th>Heure du début de la promenade</th>
 							<th>Descrition du promenade</th>
@@ -74,6 +73,7 @@ $req = $promenade->affpro2($conn);
 							<th>Type de promenade</th>
 																<th>Modifier</th>
 																 <th>Supprimer</th>
+																 <th>Voir les membres</th>
 						</tr>
 					</tfoot>
 
@@ -82,7 +82,6 @@ $req = $promenade->affpro2($conn);
 						while($ligne = $req -> fetch())
 {
   echo"<tr>";
-    echo"<td>",$ligne['idpro'],"</td>";
     echo"<td>",$ligne['datepro'],"</td>";
 		echo"<td>",$ligne['heuredpro'],"</td>";
 		echo"<td>",$ligne['descpro'],"</td>";
@@ -91,6 +90,7 @@ $req = $promenade->affpro2($conn);
 		echo"<td>",$ligne['nom_type_pro'],"</td>";
     echo"<td> <a href='traitpro.php?modif=modif&idpro=$ligne[idpro]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='traitpro.php?sup=sup&idpro=$ligne[idpro]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
+		echo"<td> <a href='reservactivite.php?idpro=$ligne[idpro]'><img src='images/modadmin.png' alt='edit'name='affmembre' width=35 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
@@ -151,7 +151,7 @@ echo"</center>";
               </div>
             </div>
 
-						 
+
 
             <div class="row form-group">
               <div class="col-md-12">

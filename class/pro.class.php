@@ -93,7 +93,20 @@
           AND membre.idmembre = inscriptionp.idmembre
           AND promenade.idpro = inscriptionp.idpro
           AND validepro = 1
-          AND membre.idmembre = 5
+          AND membre.idmembre = $idm
+          AND valide_inscriptionp = 1";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
+        public function affpromm($idp, $conn)
+        {
+          $SQL = "SELECT  promenade.datepro, promenade.lieuxpro, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
+          FROM promenade, membre, inscriptionp
+          WHERE promenade.idpro = inscriptionp.idpro
+          AND membre.idmembre = inscriptionp.idmembre
+          AND validepro = 1
+          AND promenade.idpro = $idp
           AND valide_inscriptionp = 1";
           $req = $conn -> query($SQL);
           return $req;
