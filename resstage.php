@@ -100,7 +100,7 @@
 
   					</tbody>
   				</table>
-  				<a href='admin.php'><button class="boutonret">Retour</button></a>
+  				<a href='stage.php'><button class="boutonret">Retour</button></a>
 
 
   	</div>

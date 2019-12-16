@@ -2,6 +2,7 @@
   include 'class/bdd.inc.php';
   include 'class/stage.class.php';
   include 'class/typestage.class.php';
+  include 'class/membre.class.php';
 
   if (isset($_POST['btn_ajstage_form']))
   {
@@ -36,9 +37,16 @@
   if (isset($_GET['res']))
   {
     $idstage = $_GET['id'];
+    session_start ();
+    $mailm = $_SESSION['mailm'];
+    $mdpm = $_SESSION['mdpm'];
+    $membre = new membre("","","","","","","","","","","","","","");
+    $req = $membre->affidm($mailm, $mdpm, $conn);
+    $ligne = $req->fetch();
+    $idmembre = $ligne['idmembre'];
     $stage = new stage("","","","","","","","","","");
-  $req= $stage->suppstage($idstage,$conn);
-    header('Location:affstage.php');
+    $req= $stage->ajoutres($conn,$idstage,$idmembre);
+    header('Location:affstage.php')
   }
   if (isset($_GET['mod']))
   {

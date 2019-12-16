@@ -97,6 +97,13 @@
       $req = $conn -> query($SQL);
       return $req;
     }
+    public function ajoutres($conn,$id,$idmembre)
+    {
+      $SQL = "INSERT INTO inscriptions (idstage,idmembre,valide_stage)
+              VALUES ('$id','$idmembre','1')";
+      $req = $conn -> query($SQL);
+      return $req;
+    }
 }
 
 ?>
