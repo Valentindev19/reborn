@@ -47,6 +47,7 @@
   <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
       				<thead>
   							<tr>
+                  <th>ID Cours</th>
                   <th>Date du Cours</th>
   								<th>Heure du début de Cours</th>
   								<th>Descrition du Cours</th>
@@ -64,6 +65,7 @@
   ?>
   					<tfoot>
               <tr>
+                <th>ID Cours</th>
                 <th>Date du Cours</th>
                 <th>Heure du début de Cours</th>
                 <th>Descrition du Cours</th>

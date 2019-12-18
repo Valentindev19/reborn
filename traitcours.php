@@ -32,6 +32,20 @@
     $cours->suppcours($idcours,$conn);
     header('Location:gestioncours.php');
   }
+  if (isset($_GET['res']))
+  {
+    $idpro = $_GET['id'];
+    session_start ();
+    $mailm = $_SESSION['mailm'];
+    $mdpm = $_SESSION['mdpm'];
+    $membre = new membre("","","","","","","","","","","","","","");
+    $req = $membre->affidm($mailm, $mdpm, $conn);
+    $ligne = $req->fetch();
+    $idmembre = $ligne['idmembre'];
+    $cours = new cours("","","","","","","");
+    $req= $cours->ajoutresc($conn,$idcours,$idmembre);
+    header('Location:affpro.php');
+  }
   if (isset($_GET['modif']))
   {
     $idcours = $_GET['id'];

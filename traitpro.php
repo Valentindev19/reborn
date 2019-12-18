@@ -51,7 +51,7 @@
     $ligne = $req->fetch();
     $idmembre = $ligne['idmembre'];
     $promenade = new promenade("","","","","","","","");
-    $req= $promenade->ajoutresp($conn,$idstage,$idmembre);
+    $req= $promenade->ajoutresp($conn,$idpro,$idmembre);
     header('Location:affpro.php');
   }
   if (isset($_GET['modif']))
