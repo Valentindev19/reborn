@@ -73,7 +73,7 @@
                       <li class="has-children active">
                         <a href="cours.php">Activités</a>
                         <ul class="dropdown arrow-top">
-                          <li class="active"><a href="cours.php">Cour</a></li>
+                          <li class="active"><a href="cours.php">Cours</a></li>
                           <li><a href="stage.php">Stage</a></li>
                           <li><a href="promenade.php">Promenade</a></li>
                           </li>
