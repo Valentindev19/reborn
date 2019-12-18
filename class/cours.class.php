@@ -89,5 +89,24 @@
           $req = $conn -> query($SQL);
           return $req;
         }
+
+        public function affcoursres($conn,$id)
+        {
+          $SQL = "SELECT cours.idcours, type_cours.nom_type_cours, datecours, heuredcours, desccours, heurefcours
+          FROM cours, type_cours
+          WHERE cours.id_type_cours = type_cours.id_type_cours
+          AND cours.id_type_cours = $id
+          AND validecours= 1";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
+        public function ajoutresc($conn,$id,$idmembre)
+        {
+          $SQL = "INSERT INTO inscriptionc (idcours,idmembre,valide_inscriptionc)
+                  VALUES ('$id','$idmembre','1')";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
       }
 ?>

@@ -36,7 +36,7 @@
   <body>
   <div class="container">
   	<div class="row">
-  		<h2 class="text-center">S'incrire à une promenade</h2>
+  		<h2 class="text-center">S'incrire à un cours</h2>
   	</div>
 
           <div class="row">
@@ -47,31 +47,29 @@
   <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
       				<thead>
   							<tr>
-                  <th>Date du promenade</th>
-    							<th>Heure du début de la promenade</th>
-    							<th>Descrition du promenade</th>
-    							<th>Heure de fin du promenade</th>
-    							<th>Lieux de la promenade</th>
-    							<th>Type de promenade</th>
-  	                                <th>Réserver</th>
+                  <th>Date du Cours</th>
+  								<th>Heure du début de Cours</th>
+  								<th>Descrition du Cours</th>
+  								<th>Heure de fin du Cours</th>
+  								<th>Type Cours</th>
+  	                             <th>Réserver</th>
 
   							</tr>
   					</thead>
   					<?php
 
 
-  $promenade = new promenade("","","","","","","","");
-  $req = $promenade->affprores($conn,$id);
+  $cours = new cours("","","","","","","","");
+  $req = $cours->affcoursres($conn,$id);
   ?>
   					<tfoot>
               <tr>
-                <th>Date du promenade</th>
-  							<th>Heure du début de la promenade</th>
-  							<th>Descrition du promenade</th>
-  							<th>Heure de fin du promenade</th>
-  							<th>Lieux de la promenade</th>
-  							<th>Type de promenade</th>
-                                  <th>Réserver</th>
+                <th>Date du Cours</th>
+                <th>Heure du début de Cours</th>
+                <th>Descrition du Cours</th>
+                <th>Heure de fin du Cours</th>
+                <th>Type Cours</th>
+                               <th>Réserver</th>
 
               </tr>
   					</tfoot>
@@ -81,13 +79,13 @@
   	            while ($ligne = $req -> fetch())
   	            {
     echo"<tr>";
-      echo"<td>",$ligne['datepro'],"</td>";
-  		echo"<td>",$ligne['heuredpro'],"</td>";
-  		echo"<td>",$ligne['descpro'],"</td>";
-      echo"<td>",$ligne['heurefpro'],"</td>";
-  		echo"<td>",$ligne['lieuxpro'],"</td>";
-  		echo"<td>",$ligne['nom_type_pro'],"</td>";
-      echo"<td> <a href='traitpro.php?res=res&id=$ligne[idpro]'><img src='images/modadmin.png' alt='edit' title='reserver' width=35 /></a></td>";
+    echo"<td>",$ligne['idcours'],"</td>";
+    echo"<td>",$ligne['datecours'],"</td>";
+    echo"<td>",$ligne['heuredcours'],"</td>";
+    echo"<td>",$ligne['desccours'],"</td>";
+    echo"<td>",$ligne['heurefcours'],"</td>";
+    echo"<td>",$ligne['nom_type_cours'],"</td>";
+      echo"<td> <a href='traitcours.php?res=res&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit' title='reserver' width=35 /></a></td>";
     echo"</tr>";
   }
   echo"</center>";
@@ -96,7 +94,7 @@
 
   					</tbody>
   				</table>
-  				<a href='stage.php'><button class="boutonret">Retour</button></a>
+  				<a href='cours.php'><button class="boutonret">Retour</button></a>
 
 
   	</div>
