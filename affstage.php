@@ -51,7 +51,7 @@
   							<tr>
   								<th>Type Stage</th>
   								<th>Date Début</th>
-  								<th>Heure Début</th>
+  								<th>Date Fin</th>
   								<th>Description</th>
   								<th>Heure Début</th>
   								<th>Heure Fin</th>
@@ -77,7 +77,7 @@
               <tr>
                 <th>Type Stage</th>
                 <th>Date Début</th>
-                <th>Heure Début</th>
+                <th>Date Fin</th>
                 <th>Description</th>
                 <th>Heure Début</th>
                 <th>Heure Fin</th>

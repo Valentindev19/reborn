@@ -87,7 +87,7 @@ $('#datatable').dataTable(
     echo"<td>",$ligne['contenue_article'],"</td>";
 		echo"<td>",$ligne['image_article'],"</td>";
     echo"<td> <a href='traitarticle.php?modif=modif&id=$ligne[idarticle]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
-    echo"<td> <a href='traitarticle.php?sup=sup&id=$ligne[idarticle]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
+    echo"<td> <a href='traitarticle.php?sup=sup&id=$ligne[idarticle]'><img src='images/modifmembre.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
   echo"</tr>";
 }
 echo"</center>";

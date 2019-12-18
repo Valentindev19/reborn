@@ -95,7 +95,7 @@ $res = $stage->afftype($conn);
     echo"<td>",$ligne['repas'],"</td>";
     echo"<td> <a href='traitstage.php?mod=mod&id=$ligne[idstage]'><img src='images/modadmin.png' alt='edit' title='modifier' width=35 /></a></td>";
     echo"<td> <a href='traitstage.php?sup=sup&id=$ligne[idstage]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 /></a></td>";
-		echo"<td> <a href='membrestage.php?id=$ligne[idstage]'><img src='images/voir.png' alt='voirmembre' title='Voir' width=20 /></a></td>";
+		echo"<td> <a href='membrestage.php?id=$ligne[idstage]'><img src='images/modifmembre.png' alt='voirmembre' title='Voir' width=20 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
