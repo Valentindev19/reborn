@@ -101,7 +101,7 @@
 
         public function affpromm($idp, $conn)
         {
-          $SQL = "SELECT  promenade.datepro, promenade.lieuxpro, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
+          $SQL = "SELECT  date_format(datepro, '%d/%m/%Y')  AS dated, promenade.lieuxpro, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
           FROM promenade, membre, inscriptionp
           WHERE promenade.idpro = inscriptionp.idpro
           AND membre.idmembre = inscriptionp.idmembre
