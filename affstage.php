@@ -94,8 +94,8 @@
   	            {
     echo"<tr>";
       echo"<td>",$ligne['typestage'],"</td>";
-  		echo"<td>",$ligne['datedstage'],"</td>";
-  		echo"<td>",$ligne['datefstage'],"</td>";
+  		echo"<td>",$ligne['dated'],"</td>";
+  		echo"<td>",$ligne['datef'],"</td>";
       echo"<td>",$ligne['descstage'],"</td>";
   		echo"<td>",$ligne['heuredstage'],"</td>";
   		echo"<td>",$ligne['heurefstage'],"</td>";

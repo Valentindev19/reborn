@@ -62,7 +62,7 @@
 ////////////////////////////////////////// AFFICHER
     public function affstage1($idstage, $conn)
     {
-        $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+        $SQL = "SELECT idstage,type_stage.typestage, date_format(datedstage, '%d/%m/%Y')  AS dated , date_format(datefstage,'%d/%m/%Y')  AS datef, descstage, heuredstage, heurefstage, repas
         FROM stage,type_stage
         WHERE stage.idtype_stage = type_stage.idtype_stage
         AND idstage= '$idstage'";
@@ -73,7 +73,7 @@
 
     public function affstage($conn)
     {
-      $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+      $SQL = "SELECT idstage,type_stage.typestage, date_format(datedstage, '%d/%m/%Y')  AS dated , date_format(datefstage,'%d/%m/%Y')  AS datef, descstage, heuredstage, heurefstage, repas
       FROM stage,type_stage
       WHERE stage.idtype_stage = type_stage.idtype_stage
       AND validestage= 1";
@@ -89,7 +89,7 @@
     }
     public function affstageres($conn,$id)
     {
-      $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+      $SQL = "SELECT idstage,type_stage.typestage, date_format(datedstage, '%d/%m/%Y')  AS dated , date_format(datefstage,'%d/%m/%Y')  AS datef, descstage, heuredstage, heurefstage, repas
       FROM stage,type_stage
       WHERE stage.idtype_stage = type_stage.idtype_stage
       AND stage.idtype_stage = '$id'
@@ -99,7 +99,7 @@
     }
     public function affresstage($id, $conn)
     {
-      $SQL = "SELECT  stage.idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+      $SQL = "SELECT  stage.idstage,type_stage.typestage, date_format(datedstage, '%d/%m/%Y')  AS dated , date_format(datefstage,'%d/%m/%Y')  AS datef, descstage, heuredstage, heurefstage, repas
       FROM stage, membre, inscriptions,type_stage
       WHERE stage.idstage = inscriptions.idstage
       AND membre.idmembre = inscriptions.idmembre
