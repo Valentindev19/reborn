@@ -97,12 +97,16 @@
       $req = $conn -> query($SQL);
       return $req;
     }
-    public function affstageres1($conn,$idmembre)
+    public function affresstage($id, $conn)
     {
-      $SQL = "SELECT idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
-      FROM stage,type_stage
-      WHERE stage.idtype_stage = type_stage.idtype_stage
-      AND validestage= 1";
+      $SQL = "SELECT  stage.idstage,type_stage.typestage, datedstage, datefstage, descstage, heuredstage, heurefstage, repas
+      FROM stage, membre, inscriptions,type_stage
+      WHERE stage.idstage = inscriptions.idstage
+      AND membre.idmembre = inscriptions.idmembre
+      AND type_stage.idtype_stage = stage.idtype_stage
+      AND validestage = 1
+      AND inscriptions.idmembre = '$id'
+      AND valide_stage = 1";
       $req = $conn -> query($SQL);
       return $req;
     }
@@ -110,6 +114,18 @@
     {
       $SQL = "INSERT INTO inscriptions (idstage,idmembre,valide_stage)
               VALUES ('$id','$idmembre','1')";
+      $req = $conn -> query($SQL);
+      return $req;
+    }
+    public function affstagem($id, $conn)
+    {
+      $SQL = "SELECT  stage.datedstage, stage.descstage, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
+      FROM stage, membre, inscriptions
+      WHERE stage.idstage = inscriptions.idstage
+      AND membre.idmembre = inscriptions.idmembre
+      AND validestage = 1
+      AND stage.idstage = '$id'
+      AND valide_stage = 1";
       $req = $conn -> query($SQL);
       return $req;
     }
