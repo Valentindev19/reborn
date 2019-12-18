@@ -69,9 +69,9 @@
             $membre = new membre("","","","","","","","","","","","","","");
             $req = $membre->affidm($mailm, $mdpm, $conn);
             $ligne = $req->fetch();
-            $idmembre = $ligne['idmembre'];
+            $id = $ligne['idmembre'];
             $stage = new stage("","","","","","","","","","");
-            $req= $stage->affstageres1($conn,$idmembre);
+            $req= $stage->affresstage($id, $conn);
   ?>
   					<tfoot>
               <tr>
@@ -109,7 +109,7 @@
 
   					</tbody>
   				</table>
-  				<a href='stage.php'><button class="boutonret">Retour</button></a>
+  				<a href='gestionsta.php'><button class="boutonret">Retour</button></a>
 
 
   	</div>

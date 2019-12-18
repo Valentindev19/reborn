@@ -45,8 +45,8 @@
     $ligne = $req->fetch();
     $idmembre = $ligne['idmembre'];
     $stage = new stage("","","","","","","","","","");
-    $req= $stage->ajoutres($conn,$idstage,$idmembre);
-    header('Location:affstage.php')
+    $req= $stage->ajoutress($conn,$idstage,$idmembre);
+    header('Location:affstage.php');
   }
   if (isset($_GET['mod']))
   {
