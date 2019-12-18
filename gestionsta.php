@@ -76,6 +76,7 @@ $res = $stage->afftype($conn);
 							<th>Repas</th>
 																<th>Modifier</th>
 																 <th>Supprimer</th>
+																 <th>Voir les Membres</th>
 						</tr>
 					</tfoot>
 
@@ -101,7 +102,7 @@ echo"</center>";
 
 					</tbody>
 				</table>
-				<a href='admin.php'><button class="boutonret">Retour</button></a>
+				<a href='gestionactivité.php'><button class="boutonret">Retour</button></a>
 
 
 	</div>
