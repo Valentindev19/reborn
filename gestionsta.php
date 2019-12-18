@@ -151,7 +151,7 @@ echo"</center>";
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label class="font-weight-bold" for="nom">Heure Début</label>
-										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure de fin du cours xx:xx:xx">
+										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure de début du cours xx:xx:xx">
 									</div>
 								</div>
 
