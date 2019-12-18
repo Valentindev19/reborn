@@ -150,8 +150,8 @@ echo"</center>";
 								</div>
 								<div class="row form-group">
 									<div class="col-md-12">
-										<label class="font-weight-bold" for="nom">Date Fin</label>
-										<input type=text name="heured" id="heured" class="form-control" placeholder="AAAA-MM-JJ">
+										<label class="font-weight-bold" for="nom">Heure Début</label>
+										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure de fin du cours xx:xx:xx">
 									</div>
 								</div>
 
