@@ -62,7 +62,7 @@ $req = $promenade->affpromm($idpro, $conn);
 ?>
 					<tfoot>
 						<tr>
-							<th>Date du promenade</th>
+							<th>Date de la promenade</th>
 							<th>Lieux de la promenade</th>
 							<th>Nom membres</th>
 							<th>Prenom membres</th>
@@ -95,72 +95,6 @@ echo"</center>";
 	</div>
 	</div>
 </div>
-
-<div class="container">
-	<div class="row">
-		<h2 class="text-center">membres inscrits aux cours</h2>
-	</div>
-
-        <div class="row">
-
-            <div class="col-md-12">
-
-
-<table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
-    				<thead>
-							<tr>
-								<th>Date du promenade</th>
-								<th>Lieux de la promenade</th>
-								<th>Nom membres</th>
-								<th>Prenom membres</th>
-								<th>Téléphone membres</th>
-								<th>Mail membres</th>
-							</tr>
-					</thead>
-					<?php
-					$idpro = $_GET['idpro'];
-$promenade = new promenade("","","","","","","","");
-$req = $promenade->affpromm($idpro, $conn);
-?>
-					<tfoot>
-						<tr>
-							<th>Date du promenade</th>
-							<th>Lieux de la promenade</th>
-							<th>Nom membres</th>
-							<th>Prenom membres</th>
-							<th>Téléphone membres</th>
-							<th>Mail membres</th>
-						</tr>
-					</tfoot>
-
-					<tbody>
-						<?php
-						while($ligne = $req -> fetch())
-{
-  echo"<tr>";
-    echo"<td>",$ligne['datepro'],"</td>";
-    echo"<td>",$ligne['lieuxpro'],"</td>";
-		echo"<td>",$ligne['nomm'],"</td>";
-		echo"<td>",$ligne['prenomm'],"</td>";
-    echo"<td>",$ligne['telephonem'],"</td>";
-		echo"<td>",$ligne['mailm'],"</td>";
-  echo"</tr>";
-}
-echo"</center>";
-
-?>
-					</tbody>
-				</table>
-				<a href='gestionactivité.php'><button class="boutonret">Retour</button></a>
-
-
-	</div>
-	</div>
-</div>
-
-
-
-    </body>
 		<?php
 		}
 		else {
