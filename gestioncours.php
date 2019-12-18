@@ -2,9 +2,10 @@
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
 
-//include 'class/cours.class.php';
+//include
 include 'class/cours.class.php';
 include 'class/bdd.inc.php';
+include 'class/date.class.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -32,6 +33,18 @@ $('#datatable').dataTable(
 } );
 </script>
 
+<!--SCRIPT POUR METTRE LA DATE EN FR -->
+<!--
+<script>
+// Specify a source format and locale
+$('#datatable').dataTable( {
+	columnDefs: [ {
+	targets: 2,
+	render: $.fn.dataTable.render.moment( 'YYYY/MM/DD', 'Do DD/MM/YYYY', 'fr' )
+	} ]
+} );
+</script>
+-->
 <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/creative.css">
 
@@ -81,6 +94,8 @@ $req = $cours->affcours2($conn);
 					<tbody>
 						<?php
 						while($ligne = $req -> fetch())
+
+
 {
   echo"<tr>";
     echo"<td>",$ligne['idcours'],"</td>";

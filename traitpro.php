@@ -2,6 +2,7 @@
   include 'class/bdd.inc.php';
   include 'class/pro.class.php';
   include 'class/type_pro.class.php';
+  include 'class/membre.class.php';
 
   if (isset($_POST['btn_ajpro_form']))
   {
@@ -38,6 +39,20 @@
     $promenade = new promenade("","","","","","","","");
     $promenade->suppprom($idpro,$conn);
     header('Location:affprom.php');
+  }
+  if (isset($_GET['res']))
+  {
+    $idpro = $_GET['id'];
+    session_start ();
+    $mailm = $_SESSION['mailm'];
+    $mdpm = $_SESSION['mdpm'];
+    $membre = new membre("","","","","","","","","","","","","","");
+    $req = $membre->affidm($mailm, $mdpm, $conn);
+    $ligne = $req->fetch();
+    $idmembre = $ligne['idmembre'];
+    $promenade = new promenade("","","","","","","","");
+    $req= $promenade->ajoutresp($conn,$idstage,$idmembre);
+    header('Location:affpro.php');
   }
   if (isset($_GET['modif']))
   {

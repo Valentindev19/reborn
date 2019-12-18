@@ -171,9 +171,7 @@
             <h2 class="mb-3 text-uppercase">Balade <strong class="text-black font-weight-bold">débutant</strong> 1h</h2>
             <p class="mb-4"> Le plaisir de la découverte de la promenade à cheval. Une très jolie balade de débutants, qui vous permettra de découvrir tranquillement le plaisir de la promenade à cheval.
                              Le centre équestre de Saint Vitrac vous propose de découvrir le plaisir de la promenade à cheval dans les terres. Vous visiterez le marais au pas du cheval, et découvrirez la faune et la flore. Vous profiterai en famille d'une balade dans la nature, au rythme du cheval. Cette promenade est accessible à tous, enfants et adultes, y compris débutants.</p>
-            <form method="post" action="log.php">
-              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
-            </form>
+              <a href="respro.php?id=1"><button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button></a>
           </div>
           <div class="col-md-12 col-lg-6 mr-auto order-2">
             <img src="images/chevalpro1.jpg" alt="Image" class="img-fluid">
@@ -191,9 +189,7 @@
           <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
             <h2 class="mb-3 text-uppercase">Balade <strong class="text-black font-weight-bold">VIP</strong> 2h</h2>
             <p class="mb-4"> Offrez-vous le plaisir d'une balade privée, avec un guide pour vous seuls. Vous pourrez ainsi découvrir la forêt de Jade à votre rythme, vous arrêter pour profiter du paysage, trotter et galoper en toute liberté.</p>
-            <form method="post" action="log.php">
-              <button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button>
-            </form>
+            <a href="respro.php?id=2"><button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button></a>
           </div>
         </div>
       </div>

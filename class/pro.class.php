@@ -112,5 +112,24 @@
           return $req;
         }
 
+        public function affprores($conn,$id)
+        {
+          $SQL = "SELECT promenade.idpro, type_pro.nom_type_pro, descpro, heuredpro, heurefpro, datepro, lieuxpro
+          FROM promenade, type_pro
+          WHERE promenade.id_type_pro = type_pro.id_type_pro
+          AND promenade.id_type_pro = $id
+          AND validepro= 1";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
+        public function ajoutresp($conn,$id,$idmembre)
+        {
+          $SQL = "INSERT INTO inscriptionp (idpro,idmembre,valide_inscriptionp)
+                  VALUES ('$id','$idmembre','1')";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
       }
 ?>

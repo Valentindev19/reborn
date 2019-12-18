@@ -2,6 +2,7 @@
   include 'class/bdd.inc.php';
   include 'class/cours.class.php';
   include 'class/type_cours.class.php';
+  include 'class/date.class.php';
 
   if (isset($_POST['btn_ajcours_form']))
   {
