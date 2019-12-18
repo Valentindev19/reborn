@@ -76,7 +76,7 @@ $req = $stage->affstagem($id, $conn);
 						while($ligne = $req -> fetch())
 {
   echo"<tr>";
-    echo"<td>",$ligne['datedstage'],"</td>";
+    echo"<td>",$ligne['dated'],"</td>";
     echo"<td>",$ligne['descstage'],"</td>";
 		echo"<td>",$ligne['nomm'],"</td>";
 		echo"<td>",$ligne['prenomm'],"</td>";

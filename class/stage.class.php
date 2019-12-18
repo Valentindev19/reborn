@@ -119,7 +119,7 @@
     }
     public function affstagem($id, $conn)
     {
-      $SQL = "SELECT  stage.datedstage, stage.descstage, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
+      $SQL = "SELECT  date_format(datedstage, '%d/%m/%Y')  AS dated, stage.descstage, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
       FROM stage, membre, inscriptions
       WHERE stage.idstage = inscriptions.idstage
       AND membre.idmembre = inscriptions.idmembre
