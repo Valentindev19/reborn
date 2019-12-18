@@ -48,7 +48,7 @@ $('#datatable').dataTable(
 							<tr>
 								<th>Type Stage</th>
 								<th>Date Début</th>
-								<th>Heure Début</th>
+								<th>Date Fin</th>
 								<th>Description</th>
 								<th>Heure Début</th>
 								<th>Heure Fin</th>
@@ -70,7 +70,7 @@ $res = $stage->afftype($conn);
             <tr>
 							<th>Type Stage</th>
 							<th>Date Début</th>
-							<th>Heure Début</th>
+							<th>Date Fin</th>
 							<th>Description</th>
 							<th>Heure Début</th>
 							<th>Heure Fin</th>
@@ -150,8 +150,8 @@ echo"</center>";
 								</div>
 								<div class="row form-group">
 									<div class="col-md-12">
-										<label class="font-weight-bold" for="nom">Heure Début</label>
-										<input type=text name="heured" id="heured" class="form-control" placeholder="Donner l'heure du début du stage xx:xx:xx">
+										<label class="font-weight-bold" for="nom">Date Fin</label>
+										<input type=text name="heured" id="heured" class="form-control" placeholder="AAAA-MM-JJ">
 									</div>
 								</div>
 

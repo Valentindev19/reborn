@@ -210,37 +210,37 @@
 
             <div class="media-with-text">
               <div class="img-border-sm mb-4">
-                  <img src="images/Chevaux/Cheval_francais1.jpg" alt="" class="img-fluid">
+                  <img src="images/upload/Cheval_francais1.jpg" alt="" class="img-fluid">
               </div>
             </div>
 
             <div class="media-with-text">
               <div class="img-border-sm mb-4">
-                  <img src="images/Chevaux/Lipizzan2.jpg" alt="" class="img-fluid">
+                  <img src="images/upload/Lipizzan1.jpg" alt="" class="img-fluid">
               </div>
             </div>
 
             <div class="media-with-text">
               <div class="img-border-sm mb-4">
-                  <img src="images/Chevaux/Mérens.jpg" alt="" class="img-fluid">
+                  <img src="images/upload/Mérens.jpg" alt="" class="img-fluid">
               </div>
             </div>
 
             <div class="media-with-text">
               <div class="img-border-sm mb-4">
-                  <img src="images/Chevaux/Poney_francais2.jpg" alt="" class="img-fluid">
+                  <img src="images/upload/Poney_francais2.jpg" alt="" class="img-fluid">
               </div>
             </div>
 
             <div class="media-with-text">
               <div class="img-border-sm mb-4">
-                  <img src="images/Chevaux/Shetland3.jpg" alt="" class="img-fluid">
+                  <img src="images/upload/Shetland3.jpg" alt="" class="img-fluid">
               </div>
             </div>
 
             <div class="media-with-text">
               <div class="img-border-sm mb-4">
-                  <img src="images/Chevaux/Trotteur.jpg" alt="" class="img-fluid">
+                  <img src="images/upload/Trotteur.jpg" alt="" class="img-fluid">
               </div>
             </div>
 

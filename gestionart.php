@@ -137,7 +137,7 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="taille">Contenue Article</label>
-                <input name="contenue" id="contenue" class="form-control" placeholder="Contenue de l'article">
+                <textarea name="contenue" id="contenue" cols="30" rows="5" class="form-control" placeholder="Votre article..."></textarea>
               </div>
             </div>
 
