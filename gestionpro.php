@@ -82,7 +82,7 @@ $req = $promenade->affpro2($conn);
 						while($ligne = $req -> fetch())
 {
   echo"<tr>";
-    echo"<td>",$ligne['datepro'],"</td>";
+    echo"<td>",$ligne['dated'],"</td>";
 		echo"<td>",$ligne['heuredpro'],"</td>";
 		echo"<td>",$ligne['descpro'],"</td>";
     echo"<td>",$ligne['heurefpro'],"</td>";

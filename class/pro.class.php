@@ -67,7 +67,7 @@
 
     // AFFICHER
         public function affpro($idpro, $conn){
-          $SQL = "SELECT datepro, heuredpro, descpro, type_pro.nom_type_pro, heurefpro, lieuxpro
+          $SQL = "SELECT date_format(datepro, '%d/%m/%Y')  AS dated, heuredpro, descpro, type_pro.nom_type_pro, heurefpro, lieuxpro
           FROM promenade, type_pro
           WHERE promenade.id_type_pro = type_pro.id_type_pro
           AND idpro ='$idpro'";
@@ -77,7 +77,7 @@
 
         public function affpro2($conn)
         {
-          $SQL = "SELECT  idpro, type_pro.id_type_pro, datepro, heuredpro, type_pro.nom_type_pro, descpro, heurefpro, lieuxpro
+          $SQL = "SELECT  idpro, type_pro.id_type_pro,  date_format(datepro, '%d/%m/%Y')  AS dated, heuredpro, type_pro.nom_type_pro, descpro, heurefpro, lieuxpro
           FROM promenade, type_pro
           WHERE promenade.id_type_pro = type_pro.id_type_pro
           AND validepro = 1";
@@ -87,7 +87,7 @@
 
         public function affprom($idm, $conn)
         {
-          $SQL = "SELECT  promenade.idpro, type_pro.id_type_pro, datepro, heuredpro, type_pro.nom_type_pro, descpro, heurefpro, lieuxpro
+          $SQL = "SELECT  promenade.idpro, type_pro.id_type_pro,  date_format(datepro, '%d/%m/%Y')  AS dated, heuredpro, type_pro.nom_type_pro, descpro, heurefpro, lieuxpro
           FROM promenade, type_pro, membre, inscriptionp
           WHERE promenade.id_type_pro = type_pro.id_type_pro
           AND membre.idmembre = inscriptionp.idmembre
@@ -114,7 +114,7 @@
 
         public function affprores($conn,$id)
         {
-          $SQL = "SELECT promenade.idpro, type_pro.nom_type_pro, descpro, heuredpro, heurefpro, datepro, lieuxpro
+          $SQL = "SELECT promenade.idpro, type_pro.nom_type_pro, descpro, heuredpro, heurefpro, date_format(datepro, '%d/%m/%Y')  AS dated, lieuxpro
           FROM promenade, type_pro
           WHERE promenade.id_type_pro = type_pro.id_type_pro
           AND promenade.id_type_pro = $id
