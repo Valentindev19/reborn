@@ -2,8 +2,8 @@
 
   $id=$_GET['id'];
   session_start ();
-  include 'class/pro.class.php';
-  include 'class/type_pro.class.php';
+  include 'class/cours.class.php';
+  include 'class/type_cours.class.php';
   include 'class/bdd.inc.php';
   // On récupère nos variables de session
   if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
@@ -59,7 +59,7 @@
   					<?php
 
 
-  $cours = new cours("","","","","","","","");
+  $cours = new cours("","","","","","","");
   $req = $cours->affcoursres($conn,$id);
   ?>
   					<tfoot>
