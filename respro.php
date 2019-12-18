@@ -1,5 +1,6 @@
 <?php
 
+
   $id=$_GET['id'];
   session_start ();
   include 'class/pro.class.php';

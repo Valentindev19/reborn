@@ -90,7 +90,7 @@ $req = $promenade->affpro2($conn);
 		echo"<td>",$ligne['nom_type_pro'],"</td>";
     echo"<td> <a href='traitpro.php?modif=modif&idpro=$ligne[idpro]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='traitpro.php?sup=sup&idpro=$ligne[idpro]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
-		echo"<td> <a href='reservactivite.php?idpro=$ligne[idpro]'><img src='images/modadmin.png' alt='edit'name='affmembre' width=35 /></a></td>";
+		echo"<td> <a href='reservpromenade.php?idpro=$ligne[idpro]'><img src='images/modifmembre.png' alt='edit'name='affmembre' width=35 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";
