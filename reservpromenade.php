@@ -47,7 +47,7 @@ $('#datatable').dataTable(
 <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
     				<thead>
 							<tr>
-								<th>Date du promenade</th>
+								<th>Date de la promenade</th>
 								<th>Lieux de la promenade</th>
 								<th>Nom membres</th>
 								<th>Prenom membres</th>
@@ -89,7 +89,7 @@ echo"</center>";
 ?>
 					</tbody>
 				</table>
-				<a href='gestionactivité.php'><button class="boutonret">Retour</button></a>
+				<a href='gestionpro.php'><button class="boutonret">Retour</button></a>
 
 
 	</div>

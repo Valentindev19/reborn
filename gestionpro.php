@@ -47,14 +47,14 @@ $('#datatable').dataTable(
 <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
     				<thead>
 							<tr>
-								<th>Date du promenade</th>
-								<th>Heure du début de promenade</th>
-								<th>Descrition du la promenade</th>
-								<th>Heure de fin du promenade</th>
+								<th>Date de la promenade</th>
+								<th>Heure du début de la promenade</th>
+								<th>Description de la promenade</th>
+								<th>Heure de fin de la promenade</th>
 								<th>Lieux de la promenade</th>
 								<th>Type de promenade</th>
-	                                <th>Modifier</th>
-	                                 <th>Supprimer</th>
+																	<th>Modifier</th>
+																	 <th>Supprimer</th>
 																	 <th>Voir les membres</th>
 							</tr>
 					</thead>
@@ -65,10 +65,10 @@ $req = $promenade->affpro2($conn);
 ?>
 					<tfoot>
 						<tr>
-							<th>Date du promenade</th>
+							<th>Date de la promenade</th>
 							<th>Heure du début de la promenade</th>
-							<th>Descrition du promenade</th>
-							<th>Heure de fin du promenade</th>
+							<th>Description de la promenade</th>
+							<th>Heure de fin de la promenade</th>
 							<th>Lieux de la promenade</th>
 							<th>Type de promenade</th>
 																<th>Modifier</th>
@@ -124,7 +124,7 @@ echo"</center>";
             </div>
             <div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="nom">Heure du début de promenade</label>
+                <label class="font-weight-bold" for="nom">Heure du début de la promenade</label>
                 <input type=text name="hdpro" id="hdpro" class="form-control" placeholder="Donner l'heure du début du promenade xx:xx:xx">
               </div>
             </div>
@@ -132,14 +132,14 @@ echo"</center>";
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
-                <label class="font-weight-bold" for="age">Description du promenade</label>
+                <label class="font-weight-bold" for="age">Description de la promenade</label>
                 <input type="text" name="descpro" id="descpro" class="form-control" placeholder="Donner la description du promenade">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="taille">Heure de la fin du promenade</label>
+                <label class="font-weight-bold" for="taille">Heure de la fin de la promenade</label>
                 <input type=text name="hfpro" id="heurefpro" class="form-control" placeholder="Donner l'heure de la fin du promenade xx:xx:xx">
               </div>
             </div>

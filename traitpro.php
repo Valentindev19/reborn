@@ -99,7 +99,7 @@
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="Heure_début_pro">Heure de début du promenade</label>
+                  <label class="font-weight-bold" for="Heure_début_pro">Heure de début de la promenade</label>
                   <input type=text name="heuredpro" id="heuredpro" class="form-control" value="<?php echo $ligne['heuredpro']; ?>">
                 </div>
               </div>
@@ -107,14 +107,14 @@
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="Description_pro">Description du promenade</label>
+                  <label class="font-weight-bold" for="Description_pro">Description de la promenade</label>
                   <input type="texte" name="descpro" id="descpro" class="form-control" value="<?php echo $ligne['descpro']; ?>">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="Heure_fin_pro">Heure de fin du promenade</label>
+                  <label class="font-weight-bold" for="Heure_fin_pro">Heure de fin de la promenade</label>
                   <input type="text" name="heurefpro" id="heurefpro" class="form-control" value="<?php echo $ligne['heurefpro']; ?>">
                 </div>
               </div>

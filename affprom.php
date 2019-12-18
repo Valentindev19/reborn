@@ -48,10 +48,10 @@ $('#datatable').dataTable(
 <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
     				<thead>
 							<tr>
-								<th>Date du promenade</th>
-								<th>Heure du début de promenade</th>
-								<th>Descrition du la promenade</th>
-								<th>Heure de fin du promenade</th>
+								<th>Date de la promenade</th>
+								<th>Heure de début de la promenade</th>
+								<th>Description de la promenade</th>
+								<th>Heure de fin de la promenade</th>
 								<th>Lieux de la promenade</th>
 								<th>Type de promenade</th>
 	                                 <th>Supprimer</th>

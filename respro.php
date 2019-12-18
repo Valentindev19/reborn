@@ -48,10 +48,10 @@
   <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
       				<thead>
   							<tr>
-                  <th>Date du promenade</th>
-    							<th>Heure du début de la promenade</th>
-    							<th>Descrition du promenade</th>
-    							<th>Heure de fin du promenade</th>
+                  <th>Date de la promenade</th>
+    							<th>Heure de la début de la promenade</th>
+    							<th>Descrition de la promenade</th>
+    							<th>Heure de fin de la promenade</th>
     							<th>Lieux de la promenade</th>
     							<th>Type de promenade</th>
   	                                <th>Réserver</th>
@@ -66,12 +66,12 @@
   ?>
   					<tfoot>
               <tr>
-                <th>Date du promenade</th>
-  							<th>Heure du début de la promenade</th>
-  							<th>Descrition du promenade</th>
-  							<th>Heure de fin du promenade</th>
-  							<th>Lieux de la promenade</th>
-  							<th>Type de promenade</th>
+                <th>Date de la promenade</th>
+                <th>Heure de la début de la promenade</th>
+                <th>Descrition de la promenade</th>
+                <th>Heure de fin de la promenade</th>
+                <th>Lieux de la promenade</th>
+                <th>Type de promenade</th>
                                   <th>Réserver</th>
 
               </tr>
@@ -97,7 +97,7 @@
 
   					</tbody>
   				</table>
-  				<a href='stage.php'><button class="boutonret">Retour</button></a>
+  				<a href='promenade.php'><button class="boutonret">Retour</button></a>
 
 
   	</div>
