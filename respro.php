@@ -82,7 +82,7 @@
   	            while ($ligne = $req -> fetch())
   	            {
     echo"<tr>";
-      echo"<td>",$ligne['dated'],"</td>";
+      echo"<td>",$ligne['datepro'],"</td>";
   		echo"<td>",$ligne['heuredpro'],"</td>";
   		echo"<td>",$ligne['descpro'],"</td>";
       echo"<td>",$ligne['heurefpro'],"</td>";

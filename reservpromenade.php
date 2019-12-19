@@ -76,7 +76,7 @@ $req = $promenade->affpromm($idpro, $conn);
 						while($ligne = $req -> fetch())
 {
   echo"<tr>";
-    echo"<td>",$ligne['dated'],"</td>";
+    echo"<td>",$ligne['datepro'],"</td>";
     echo"<td>",$ligne['lieuxpro'],"</td>";
 		echo"<td>",$ligne['nomm'],"</td>";
 		echo"<td>",$ligne['prenomm'],"</td>";
