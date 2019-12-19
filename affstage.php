@@ -73,20 +73,7 @@
             $stage = new stage("","","","","","","","","","");
             $req= $stage->affresstage($id, $conn);
   ?>
-  					<tfoot>
-              <tr>
-                <th>Type Stage</th>
-                <th>Date Début</th>
-                <th>Date Fin</th>
-                <th>Description</th>
-                <th>Heure Début</th>
-                <th>Heure Fin</th>
-                <th>Repas</th>
-                <th>Supprimer</th>
-
-
-              </tr>
-  					</tfoot>
+  					
 
   					<tbody>
   						<?php
