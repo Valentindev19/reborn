@@ -34,7 +34,7 @@
   }
   if (isset($_GET['res']))
   {
-    $idpro = $_GET['id'];
+    $idcours = $_GET['id'];
     session_start ();
     $mailm = $_SESSION['mailm'];
     $mdpm = $_SESSION['mdpm'];
