@@ -143,8 +143,14 @@ echo"</center>";
 
 						<div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="img">Image</label>
+                <label class="font-weight-bold" for="img">Image Présentation</label>
                 <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
+              </div>
+            </div>
+						<div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="img">Images</label>
+                <input type="file" name="fileToUpload" id="fileToUpload[]" class="form-control" multiple>
               </div>
             </div>
             <div class="row form-group">
@@ -157,6 +163,7 @@ echo"</center>";
       </div>
     </div>
   </div>
+	
 
 		<script>
 		$(document).ready(function() {

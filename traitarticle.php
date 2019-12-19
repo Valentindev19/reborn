@@ -20,7 +20,7 @@
       }
       $contenue_article = $_POST['contenue'];
       $img_art = $_FILES['fileToUpload']['name'].$num_rand;
-      echo "ghdoig";
+      
 
       $article = new article("","","","","","","");
       $article->ajoutart($titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
