@@ -162,11 +162,46 @@
                       </div>
                     </div>
                   </div>
-                </div>
+
+                  <div class="site-section block-15">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                          <h2> Photos</h2>
+                        </div>
+                      </div>
+
+
+                      <div class="nonloop-block-15 owl-carousel">
+
+                    <?php
+                    $article = new article("","","","","","","");
+                    $res = $article->affartphoto($idarticle,$conn);
+                    while ($l = $res -> fetch())
+                    {
+                      ?>
+
+                      <div class="media-with-text">
+                          <div class="img-border-sm mb-4">
+                              <img src="images/upload/<?php echo $l['file_name']; ?>" alt="" class="img-fluid">
+                      </div>
+                      </div>
+
+
+
 
                 <?php
                   }
+                }
                 ?>
+
+              </div>
+
+              <div class="row">
+
+              </div>
+            </div>
+          </div>
 
       <!--Image btn vers le haut-->
       <img id='btn_up' src="images/to_top.png"/>

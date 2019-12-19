@@ -1,6 +1,7 @@
 <?php
   include 'class/bdd.inc.php';
   include 'class/article.class.php';
+  include 'class/bdd.inc.php';
 
   if (isset($_POST['btn_ajart_form']))
   {
@@ -20,10 +21,31 @@
       }
       $contenue_article = $_POST['contenue'];
       $img_art = $_FILES['fileToUpload']['name'].$num_rand;
-      
+
 
       $article = new article("","","","","","","");
       $article->ajoutart($titre_article, $resume_article, $lien_article, $contenue_article, $img_art, $conn);
+      $idarticle = $conn->lastinsertid();
+
+      $totalfiles = count($_FILES['file']['name']);
+
+      // Looping over all files
+      for($i=0;$i<$totalfiles;$i++){
+      $filename = $_FILES['file']['name'][$i];
+
+     // Upload files and store in database
+     if(move_uploaded_file($_FILES["file"]["tmp_name"][$i],'images/upload/'.$filename)){
+     		// Image db insert sql
+     		$SQL = "INSERT into files(file_name,uploaded_on,status,idarticle) values('$filename',now(),1,$idarticle)";
+         $conn->query($SQL);
+     	}
+       else{
+     		echo 'Error in uploading file - '.$_FILES['file']['name'][$i].'<br/>';
+     	}
+
+      }
+
+      header('Location:gestionart.php');
 
     }
     else

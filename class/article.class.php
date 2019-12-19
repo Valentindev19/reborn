@@ -40,7 +40,7 @@
       $SQL = "INSERT INTO article (titre_article, resume_article, lien_article, contenue_article, image_article, valide_article)
               VALUES ('$titre_article', '$resume_article', '$lien_article', '$contenue_article', '$img_art', 1)";
       $conn->query($SQL);
-      header('Location:gestionart.php');
+    //  header('Location:gestionart.php');
     }
 
 ////////////////////////////////////////// SUPPRIMER
@@ -79,6 +79,16 @@
       $req = $conn -> query($SQL);
       return $req;
     }
+    public function affartphoto($idarticle, $conn)
+    {
+      $SQL = "SELECT file_name
+      FROM article,files
+      WHERE article.idarticle = files.idarticle
+      AND files.idarticle ='$idarticle'";
+      $res = $conn -> query($SQL);
+      return $res;
+    }
+
 
 
   }
