@@ -58,7 +58,7 @@
 
     // AFFICHER
         public function affcours($idcours, $conn){
-          $SQL = "SELECT datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
+          $SQL = "SELECT  date_format(datecours, '%d/%m/%Y')  AS datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
           FROM cours, type_cours
           WHERE cours.id_type_cours = type_cours.id_type_cours
           AND idcours ='$idcours'";
@@ -68,7 +68,7 @@
 
         public function affcours2($conn)
         {
-          $SQL = "SELECT  idcours, type_cours.id_type_cours, datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
+          $SQL = "SELECT  idcours, type_cours.id_type_cours, date_format(datecours, '%d/%m/%Y')  AS datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
           FROM cours, type_cours
           WHERE cours.id_type_cours = type_cours.id_type_cours
           AND validecours = 1";
@@ -78,7 +78,7 @@
 
         public function affcoursm($idm, $conn)
         {
-          $SQL = "SELECT  cours.idcours, type_cours.id_type_cours, datecours, heuredcours, type_cours.nom_type_cours, desccours, heurefcours
+          $SQL = "SELECT  cours.idcours, type_cours.id_type_cours, date_format(datecours, '%d/%m/%Y')  AS datecours, heuredcours, type_cours.nom_type_cours, desccours, heurefcours
           FROM cours, type_cours, membre, inscriptionc
           WHERE cours.id_type_cours = type_cours.id_type_cours
           AND membre.idmembre = inscriptionc.idmembre
@@ -92,7 +92,7 @@
 
         public function affcoursm2($idcours, $conn)
         {
-          $SQL = "SELECT  cours.datecours, cours.heuredcours,cours.desccours, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
+          $SQL = "SELECT  date_format(datecours, '%d/%m/%Y')  AS datecours, cours.heuredcours,cours.desccours, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
           FROM cours, membre, inscriptionc
           WHERE cours.idcours = inscriptionc.idcours
           AND membre.idmembre = inscriptionc.idmembre
@@ -105,7 +105,7 @@
 
         public function affcoursres($conn,$id)
         {
-          $SQL = "SELECT cours.idcours, type_cours.nom_type_cours, datecours, heuredcours, desccours, heurefcours
+          $SQL = "SELECT cours.idcours, type_cours.nom_type_cours, date_format(datecours, '%d/%m/%Y')  AS datecours, heuredcours, desccours, heurefcours
           FROM cours, type_cours
           WHERE cours.id_type_cours = type_cours.id_type_cours
           AND cours.id_type_cours = $id
