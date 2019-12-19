@@ -7,7 +7,7 @@
   if (isset($_POST['btn_ajpro_form']))
   {
 
-    if ($_POST['datepro'] != '' && $_POST['hdpro'] != '' && $_POST['descpro'] != '' && $_POST['hfpro'] != '' && $_POST['id_type_pro'] != 0)
+    if ($_POST['datepro'] != '' && $_POST['hdpro'] != '' && $_POST['descpro'] != '' && $_POST['hfpro'] != '')
     {
       $date_pro = $_POST['datepro'];
       $hd_pro = $_POST['hdpro'];
@@ -15,7 +15,6 @@
       $hf_pro = $_POST['hfpro'];
       $lieux_pro = $_POST['lieuxpro'];
       $id_type_pro = $_POST['id_type_pro'];
-      echo $id_type_pro;
 
       $promenade = new promenade("","","","","","","","");
       $promenade->ajoutpro($date_pro, $hd_pro, $desc_pro, $hf_pro, $lieux_pro, $id_type_pro, $conn);

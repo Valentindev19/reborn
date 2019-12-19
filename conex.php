@@ -103,6 +103,20 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
+                                    <label class="label">Adresse</label>
+                                    <input class="input--style-4" type="text" name="adr">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Compléménent d'adresse</label>
+                                    <input class="input--style-4" type="text" name="comp">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
                                     <label class="label">Code Postal</label>
                                     <input  class="input--style-4" type="text" id="nom_id" onkeyup="autocomplet()" name="CP">
                                     <ul id="nom_list_id"></ul>
@@ -112,20 +126,6 @@
                                 <div class="input-group">
                                     <label class="label">Ville</label>
                                     <input  class="input--style-4" type="text" id="nom2_id" name="ville">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Adresse</label>
-                                    <input class="input--style-4" type="text" name="adr">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Compléménent d'adresse</label>
-                                    <input class="input--style-4" type="text" name="comp">
                                 </div>
                             </div>
                         </div>

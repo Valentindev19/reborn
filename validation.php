@@ -9,6 +9,7 @@
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $dn = $_POST['DN'];
+    echo $dn;
     $sexe = $_POST['sexe'];
     $mailm = $_POST['email'];
     $phone = $_POST['phone'];

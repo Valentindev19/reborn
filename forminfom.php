@@ -69,11 +69,11 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Date de naissance</label>
-                                    <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker" value="<?php echo $ligne['ddn']; ?>">
-                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div>
+                                  <label class="label">Date de naissance</label>
+                                  <div class="input-group-icon">
+                                      <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker">
+                                      <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                  </div>
                                 </div>
                             </div>
                             <div class="col-2">

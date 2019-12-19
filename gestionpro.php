@@ -3,6 +3,7 @@
 session_start ();
 include 'class/pro.class.php';
 include 'class/bdd.inc.php';
+include 'class/type_pro.class.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -62,6 +63,8 @@ $('#datatable').dataTable(
 include 'class/bdd.inc.php';
 $promenade = new promenade("","","","","","","","");
 $req = $promenade->affpro2($conn);
+$promenade = new type_pro("","","");
+$res = $promenade->afftype_pro($conn);
 ?>
 					<tfoot>
 						<tr>
@@ -82,7 +85,7 @@ $req = $promenade->affpro2($conn);
 						while($ligne = $req -> fetch())
 {
   echo"<tr>";
-    echo"<td>",$ligne['dated'],"</td>";
+    echo"<td>",$ligne['datepro'],"</td>";
 		echo"<td>",$ligne['heuredpro'],"</td>";
 		echo"<td>",$ligne['descpro'],"</td>";
     echo"<td>",$ligne['heurefpro'],"</td>";
@@ -113,9 +116,28 @@ echo"</center>";
         <div class="col-md-12 col-lg-8 mb-5">
 
 
-
+					<br>
           <form method="post" action="traitpro.php" id="contact_form" class="p-5 bg-white">
 
+						<div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="race">Type de promenade </label>
+								<tr>
+				<td>
+				<select name="id_type_pro">
+			<?php
+					while ($l = $res -> fetch())
+					{
+						?>
+							<option value="<?php echo $l['id_type_pro']?>"><?php echo $l['nom_type_pro']?></option>
+					 <?php
+					}
+					?>
+				</select>
+				</td>
+			</tr>
+              </div>
+            </div>
 						<div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Date</label>
