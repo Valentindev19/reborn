@@ -90,6 +90,19 @@
           return $req;
         }
 
+        public function affcoursm2($idcours, $conn)
+        {
+          $SQL = "SELECT  cours.datecours, cours.heuredcours,cours.desccours, membre.nomm, membre.prenomm, membre.telephonem, membre.mailm
+          FROM cours, membre, inscriptionc
+          WHERE cours.idcours = inscriptionc.idcours
+          AND membre.idmembre = inscriptionc.idmembre
+          AND validecours = 1
+          AND cours.idcours = $idcours
+          AND valide_inscriptionc = 1";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
         public function affcoursres($conn,$id)
         {
           $SQL = "SELECT cours.idcours, type_cours.nom_type_cours, datecours, heuredcours, desccours, heurefcours

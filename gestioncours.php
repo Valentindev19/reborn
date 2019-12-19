@@ -33,18 +33,6 @@ $('#datatable').dataTable(
 } );
 </script>
 
-<!--SCRIPT POUR METTRE LA DATE EN FR -->
-<!--
-<script>
-// Specify a source format and locale
-$('#datatable').dataTable( {
-	columnDefs: [ {
-	targets: 2,
-	render: $.fn.dataTable.render.moment( 'YYYY/MM/DD', 'Do DD/MM/YYYY', 'fr' )
-	} ]
-} );
-</script>
--->
 <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/creative.css">
 
@@ -70,6 +58,7 @@ $('#datatable').dataTable( {
 								<th>Type Cours</th>
 	                                <th>Modifier</th>
 	                                 <th>Supprimer</th>
+																	 <th>Voir les membres</th>
 							</tr>
 					</thead>
 					<?php
@@ -88,6 +77,7 @@ $req = $cours->affcours2($conn);
 							<th>Type Cours</th>
 																<th>Modifier</th>
 																 <th>Supprimer</th>
+																 <th>Voir les membres</th>
 						</tr>
 					</tfoot>
 
@@ -106,6 +96,7 @@ $req = $cours->affcours2($conn);
 		echo"<td>",$ligne['nom_type_cours'],"</td>";
     echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='traitcours.php?sup=sup&id=$ligne[idcours]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
+			echo"<td> <a href='reservcours.php?idcours=$ligne[idcours]'><img src='images/modifmembre.png' alt='edit'name='affmembre' width=35 /></a></td>";
   echo"</tr>";
 }
 echo"</center>";

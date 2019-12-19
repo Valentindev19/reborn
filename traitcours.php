@@ -2,7 +2,7 @@
   include 'class/bdd.inc.php';
   include 'class/cours.class.php';
   include 'class/type_cours.class.php';
-  include 'class/date.class.php';
+  include 'class/membre.class.php';
 
   if (isset($_POST['btn_ajcours_form']))
   {
@@ -44,7 +44,7 @@
     $idmembre = $ligne['idmembre'];
     $cours = new cours("","","","","","","");
     $req= $cours->ajoutresc($conn,$idcours,$idmembre);
-    header('Location:affpro.php');
+    header('Location:affcoursm.php');
   }
   if (isset($_GET['modif']))
   {
