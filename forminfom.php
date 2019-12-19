@@ -178,12 +178,20 @@
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="vendor/datepicker/jquery-1.12.4.js"></script>
-    <script src="vendor/datepicker/jquery-ui-1.12.1.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
     $( function() {
-      $( "#datepicker" ).datepicker();
-    } );
+  $( "#datepicker" ).datepicker({
+    yearRange: "c-40:c",
+    firstDay: 1,
+    dateFormat: "yy/mm/dd",
+    monthNamesShort: [ "Jan", "Fev", "Mars", "Avril", "Mai", "Juin", "Juil", "Août", "Sep", "Oct", "Nov", "Dec" ],
+    dayNamesMin: [ "Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam" ],
+    changeMonth: true,
+    changeYear: true
+  });
+} );
     </script>
 
     <!-- Main JS-->
