@@ -103,6 +103,13 @@ class membre
     return $ligne;
   }
 
+  public function affsess2($mailm, $conn)
+  {
+    $req = "SELECT mailm, mdpm FROM membre WHERE mailm = '$mailm'";
+    $res=	$conn -> query($req);
+    return $res;
+  }
+
   //////////////////////////////////////////// UPDATE
   public function modifvalide($cleverif, $mailm, $conn)
   {
@@ -186,6 +193,15 @@ class membre
                     ville_id = $idville
                 WHERE idmembre ='$idmembre'";
         $conn -> query($SQL);
+        }
+
+        public function verifmail($mailm, $conn)
+        {
+          $SQL = "SELECT mailm, cle
+          		FROM membre
+          		WHERE mailm = '$mailm'";
+          $req=	$conn -> query($SQL);
+          return $req;
         }
 
 

@@ -14,7 +14,7 @@
 
 
     <!-- Title Page-->
-    <title>Page connexion</title>
+    <title>Mot de passe oublié</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -34,18 +34,16 @@
     <link rel="stylesheet" href="css/log.css">
     <div class="login-page">
       <div class="form">
-        <form class="login-form" method="post" action="logtrait.php">
-          <input type="text" placeholder="mail" name="mailm"/>
-          <input type="password" placeholder="mot de passe" name="mdpm"/>
-          <button name="form_log">Connexion</button>
-            <p class="message"> <a href="mdpoublie.php">Mot de passe oublié</a></p> <!-- Probleme !! -->
+        <form class="login-form" method="post" action="traitmdpoublie.php">
+          <input type="text" placeholder="Votre mail" name="mailm"/>
+          <button name="form_oublie">Envoyer</button>
           <p class="message">Pas inscrit ? <a href="conex.php">Créer un compte</a></p>
         </form>
       </div>
     </div>
   </body>
   <?php
-  if (isset($_COOKIE['non']))
+  if (isset($_COOKIE['mdpoublie']))
   {
     ?>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -59,38 +57,11 @@ $( function() {
 <body>
 
 <div id="dialog" title="Erreur Connexion">
-<p>Votre compte n'est pas encore valide. Veuillez vérifier vos mails.</p>
+<p>Ce mail n'existe pas.</p>
 </div>
 <?php
-    setcookie('non',0, time() - 3600);
-  }
-
-  if (isset($_COOKIE['erreur']))
-  {
-    ?>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-$( function() {
-  $( "#dialog" ).dialog();
-} );
-</script>
-</head>
-<body>
-
-<div id="dialog" title="Erreur Connexion">
-<p>Votre mot de passe ou votre mail sont incorrects.</p>
-</div>
-<?php
-    setcookie('erreur',0, time() - 3600);
+    setcookie('mdpoublie',0, time() - 3600);
   }
   ?>
 
 </html>
-
-
-
-
-
-
- ?>
