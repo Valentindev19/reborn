@@ -189,7 +189,7 @@
           <div class="col-md-12 col-lg-5 mb-5 mb-lg-0 order-1">
             <h2 class="mb-3 text-uppercase">Balade <strong class="text-black font-weight-bold">VIP</strong> 2h</h2>
             <p class="mb-4"> Offrez-vous le plaisir d'une balade privée, avec un guide pour vous seuls. Vous pourrez ainsi découvrir la forêt de Jade à votre rythme, vous arrêter pour profiter du paysage, trotter et galoper en toute liberté.</p>
-            <a href="respro.php?id=2"><button class="btn btn-primary pill px-4" name="promenade">En savoir plus</button></a>
+            <a href="respro.php?id=2"><button class="btn btn-primary pill px-4" name="promenade">Réserver balade "VIP"</button></a>
           </div>
         </div>
       </div>
