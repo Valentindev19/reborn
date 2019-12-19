@@ -50,7 +50,6 @@ $('#datatable').dataTable(
 								<th>Date du Cours</th>
 								<th>Heure du début de Cours</th>
 								<th>Descrition du Cours</th>
-								<th>Type Cours</th>
 								<th>Nom membres</th>
 								<th>Prenom membres</th>
 								<th>Mail membres</th>
@@ -67,7 +66,6 @@ $req = $cours->affcoursm2($idcours, $conn);
 							<th>Date du Cours</th>
 							<th>Heure du début de Cours</th>
 							<th>Descrition du Cours</th>
-							<th>Type Cours</th>
 							<th>Nom membres</th>
 							<th>Prenom membres</th>
 							<th>Mail membres</th>
@@ -83,7 +81,6 @@ $req = $cours->affcoursm2($idcours, $conn);
     echo"<td>",$ligne['datecours'],"</td>";
     echo"<td>",$ligne['heuredcours'],"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
-		echo"<td>",$ligne['id_type_cours'],"</td>";
 		echo"<td>",$ligne['nomm'],"</td>";
 		echo"<td>",$ligne['prenomm'],"</td>";
 		echo"<td>",$ligne['mailm'],"</td>";
