@@ -130,8 +130,8 @@ echo"</center>";
             </div>
             <div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="nom">Heure du début de cours</label>
-                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Donner l'heure du début du cours hh:mm:ss">
+                <label class="font-weight-bold" for="nom">Heure de début du cours</label>
+                <input type=text name="hdcours" id="hdcours" class="form-control" placeholder="Saisir l'heure du début du cours hh:mm:ss">
               </div>
             </div>
 
@@ -139,20 +139,20 @@ echo"</center>";
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="age">Description du cours</label>
-                <input type="text" name="desccours" id="desccours" class="form-control" placeholder="Donner la description du cours">
+                <input type="text" name="desccours" id="desccours" class="form-control" placeholder="Saisir la description du cours">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <label class="font-weight-bold" for="taille">Heure de la fin du cours</label>
-                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Donner l'heure de la fin du cours hh:mm:ss">
+                <label class="font-weight-bold" for="taille">Heure de fin du cours</label>
+                <input type=text name="hfcours" id="heurefcours" class="form-control" placeholder="Saisir l'heure de la fin du cours hh:mm:ss">
               </div>
             </div>
 
 						<div class="row form-group">
               <div class="col-md-12">
-								<label class="font-weight-bold" for="type_promenade">Type cours</label>
+								<label class="font-weight-bold" for="type_promenade">Type de cours</label>
 								<tr>
 									<td>
 										<select name="id_type_cours">

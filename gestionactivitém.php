@@ -123,7 +123,7 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
 			<div class="d-block d-md-flex">
 				<div class="text-center p-4 item border-right">
 					<span class="flaticon-chat display-3 mb-3 d-block text-primary"></span>
-					<a href="rescours.php"><h2 class="h5 text-uppercase">Cours</h2>
+					<a href="affcoursm.php"><h2 class="h5 text-uppercase">Cours</h2>
 					<p>Voir les cours <span class="icon-arrow-right small"></span></a></p>
 				</div>
 
