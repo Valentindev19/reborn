@@ -27,5 +27,14 @@
           return $req;
         }
 
+        public function affville2($idv, $conn)
+        {
+          $SQL = "SELECT  ville_nom_reel, ville_code_postal
+          FROM villes
+          WHERE ville_id = '$idv'";
+          $req = $conn -> query($SQL);
+          return $req;
+        }
+
       }
 ?>

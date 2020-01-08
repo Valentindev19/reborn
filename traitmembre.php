@@ -48,7 +48,12 @@
     $membre = new membre("","","","","","","","","","","","","","");
     $req = $membre->affmembre1($idmembre, $conn);
     $ligne = $req->fetch();
-
+    $idv = $_GET['idv'];
+    $idville = new ville("","","","");
+    $req = $idville->affville2($idv, $conn);
+    $rep = $req->fetch();
+    $ville = $rep['ville_nom_reel'];
+    $CP = $rep['ville_code_postal'];
 
     ?>
     <html>
@@ -121,14 +126,14 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="age">Code postal</label>
-                  <input type="texte" name="CP" id="nom_id" class="form-control" value="<?php echo $_GET['idv']; ?>" onkeyup="autocomplet()">
+                  <input type="texte" name="CP" id="nom_id" class="form-control" value="<?php echo $CP; ?>" onkeyup="autocomplet()">
+                  <ul id="nom_list_id"></ul>
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="age">Ville</label>
-                  <input type="texte" name="ville" id="ville" class="form-control" value="<?php echo $ligne['ville_nom_reel']; ?>">
-                  <input type="hidden" name='cp' id='cp' value="<?php echo $_GET['idv']; ?>">
+                  <input type="texte" name="ville" id="nom2_id" class="form-control" value="<?php echo $ville; ?>">
                 </div>
               </div>
               <div class="row form-group">
@@ -171,6 +176,13 @@
   }
     if (isset($_POST['btn_modif_form']))
     {
+      $ville = $_POST['ville'];
+      $cp = $_POST['CP'];
+      $idville = new ville("","","","");
+      $req = $idville->affville($ville, $cp, $conn);
+      $ligne = $req->fetch();
+      $idville = $ligne['ville_id'];
+      echo $idville;
       $idmembre = $_POST['id'];
       $nomm = $_POST['nom'];
       $prenomm = $_POST['prenom'];
@@ -183,7 +195,7 @@
       $ruem = $_POST['add'];
       $mdpm = $_POST['mdpm'];
       $membre = new membre("","","","","","","","","","","","","","");
-      $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $ruem, $comp, $mdpm, $conn);
+      $membre->modifmembre($idmembre,$nomm, $prenomm, $genrem, $ddn, $mailm,$telephonem, $idville, $ruem, $comp, $mdpm, $conn);
       header('Location:gestionm.php');
     }
 ?>

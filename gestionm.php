@@ -2,6 +2,7 @@
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
 session_start ();
 include 'class/bdd.inc.php';
+include 'date_heure.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -87,7 +88,7 @@ $('#datatable').dataTable(
     echo"<td>",$ligne['nomm'],"</td>";
 		echo"<td>",$ligne['prenomm'],"</td>";
 		echo"<td>",$ligne['genrem'],"</td>";
-    echo"<td>",$ligne['ddn'],"</td>";
+    echo"<td>",dateustofr($ligne['ddn']),"</td>";
 		echo"<td>",$ligne['mailm'],"</td>";
 		echo"<td>",$ligne['telephonem'],"</td>";
     echo"<td>",$ligne['ville_nom_reel'],"</td>";

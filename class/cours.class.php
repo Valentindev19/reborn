@@ -58,7 +58,7 @@
 
     // AFFICHER
         public function affcours($idcours, $conn){
-          $SQL = "SELECT  date_format(datecours, '%d/%m/%Y')  AS datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
+          $SQL = "SELECT  date_format(datecours, '%d/%m/%Y') AS datecours, heuredcours, desccours, heurefcours, type_cours.nom_type_cours
           FROM cours, type_cours
           WHERE cours.id_type_cours = type_cours.id_type_cours
           AND idcours ='$idcours'";
