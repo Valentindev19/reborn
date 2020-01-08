@@ -4,6 +4,7 @@ session_start ();
 include 'class/stage.class.php';
 include 'class/typestage.class.php';
 include 'class/bdd.inc.php';
+include 'date_heure.php';
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
@@ -90,8 +91,8 @@ $res = $stage->afftype($conn);
 		echo"<td>",$ligne['dated'],"</td>";
 		echo"<td>",$ligne['datef'],"</td>";
     echo"<td>",$ligne['descstage'],"</td>";
-		echo"<td>",$ligne['heuredstage'],"</td>";
-		echo"<td>",$ligne['heurefstage'],"</td>";
+		echo"<td>",heurehm($ligne['heuredstage']),"</td>";
+		echo"<td>",heurehm($ligne['heurefstage']),"</td>";
     echo"<td>",$ligne['repas'],"</td>";
     echo"<td> <a href='traitstage.php?mod=mod&id=$ligne[idstage]'><img src='images/modadmin.png' alt='edit' title='modifier' width=35 /></a></td>";
     echo"<td> <a href='traitstage.php?sup=sup&id=$ligne[idstage]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 /></a></td>";

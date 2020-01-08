@@ -4,6 +4,7 @@ session_start ();
 include 'class/pro.class.php';
 include 'class/bdd.inc.php';
 include 'class/type_pro.class.php';
+include 'date_heure.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -86,9 +87,9 @@ $res = $promenade->afftype_pro($conn);
 {
   echo"<tr>";
     echo"<td>",$ligne['datepro'],"</td>";
-		echo"<td>",$ligne['heuredpro'],"</td>";
+		echo"<td>",heurehm($ligne['heuredpro']),"</td>";
 		echo"<td>",$ligne['descpro'],"</td>";
-    echo"<td>",$ligne['heurefpro'],"</td>";
+    echo"<td>",heurehm($ligne['heurefpro']),"</td>";
 		echo"<td>",$ligne['lieuxpro'],"</td>";
 		echo"<td>",$ligne['nom_type_pro'],"</td>";
     echo"<td> <a href='traitpro.php?modif=modif&idpro=$ligne[idpro]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";

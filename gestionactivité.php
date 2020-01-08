@@ -4,6 +4,7 @@ session_start ();
 include 'class/cours.class.php';
 include 'class/bdd.inc.php';
 
+
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
 ?>
