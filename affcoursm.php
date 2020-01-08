@@ -4,6 +4,8 @@ session_start ();
 include 'class/cours.class.php';
 include 'class/membre.class.php';
 include 'class/bdd.inc.php';
+include 'date_heure.php';
+
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
@@ -72,9 +74,9 @@ $('#datatable').dataTable(
 {
   echo"<tr>";
     echo"<td>",$ligne['datecours'],"</td>";
-		echo"<td>",$ligne['heuredcours'],"</td>";
+		echo"<td>",heurehm($ligne['heuredcours']),"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
-    echo"<td>",$ligne['heurefcours'],"</td>";
+    echo"<td>",heurehm($ligne['heurefcours']),"</td>";
 		echo"<td>",$ligne['nom_type_cours'],"</td>";
     echo"<td> <a href='traitcours.php?supm=supm&idcours=$ligne[idcours]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
   echo"</tr>";

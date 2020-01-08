@@ -4,6 +4,8 @@ session_start ();
 include 'class/pro.class.php';
 include 'class/membre.class.php';
 include 'class/bdd.inc.php';
+include 'date_heure.php';
+
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm'])) {
@@ -73,9 +75,9 @@ $('#datatable').dataTable(
 {
   echo"<tr>";
     echo"<td>",$ligne['datepro'],"</td>";
-		echo"<td>",$ligne['heuredpro'],"</td>";
+		echo"<td>",heurehm($ligne['heuredpro']),"</td>";
 		echo"<td>",$ligne['descpro'],"</td>";
-    echo"<td>",$ligne['heurefpro'],"</td>";
+    echo"<td>",heurehm($ligne['heurefpro']),"</td>";
 		echo"<td>",$ligne['lieuxpro'],"</td>";
 		echo"<td>",$ligne['nom_type_pro'],"</td>";
     echo"<td> <a href='traitpro.php?supm=supm&idpro=$ligne[idpro]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";

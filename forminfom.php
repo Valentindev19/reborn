@@ -71,7 +71,7 @@
                                 <div class="input-group">
                                   <label class="label">Date de naissance</label>
                                   <div class="input-group-icon">
-                                      <input class="input--style-4 js-datepicker" type="text" name="DN" id="datepicker">
+                                      <input class="input--style-4 js-datepicker" type="text" name="DN" value="<?php echo $ligne['ddn'];?>" id="datepicker">
                                       <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                   </div>
                                 </div>

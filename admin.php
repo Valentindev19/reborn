@@ -183,8 +183,6 @@ if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id
 	    <!--Image btn vers le haut-->
 	    <img id='btn_up' src="images/to_top.png"/>
 
-	    </div>
-
 
 	    <div class="py-5 quick-contact-info">
 	      <div class="container">
