@@ -55,7 +55,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="http:s//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+    <script type="text/javascript" src="js/script.js"></script>
     <script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
     <script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script language="JavaScript" src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
@@ -120,8 +120,15 @@
               </div>
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="age">Code postal</label>
+                  <input type="texte" name="CP" id="nom_id" class="form-control" value="<?php echo $_GET['idv']; ?>" onkeyup="autocomplet()">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="age">Ville</label>
                   <input type="texte" name="ville" id="ville" class="form-control" value="<?php echo $ligne['ville_nom_reel']; ?>">
+                  <input type="hidden" name='cp' id='cp' value="<?php echo $_GET['idv']; ?>">
                 </div>
               </div>
               <div class="row form-group">
@@ -153,6 +160,13 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <?php
   }
     if (isset($_POST['btn_modif_form']))

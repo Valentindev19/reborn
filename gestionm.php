@@ -91,7 +91,7 @@ $('#datatable').dataTable(
 		echo"<td>",$ligne['mailm'],"</td>";
 		echo"<td>",$ligne['telephonem'],"</td>";
     echo"<td>",$ligne['ville_nom_reel'],"</td>";
-		echo"<td> <a href='traitmembre.php?modm=modm&id=$ligne[idmembre]'><img src='images/modadmin.png' alt='mod' title='modifier' width=35 /></a></td>";
+		echo"<td> <a href='traitmembre.php?modm=modm&id=$ligne[idmembre]&idv=$ligne[ville_id]'><img src='images/modadmin.png' alt='mod' title='modifier' width=35 /></a></td>";
     echo"<td> <a href='traitmembre.php?supm=supm&id=$ligne[idmembre]'><img src='images/supadmin.png' alt='supprimer' title='Supprimer' width=20 /></a></td>";
   echo"</tr>";
 }

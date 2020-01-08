@@ -170,7 +170,7 @@ class membre
 
       public function affmembre2($conn)
       {
-        $req = "SELECT membre.idmembre, membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, membre.ruem, membre.compm, membre.mdpm
+        $req = "SELECT membre.idmembre, membre.nomm, membre.prenomm, membre.genrem, membre.ddn, membre.mailm, membre.telephonem, villes.ville_nom_reel, membre.ruem, membre.compm, membre.mdpm, membre.ville_id
         		FROM membre, villes
         		WHERE villes.ville_id= membre.ville_id
         		 AND membre.validemembre= 1";
