@@ -3,6 +3,7 @@
   include 'class/cours.class.php';
   include 'class/type_cours.class.php';
   include 'class/membre.class.php';
+  include 'date_heure.php';
 
   if (isset($_POST['btn_ajcours_form']))
   {
@@ -153,7 +154,7 @@
     if (isset($_POST['btn_modif_form']))
     {
       $idcours = $_POST['idcours'];
-      $date_cours = $_POST['date'];
+      $date_cours = datefrtous($_POST['date']);
       $hd_cours = $_POST['heuredcours'];
       $desc_cours = $_POST['desccours'];
       $hf_cours = $_POST['heurefcours'];

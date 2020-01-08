@@ -5,7 +5,7 @@ session_start ();
 //include
 include 'class/cours.class.php';
 include 'class/bdd.inc.php';
-include 'class/date.class.php';
+include 'date_heure.php';
 
 // On récupère nos variables de session
 if (isset($_SESSION['mailm']) && isset($_SESSION['mdpm']) && isset($_SESSION['id_typem'])) {
@@ -90,9 +90,9 @@ $req = $cours->affcours2($conn);
   echo"<tr>";
     echo"<td>",$ligne['idcours'],"</td>";
     echo"<td>",$ligne['datecours'],"</td>";
-		echo"<td>",$ligne['heuredcours'],"</td>";
+		echo"<td>",heurehm($ligne['heuredcours']),"</td>";
 		echo"<td>",$ligne['desccours'],"</td>";
-    echo"<td>",$ligne['heurefcours'],"</td>";
+    echo"<td>",heurehm($ligne['heurefcours']),"</td>";
 		echo"<td>",$ligne['nom_type_cours'],"</td>";
     echo"<td> <a href='traitcours.php?modif=modif&id=$ligne[idcours]'><img src='images/modadmin.png' alt='edit'name='modifierclasse' width=35 /></a></td>";
     echo"<td> <a href='traitcours.php?sup=sup&id=$ligne[idcours]'><img src='images/supadmin.png' alt='supprimerche' title='Supprimer' width=20 name='imgsup' /></a></td>";
@@ -125,7 +125,7 @@ echo"</center>";
 						<div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="font-weight-bold" for="race">Date</label>
-                <input type="text" name="date" id="date" class="form-control" placeholder="AAAA-MM-JJ">
+                <input type="text" name="date" id="date" class="form-control" placeholder="AAAA/MM/JJ">
               </div>
             </div>
             <div class="row form-group">
