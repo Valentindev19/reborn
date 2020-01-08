@@ -62,7 +62,7 @@
 ////////////////////////////////////////// AFFICHER
     public function affstage1($idstage, $conn)
     {
-        $SQL = "SELECT idstage,type_stage.typestage, date_format(datedstage, '%d/%m/%Y')  AS dated , date_format(datefstage,'%d/%m/%Y')  AS datef, descstage, heuredstage, heurefstage, repas
+        $SQL = "SELECT idstage,type_stage.typestage, date_format(datedstage, '%d/%m/%Y')  AS datedstage , date_format(datefstage,'%d/%m/%Y')  AS datefstage, descstage, heuredstage, heurefstage, repas
         FROM stage,type_stage
         WHERE stage.idtype_stage = type_stage.idtype_stage
         AND idstage= '$idstage'";

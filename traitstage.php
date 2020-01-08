@@ -3,6 +3,7 @@
   include 'class/stage.class.php';
   include 'class/typestage.class.php';
   include 'class/membre.class.php';
+  include 'date_heure.php';
 
   if (isset($_POST['btn_ajstage_form']))
   {
@@ -161,8 +162,8 @@
 
     if (isset($_POST['btn_modif_form']))
     {
-      $dated = $_POST['dated'];
-      $datef = $_POST['datef'];
+      $dated = datefrtous($_POST['dated']);
+      $datef = datefrtous($_POST['datef']);
       $heured = $_POST['heured'];
       $heuref = $_POST['heuref'];
       $des = $_POST['descstage'];
