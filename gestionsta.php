@@ -145,7 +145,7 @@ echo"</center>";
 								<div class="row form-group">
 									<div class="col-md-12 mb-3 mb-md-0">
 										<label class="font-weight-bold" for="race">Date Début</label>
-										<input type="text" name="dated" id="dated" class="form-control" placeholder="AAAA-MM-JJ">
+										<input type="text" name="dated" id="dated" class="form-control" placeholder="AAAA/MM/JJ">
 									</div>
 								</div>
 								<div class="row form-group">
@@ -166,7 +166,7 @@ echo"</center>";
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label class="font-weight-bold" for="taille">Date Fin</label>
-										<input type=text name="datef" id="datef" class="form-control" placeholder="AAAA-MM-JJ">
+										<input type=text name="datef" id="datef" class="form-control" placeholder="AAAA/MM/JJ">
 									</div>
 								</div>
 								<div class="row form-group">
